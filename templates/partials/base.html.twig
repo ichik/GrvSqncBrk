@@ -36,18 +36,20 @@
         <meta property="og:site_name" content="{{ site.twitter_domain }}" />
 {% endblock %}
 	</head>
+    
 	<body class="{{ browser.getbrowser }}">
 		
 	{% include 'partials/header.html.twig' %}
 
 	{% include 'partials/footer.html.twig' %}
 		
-	{% block javascript %}
-	{% do assets.add('theme://vendors/blazy/blazy.min.js',11) %}
-	{% do assets.add('theme://js/sqncbrk.js',10) %}
+    {% block javascript %}
+        {% do assets.add('theme://vendors/blazy/blazy.min.js',11) %}
+        {% do assets.add('theme://js/sqncbrk.js',10) %}
 		
-	{{ assets.js() }}
+        {{ assets.js() }}
 	{% endblock %}
 		
 	</body>
+    
 </html>

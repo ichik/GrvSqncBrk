@@ -23,7 +23,11 @@
 		{% block stylesheets %}
 			{% do assets.add('theme://css/style.css',100) %}
 			{{ assets.css() }}
-		{% endblock %}	
+		{% endblock %}
+		
+		{% if page.header.customcss %}
+			<link rel="stylesheet" type="text/css" href="{{ page.url}}/custom.css" />
+		{% endif %}
 
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="{{ site.twitter_site }}">
@@ -45,6 +49,10 @@
 	<body class="{{ browser.getbrowser }}">
 
 		{% include 'partials/header.html.twig' %}
+		
+        {% block content %}
+		
+        {% endblock %}
 
 		{% include 'partials/footer.html.twig' %}
 

@@ -161,7 +161,7 @@ h2
 
 h3
 	font-size: $basefontsize * 1.5
-	line-height: $baselineheight * 1.5
+	line-height: $baselineheight * 1.2
 
 	+mobile
 		font-size: $basefontsize * 1.2
@@ -190,19 +190,24 @@ abbr
 	font-size: $basefontsize * 0.75
 	letter-spacing: $basefontsize * 0.1
 	font-family: MuseoBold
+	border-bottom: 1px dotted rgba(0,0,0,0.4)
+	cursor: help
 
 	+mobile
 		font-size: $basefontsize * 0.6
 	
-	&.def
-		border-bottom: 1px dotted rgba(0,0,0,0.4)
-		cursor: help
 
 .highlight
 	background: $black
 	margin-bottom: $baselineheight
+	padding-top: $baselineheight
+	padding-bottom: 1px
+
+	p
+		font-family: MuseoSansItalic
+		margin-bottom: $baselineheight - 1 !important
 	
-	p,blockquote
+	p,blockquote,abbr
 		color: $white
 	
 	abbr
@@ -705,6 +710,7 @@ article.post
 
 	p
 		+animation(scroll 2s infinite)
+		font-size: $basefontsize * 0.8
 	
 	+mobile
 		display: none
@@ -712,6 +718,9 @@ article.post
 #primary #platforms,#primary p,#primary blockquote,#primary h3
 	width: $mainwidth
 	margin: 0 auto $baselineheight auto
+
+	&.nomargin
+		margin-bottom: $baselineheight / 4
 
 	+mobile
 		width: 100%

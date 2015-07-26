@@ -1,1 +1,26 @@
 {% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="article-cover">
+  <div class="post-cover b-lazy" data-src="{{ page.media['cover.jpg'].url }}"></div>
+    <div class="post-content">
+      <header class="entry-header">
+        <h2 class="entry-title">{{ page.title }}</h2>
+      </header>
+      <footer class="entry-meta">
+        <time class="entry-date" datetime="{{ page.date|date('Y-m-d') }}">{{ page.date|date('d') }} {{ 'MONTHS_OF_THE_YEAR'|ta(page.date|date('n') - 1) }}, {{ page.date|date('Y') }}</time>
+      </footer>
+    </div>
+  <div id="scroll-to-content"><div class="mouse"><span><p>↓</p></span></div></div>
+</div>
+<div id="primary" class="article-area">
+  {% if page.header.platform %}
+  <ul id="platforms">
+    {% for p in page.header.platform %}
+    <li>{{ p }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {{ page.content }}
+</div>
+{% endblock %}

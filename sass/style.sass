@@ -107,6 +107,13 @@ $mobile-width: 320px
 		$index: $index + $slice
 	@return url("data:image/svg+xml;charset=utf8,#{$encoded}")
 
+//ffs
+iframe
+	max-width: 100%
+
+	+mobile
+		height: auto
+
 // basic typography and stuff
 @font-face
 	font-family: MuseoSans
@@ -165,7 +172,7 @@ h3
 
 	+mobile
 		font-size: $basefontsize * 1.2
-		line-height: $baselineheight
+		line-height: $baselineheight * 0.8
 
 p,blockquote,li
 	font-size: $basefontsize

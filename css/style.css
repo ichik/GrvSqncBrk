@@ -171,6 +171,12 @@ textarea {
     clip: rect(0 0 0 0) !important;
     position: absolute !important; } }
 /* All my styles go now */
+iframe {
+  max-width: 100%; }
+  @media (max-width: 760px) {
+    iframe {
+      height: auto; } }
+
 @font-face {
   font-family: MuseoSans;
   src: url("../fonts/MuseoSansCyrl_300Web.woff") format("woff"); }
@@ -224,7 +230,7 @@ h3 {
   @media (max-width: 760px) {
     h3 {
       font-size: 24px;
-      line-height: 36px; } }
+      line-height: 28.8px; } }
 
 p, blockquote, li {
   font-size: 20px;

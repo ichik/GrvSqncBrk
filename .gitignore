@@ -2,3 +2,5 @@ fonts/*
 .sass-cache/*
 Thumbs.db
 templates/index.html
+
+templates/article.html

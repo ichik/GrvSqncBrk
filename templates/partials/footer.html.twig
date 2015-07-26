@@ -1,0 +1,11 @@
+<footer id="page-footer">
+	
+	<p><a href="{{ site.author.site }}" class="no-u">{{ site.author.site_title }}</a>
+		
+		{% for p in pages.children %}{% if p.visible %}
+			&nbsp;•&nbsp;<a href="{{ p.url(true) }}" class="no-u">{{ p.title }}</a>
+		{% endif %}{% endfor %}
+	
+	<p><nobr>Подписаться на обновления:&nbsp;&nbsp;<a href="{{ site.rss }}" class="no-u feed"></a>&nbsp;&nbsp;<a href="http://twitter.com/{{ site.twitter_site }}" class="no-u twitter"></a>&nbsp;&nbsp;<a href="http://facebook.com/{{ site.facebook_page }}"  class="no-u facebook"></a></nobr></p>
+	
+</footer>

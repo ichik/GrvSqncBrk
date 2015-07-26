@@ -1,55 +1,60 @@
+{% spaceless %}
 <!DOCTYPE HTML>
 <html>
 	<head>
-{% block head %}
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">   
-	{% if header.description %}
-	<meta name="description" content="{{ header.description }}">
-	{% else %}
-<meta name="description" content="{{ site.metadata.description }}">
-	{% endif %}
-{% if site.rss %}
-<link rel="alternate" type="application/rss+xml" href="{{ site.rss }}" />
-{% endif %}
-	<link rel="shortcut icon" href="{{ theme_url }}/images/favicon.ico">
-	<link rel="apple-touch-icon" href="{{ theme_url }}/images/apple-touch-icon.png">
-	<title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
-	{% block stylesheets %}
-{% do assets.add('theme://css/style.css',100) %}
-{{ assets.css() }}
-	{% endblock %}
+		{% block head %}
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">   
 		
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="{{ site.twitter_site }}">
-	<meta name="twitter:title" content="{% if header.title %}{{ header.title }}{% else %}{{ site.title }}{% endif %}">
-	<meta name="twitter:creator" content="{{ site.author.twitter }}">
-	<meta name="twitter:image:src" content="{{ base_url_absolute }}{{ page.media['cover.jpg'].cropZoom(560, 300).url }}">
-        <meta name="twitter:domain" content="{{ site.twitter_domain }}">
-	<meta name="twitter:description" content="{% if header.description %}{{ header.description }}{% else %}{{ site.metadata.description }}{% endif %}">
-        
-        <meta property="og:title" content="{% if header.title %}{{ header.title }}{% else %}{{ site.title }}{% endif %}" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="{{ base_url_absolute }}{{ page.media['cover.jpg'].cropZoom(600, 315).url }}" />
-        <meta property="og:url" content="{{ page.url(true) }}" />
-        <meta property="og:description" content="{% if header.description %}{{ header.description }}{% else %}{{ site.metadata.description }}{% endif %}" />
-        <meta property="og:site_name" content="{{ site.twitter_domain }}" />
-{% endblock %}
-	</head>
-    
-	<body class="{{ browser.getbrowser }}">
-		
-	{% include 'partials/header.html.twig' %}
+		{% if header.description %}
+		<meta name="description" content="{{ header.description }}">
+		{% else %}
+		<meta name="description" content="{{ site.metadata.description }}">
+		{% endif %}
 
-	{% include 'partials/footer.html.twig' %}
-		
-    {% block javascript %}
-        {% do assets.add('theme://vendors/blazy/blazy.min.js',11) %}
-        {% do assets.add('theme://js/sqncbrk.js',10) %}
-		
-        {{ assets.js() }}
-	{% endblock %}
-		
-	</body>
-    
+		{% if site.rss %}
+		<link rel="alternate" type="application/rss+xml" href="{{ site.rss }}" />
+		{% endif %}
+
+		<link rel="shortcut icon" href="{{ theme_url }}/images/favicon.ico">
+		<link rel="apple-touch-icon" href="{{ theme_url }}/images/apple-touch-icon.png">
+
+		<title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+
+		{% block stylesheets %}
+			{% do assets.add('theme://css/style.css',100) %}
+			{{ assets.css() }}
+		{% endblock %}	
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="{{ site.twitter_site }}">
+		<meta name="twitter:title" content="{% if header.title %}{{ header.title }}{% else %}{{ site.title }}{% endif %}">
+		<meta name="twitter:creator" content="{{ site.author.twitter }}">
+		<meta name="twitter:image:src" content="{{ base_url_absolute }}{{ page.media['cover.jpg'].cropZoom(560, 300).url }}">
+		<meta name="twitter:domain" content="{{ site.twitter_domain }}">
+		<meta name="twitter:description" content="{% if header.description %}{{ header.description }}{% else %}{{ site.metadata.description }}{% endif %}">
+
+		<meta property="og:title" content="{% if header.title %}{{ header.title }}{% else %}{{ site.title }}{% endif %}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="{{ base_url_absolute }}{{ page.media['cover.jpg'].cropZoom(600, 315).url }}" />
+		<meta property="og:url" content="{{ page.url(true) }}" />
+		<meta property="og:description" content="{% if header.description %}{{ header.description }}{% else %}{{ site.metadata.description }}{% endif %}" />
+		<meta property="og:site_name" content="{{ site.twitter_domain }}" />
+		{% endblock %}
+	</head>
+
+	<body class="{{ browser.getbrowser }}">
+
+		{% include 'partials/header.html.twig' %}
+
+		{% include 'partials/footer.html.twig' %}
+
+		{% block javascript %}
+			{% do assets.add('theme://vendors/blazy/blazy.min.js',11) %}
+			{% do assets.add('theme://js/sqncbrk.js',10) %}
+			{{ assets.js() }}
+		{% endblock %}
+
+</body>
 </html>
+{% endspaceless %}

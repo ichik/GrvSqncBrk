@@ -814,6 +814,9 @@ article.post {
     #primary.article-area {
       padding-top: 9px; } }
 
+#primary img {
+  max-width: 100%; }
+
 #platforms li {
   color: #f0ad2c;
   border: 1px solid #f0ad2c;

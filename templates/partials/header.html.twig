@@ -12,3 +12,15 @@
     	<div class="spinner horizontal"></div>
     	<div class="spinner diagonal part-2"></div>
     </label>
+
+	<div class="menu-wrap" id="morphSearch">
+    	<div class="hamburger-insides">
+			<nav id="about-links">
+				<ul>
+				{% for p in pages.children %}{% if p.visible %}
+					<li><a href="{{ p.url(true) }}" class="no-u">{{ p.title }}</a></li>
+				{% endif %}{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	</div>

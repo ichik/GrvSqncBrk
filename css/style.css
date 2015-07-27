@@ -206,7 +206,8 @@ h1, h2, h3 {
   font-family: Museo;
   -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
   -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1; }
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
+  font-weight: normal; }
 
 blockquote {
   font-family: MuseoSansItalic; }
@@ -214,8 +215,7 @@ blockquote {
 h2 {
   font-size: 80px;
   line-height: 90px;
-  margin-bottom: 36px;
-  font-weight: normal; }
+  margin-bottom: 36px; }
   @media (min-width: 760px) and (max-width: 1020px) {
     h2 {
       font-size: 60px;
@@ -227,8 +227,7 @@ h2 {
 
 h3 {
   font-size: 30px;
-  line-height: 43.2px;
-  font-weight: normal; }
+  line-height: 36px; }
   @media (max-width: 760px) {
     h3 {
       font-size: 24px;

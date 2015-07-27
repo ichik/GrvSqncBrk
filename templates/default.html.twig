@@ -2,6 +2,11 @@
 
 {% block content %}
 <div class="article-cover">
+  {% if page.header.videocover %}
+  <video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+    <source src="/user/video/{{ page.title }}.mp4" type="video/mp4">
+  </video>
+  {% endif %}
   <div class="post-cover b-lazy" data-src="{{ page.media['cover.jpg'].url }}"></div>
     <div class="post-content">
       <header class="entry-header">

@@ -669,7 +669,8 @@ article.post {
     top: 0;
     height: 100%;
     display: block;
-    color: #fffcfa; }
+    color: #fffcfa;
+    border: 0; }
     article.post a:hover {
       color: #fffcfa; }
     article.post a:hover .post-cover {

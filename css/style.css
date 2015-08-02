@@ -682,12 +682,12 @@ article.post {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   text-align: center;
-  padding: 0 150px; }
+  padding: 0 150px;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0px 100px 71px rgba(0, 0, 0, 0.15); }
   @media (max-width: 760px) {
     .post-content {
       padding: 0 10px; } }
-  .post-content h2 {
-    text-shadow: 2px 2px 4px rgba(30, 10, 0, 0.2); }
 
 .post-cover {
   opacity: 0.7;

@@ -1,9 +1,9 @@
-{% if page.url(true) != base_url_absolute %}
+{% if page.url(true) == base_url_absolute %}
+	<h1>{{ site.title }}</h1>
+{% else %}
 	<a href="/" id="backtoindex">
 		<h1>{{ site.title }}</h1>
 	</a>
-{% else %}
-	<h1>{{ site.title }}</h1>
 {% endif %}
 
 	<input type="checkbox" id="nav-trigger" class="nav-trigger" />

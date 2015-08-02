@@ -45,7 +45,7 @@
 		{% endblock %}
 	</head>
 
-	<body class="{{ browser.getbrowser }}">
+	{% block body %}<body class="{{ browser.getbrowser }}">{% endblock %}
 
 		{% include 'partials/header.html.twig' %}
 
@@ -53,7 +53,7 @@
 
         {% endblock %}
 
-		{% include 'partials/footer.html.twig' %}
+		{% block footer %}{% include 'partials/footer.html.twig' %}{% endblock %}
 
 		{% block javascript %}
 			{% do assets.add('theme://vendors/blazy/blazy.min.js',11) %}
@@ -61,5 +61,5 @@
 			{{ assets.js() }}
 		{% endblock %}
 
-</body>
+	</body>
 </html>

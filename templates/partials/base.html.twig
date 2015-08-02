@@ -47,7 +47,7 @@
 
 	{% block body %}<body class="{{ browser.getbrowser }}">{% endblock %}
 
-		{% include 'partials/header.html.twig' %}
+		{% block header %}{% include 'partials/header.html.twig' %}{% endblock %}
 
         {% block content %}
 

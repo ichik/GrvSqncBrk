@@ -1,0 +1,7 @@
+<a class="search-link" href="{{ page. url }}"><div class="search-result">
+    {% set banner = page.media.images|first %}
+    <h3>{{ page. title }}</h3>
+    <time class="entry-date" datetime="{{ page.date|date('Y-m-d') }}">{{ page.date|date('d') }} {{ 'MONTHS_OF_THE_YEAR'|ta(page.date|date('n') - 1) }}, {{ page.date|date('Y') }}</time>
+    <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ banner.cropZoom(320,180).url }}" />
+    <p>{{ page.header.searchtext }}</p>
+</div></a>

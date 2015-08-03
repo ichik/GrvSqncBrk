@@ -340,6 +340,20 @@ a, a:link {
     opacity: 0;
     -webkit-transform: translate3d(0, 10px, 0);
     transform: translate3d(0, 10px, 0); } }
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 .b-lazy {
   transition: opacity 500ms ease-in-out;
   opacity: 0; }
@@ -708,7 +722,7 @@ article.post {
 
 #load-more-holder {
   height: 150px; }
-  #load-more-holder #load-more {
+  #load-more-holder #load-more, #load-more-holder:after {
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -721,9 +735,25 @@ article.post {
     border-radius: 30px;
     transition: all 0.5s ease;
     cursor: pointer; }
-    #load-more-holder #load-more:hover {
+    #load-more-holder #load-more:hover, #load-more-holder:after:hover {
       background: #000a14;
       color: #fffcfa; }
+  #load-more-holder:after {
+    content: "";
+    display: none; }
+  #load-more-holder.progress #load-more {
+    display: none; }
+  #load-more-holder.progress:after {
+    display: block;
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    top: 30%;
+    border-right-color: rgba(0, 0, 0, 0.2);
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    border-left-color: rgba(0, 0, 0, 0.2);
+    -webkit-animation: loader 1.1s linear infinite;
+    animation: loader 1.1s linear infinite; }
 
 .article-cover {
   width: 100%;

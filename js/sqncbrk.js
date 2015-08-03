@@ -7,7 +7,7 @@
 		, {
 			width: 1024 // max-width
 			, src: 'data-src-medium'
-		}]	
+		}]
 	});
 })();
 
@@ -41,3 +41,35 @@
 			}
 		} );
 })();
+
+function showContent(link) {
+var oldDiv = document.getElementById("load-more-holder");
+var mainDiv = document.getElementById("primary")
+var http = createRequestObject();
+oldDiv.className=oldDiv.className + "progress";
+if( http )
+	{
+		http.open('get', link);
+		http.onreadystatechange = function ()
+		{
+			if(http.readyState == 4)
+			{
+				oldDiv.remove();
+				mainDiv.innerHTML = mainDiv.innerHTML + http.responseText;
+				var bLazy = new Blazy;
+			}
+		}
+		http.send(null);
+	};
+};
+
+function createRequestObject() {
+	  try { return new XMLHttpRequest() }
+	  catch(e) {
+		  try { return new ActiveXObject('Msxml2.XMLHTTP') }
+		  catch(e) {
+			  try { return new ActiveXObject('Microsoft.XMLHTTP') }
+			  catch(e) { return null; }
+		  }
+	  }
+  };

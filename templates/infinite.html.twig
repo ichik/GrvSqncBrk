@@ -1,14 +1,12 @@
-{% extends 'partials/base.html.twig' %}
-
 {% set collection = page.collection %}
 {% set pagination = collection.params.pagination %}
 
-{% block content %}
-<div id="primary" class="content-area">
+{% if pagination|length > 1 %}
+
     {% for page in collection %}
         {% include 'partials/post-item.html.twig' %}
     {% endfor %}
 
     {% include 'partials/load-more.html.twig' %}
-</div>
-{% endblock %}
+
+{% endif %}

@@ -1,0 +1,13 @@
+<article class="post">
+  <a href="{{ page.rawRoute }}" class="post-cover-link">
+    <div class="post-cover b-lazy" data-src="{{ page.media['cover.jpg'].url }}"></div>
+    <div class="post-content">
+      <header class="entry-header">
+        <h2 class="entry-title">{{ page.title }}</h2>
+      </header>
+      <footer class="entry-meta">
+        <time class="entry-date" datetime="{{ page.date|date('Y-m-d') }}">{{ page.date|date('d') }} {{ 'MONTHS_OF_THE_YEAR'|ta(page.date|date('n') - 1) }}, {{ page.date|date('Y') }}</time>
+      </footer>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,5 @@
+{% if pagination.hasNext %}
+    <div id="load-more-holder" onclick="showContent('{{ base_url }}/tmpl:infinite{{ pagination.params }}{{ pagination.nextUrl }}')">
+        <button id="load-more">Давай ещё!</button>
+    </div>
+{% endif %}

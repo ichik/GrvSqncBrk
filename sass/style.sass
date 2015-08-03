@@ -267,6 +267,12 @@ a,a:link
 		opacity: 0
 		+transform(translate3d(0, 10px, 0))
 
++keyframes(loader)
+	0%
+		+transform(rotate(0))
+	100%
+		+transform(rotate(360deg))
+
 // lazy-load
 .b-lazy
 	+transition(opacity 500ms ease-in-out)
@@ -643,7 +649,7 @@ article.post
 #load-more-holder
 	height: 150px
 
-	#load-more
+	#load-more,&:after
 		position: relative
 		top: 50%
 		+transform(translateY(-50%))
@@ -659,6 +665,25 @@ article.post
 		&:hover
 			background: $black
 			color: $white
+
+	&:after
+		content: ''
+		display: none
+
+	&.progress
+		#load-more
+			display: none
+
+	&.progress:after
+		display: block
+		width: 58px
+		height: 58px
+		padding: 0
+		top: 30%
+		border-right-color: rgba(0,0,0,0.2)
+		border-bottom-color: rgba(0,0,0,0.2)
+		border-left-color: rgba(0,0,0,0.2)
+		+animation(loader 1.1s linear infinite)
 
 //article
 .article-cover

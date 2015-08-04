@@ -3,7 +3,8 @@
 		breakpoints: [{
 			width: 375 // max-width
 			, src: 'data-src-small'
-		}]
+		}],
+		offset: 400
 	});
 })();
 

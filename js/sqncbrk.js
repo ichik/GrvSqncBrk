@@ -1,12 +1,8 @@
 (function() {
 	var bLazy = new Blazy({
 		breakpoints: [{
-			width: 420 // max-width
+			width: 375 // max-width
 			, src: 'data-src-small'
-		}
-		, {
-			width: 1024 // max-width
-			, src: 'data-src-medium'
 		}]
 	});
 })();
@@ -56,7 +52,16 @@ if( http )
 			{
 				oldDiv.remove();
 				mainDiv.innerHTML = mainDiv.innerHTML + http.responseText;
-				var bLazy = new Blazy;
+				var bLazy = new Blazy({
+					breakpoints: [{
+						width: 420 // max-width
+						, src: 'data-src-small'
+					}
+					, {
+						width: 1024 // max-width
+						, src: 'data-src-medium'
+					}]
+				});
 			}
 		}
 		http.send(null);

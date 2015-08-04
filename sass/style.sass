@@ -208,8 +208,8 @@ abbr
 .highlight
 	background: $black
 	margin-bottom: $baselineheight
-	padding-top: $baselineheight
-	padding-bottom: 1px
+	padding-top: 0
+	padding-bottom: 0
 
 	p
 		font-family: MuseoSansItalic
@@ -274,11 +274,11 @@ a,a:link
 		+transform(rotate(360deg))
 
 // lazy-load
-.b-lazy
+img.b-lazy
 	+transition(opacity 500ms ease-in-out)
 	opacity: 0
 
-.b-loaded
+img.b-loaded
 	opacity: 1
 
 // logo
@@ -862,6 +862,9 @@ a.search-link
 	img
 		margin-right: $baselineheight
 		margin-bottom: $baselineheight / 2
+
+		+mobile
+			margin-right: 0
 
 	time
 		color: #888

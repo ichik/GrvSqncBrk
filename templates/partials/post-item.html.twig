@@ -1,6 +1,6 @@
 <article class="post">
   <a href="{{ page.rawRoute }}" class="post-cover-link">
-    <div class="post-cover b-lazy" data-src="{{ page.media['cover.jpg'].url }}"></div>
+    <div class="post-cover b-lazy" data-src="{{ page.media['cover.jpg'].url }}" data-src-small="{{ page.media['cover.jpg'].cropResize(750,420).url }}"></div>
     <div class="post-content">
       <header class="entry-header">
         <h2 class="entry-title">{{ page.title }}</h2>

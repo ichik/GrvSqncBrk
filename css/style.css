@@ -264,8 +264,8 @@ abbr {
 .highlight {
   background: #000a14;
   margin-bottom: 36px;
-  padding-top: 36px;
-  padding-bottom: 1px; }
+  padding-top: 0;
+  padding-bottom: 0; }
   .highlight p {
     font-family: MuseoSansItalic;
     margin-bottom: 35px !important; }
@@ -354,11 +354,11 @@ a, a:link {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
-.b-lazy {
+img.b-lazy {
   transition: opacity 500ms ease-in-out;
   opacity: 0; }
 
-.b-loaded {
+img.b-loaded {
   opacity: 1; }
 
 h1 {
@@ -915,6 +915,9 @@ a.search-link {
   a.search-link img {
     margin-right: 36px;
     margin-bottom: 18px; }
+    @media (max-width: 760px) {
+      a.search-link img {
+        margin-right: 0; } }
   a.search-link time {
     color: #888;
     font-size: 14px;

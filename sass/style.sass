@@ -212,6 +212,12 @@ abbr
 	padding-bottom: 0
 	min-height: 420px
 
+	+tablet
+		min-height: 300px
+
+	+mobile
+		min-height: 100px
+
 	p
 		font-family: MuseoSansItalic
 		margin-bottom: $baselineheight - 1 !important
@@ -748,6 +754,10 @@ article.post
 
 	+mobile
 		display: none
+
+#primary
+	+tabletandmobile
+		+transform(translateY(60px))
 
 #primary #platforms,#primary p,#primary blockquote,#primary h3
 	width: $mainwidth

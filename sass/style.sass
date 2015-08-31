@@ -304,15 +304,15 @@ h1
 	z-index: 10000
 
 
-	.msie &,.safari &
+	.msie &,.safari &,.edge &
 		mix-blend-mode: normal
 		background-color: $black
 		width: 120px
 		height: 120px
 		background-position: 10px 10px
 		border-radius: 60px
-		left: 10px
-		top: 10px
+		left: 20px
+		top: 20px
 
 		+tabletandmobile
 			width: 161px
@@ -345,21 +345,21 @@ h1
 #open-button
 	position: fixed
 	right: 30px
-	top: 60px
+	top: 70px
 	width: 30px
 	height: 30px
 	z-index: 1000
 	cursor: pointer
 	mix-blend-mode: exclusion
 
-	.msie &,.safari &
+	.msie &,.safari &,.edge &
 		mix-blend-mode: normal
 		background-color: rgba(255,255,255,0.5)
 		width: 50px
 		height: 50px
 		border-radius: 25px
 		right: 20px
-		top: 40px
+		top: 60px
 		padding: 10px
 
 		+mobile
@@ -406,7 +406,7 @@ h1
 		+mobile
 			background-color: $black
 
-		.msie &,.safari &
+		.msie &,.safari &, .edge &
 			background-color: $black
 
 	.horizontal
@@ -703,6 +703,7 @@ article.post
 	+mobile
 		height: 70vh
 		overflow: hidden
+		+transform(translateY(60px))
 
 	.post-content
 		color: $white
@@ -756,7 +757,7 @@ article.post
 	+mobile
 		display: none
 
-.content-area
+.content-area,.article-area
 	+tabletandmobile
 		+transform(translateY(60px))
 

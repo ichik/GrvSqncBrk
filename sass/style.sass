@@ -757,7 +757,7 @@ article.post
 	+mobile
 		display: none
 
-.content-area,.article-area
+.content-area
 	+tabletandmobile
 		+transform(translateY(60px))
 
@@ -795,7 +795,8 @@ article.post
 	overflow: hidden
 
 	+mobile
-		padding-top: $baselineheight / 4
+		padding-top: $baselineheight / 2
+		+transform(translateY(80px))
 
 #primary img
 	max-width: 100%

@@ -182,7 +182,7 @@ p,blockquote,li
 
 	&.mark
 		font-size: $basefontsize * 0.8
-		line-height: $baselineheight * 0.6
+		line-height: $baselineheight * 2 / 3
 		font-family: MuseoSansItalic
 
 	+mobile
@@ -649,6 +649,9 @@ article.post
 	background-color: $black
 	left: 0
 	top: 0
+
+	.article-cover &
+		opacity: 1
 
 	+mobile
 		.article-cover &

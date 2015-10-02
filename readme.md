@@ -1,8 +1,3 @@
-## So what do I have?
-* A [fully working](https://github.com/ichik/SqncBrk) HTML, CSS and JS combo as a theme prototype. Yes it really works even on real devices.
-* A very basic knowledge of said technologies
-* An even more limited knowledge of PHP and Twig
-
-## And what do I need to do
-* A working theme for [Grav](http://getgrav.org)
-* Most probably a plugin for “load more” functionality too
+## Soooo, what is it?
+It's a theme for [Grav](http://getgrav.org) that I use for my blog [Sequence Break](http://sequencebreak.ru). Fonts are missing from the repo, graphics are embedded in SASS for the most part. It needs a special plugin for [bLazy](https://github.com/dinbror/blazy) to work. Its code is awful. I need to rewrite it.
+Also I need to fix the fuckton of things. And make a new layout. Also a bagel.

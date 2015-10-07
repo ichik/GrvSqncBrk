@@ -1,2 +1,8 @@
 ru:
     MONTHS_OF_THE_YEAR: [января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+    SEARCH: Поиск
+    LOAD_MORE: Давай ещё
+en:
+    MONTHS_OF_THE_YEAR: [january, february, march, april, may, june, july, august, september, october, november, december]
+    SEARCH: Search
+    LOAD_MORE: Load more

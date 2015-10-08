@@ -3,8 +3,8 @@
 {% block content %}
 <div id="primary" class="search-results">
     <form class="search-form" action="{{ base_url_relative }}/search" method="get">
-		<input class="search-input" type="search" placeholder="Поиск..." id="search-input" autocomplete="off" value="{{ query }}" autofocus onfocus="this.value = this.value;" name="query">
-		<button class="search-submit" type="submit">Search</button>
+		<input class="search-input" type="search" placeholder="{{ "SEARCH"|t }}" id="search-input" autocomplete="off" value="{{ query }}" autofocus onfocus="this.value = this.value;" name="query">
+		<button class="search-submit" type="submit">{{ "SEARCH"|t }}</button>
 	</form>
     {% for page in search_results %}
         {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}

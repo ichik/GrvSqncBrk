@@ -913,7 +913,7 @@ a.search-link
 		width: $mainwidth
 		margin: 0 auto
 		font-size: $basefontsize * 0.65
-		height: $baselineheight * 1.5
+		height: $baselineheight
 
 		+mobile
 			width: auto
@@ -924,7 +924,10 @@ a.search-link
 			display: inline-block
 			list-style-type: none
 			font-size: $basefontsize * 0.65
-			margin-right: $basefontsize * 2
+			margin-right: $basefontsize
+
+			+mobile
+				margin-right: $basefontsize * 0.9
 
 		a
 			border-bottom: 0

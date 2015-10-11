@@ -909,16 +909,22 @@ a.search-link
 	height: 100px
 	margin-top: 100px
 
-	p
+	p, ul
 		width: $mainwidth
 		margin: 0 auto
 		font-size: $basefontsize * 0.65
-		line-height: 30px
+		height: $baselineheight * 1.5
 
 		+mobile
 			width: auto
 			padding: 0 10px
 			font-size: $basefontsize * 0.6
+
+		li
+			display: inline-block
+			list-style-type: none
+			font-size: $basefontsize * 0.65
+			margin-right: $basefontsize * 2
 
 		a
 			border-bottom: 0

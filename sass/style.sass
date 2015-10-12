@@ -465,10 +465,6 @@ h1
 			font-size: $basefontsize * 0.8
 			line-height: $baselineheight * 0.8
 
-		+mobile
-			font-size: $basefontsize
-			//text-align: center
-
 .nav-trigger
 	position: fixed
 	clip: rect(0,0,0,0)
@@ -510,7 +506,7 @@ h1
 			display: block
 			margin-right: 0
 			margin-bottom: 20px
-			font-size: $basefontsize * 1.5
+			font-size: $basefontsize * 1.2
 			line-height: $baselineheight
 
 // morphing search
@@ -524,7 +520,7 @@ h1
 
 	+mobile
 		width: 100%
-		margin-bottom: $baselineheight * 2
+		margin-bottom: $baselineheight
 
 	+tablet
 		font-size: $basefontsize * 0.8
@@ -545,9 +541,9 @@ h1
 		//text-align: center
 		width: 100%
 		padding-top: 0
-		font-size: $basefontsize * 1.5
+		font-size: $basefontsize * 1.2
 		margin-top: 0
-		line-height: $baselineheight * 2
+		line-height: $baselineheight
 
 .nav-trigger:checked ~ .menu-wrap > .hamburger-insides > .morphsearch-input
 	margin-top: 40px
@@ -568,9 +564,9 @@ h1
 
 	+mobile
 		padding-top: 0
-		font-size: $basefontsize * 1.5
+		font-size: $basefontsize * 1.2
 		margin-top: 0
-		line-height: $baselineheight * 2
+		line-height: $baselineheight
 
 .search-form
 	@extend .morphsearch-form
@@ -918,7 +914,7 @@ a.search-link
 		+mobile
 			width: auto
 			padding: 0 10px
-			font-size: $basefontsize * 0.6
+			font-size: $basefontsize * 0.55
 
 		li
 			display: inline-block
@@ -927,7 +923,8 @@ a.search-link
 			margin-right: $basefontsize
 
 			+mobile
-				margin-right: $basefontsize * 0.9
+				margin-right: $basefontsize * 0.5
+				font-size: $basefontsize * 0.55
 
 		a
 			border-bottom: 0

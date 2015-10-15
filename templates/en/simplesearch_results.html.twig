@@ -10,8 +10,8 @@
         {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
     {% endfor %}
     {% if search_results.count == 0 %}
-    <p>К сожалению, по запросу «{{ query }}» ничего не найдено.</p>
-    <p>Поищите что-нибудь ещё, например, <a href="{{ base_url_relative }}/search?query=Super+Metroid">Super Metroid</a>.</p>
+    <p>Nothing found on “{{ query }}”.</p>
+    <p>Let's look for something else, like <a href="{{ base_url_relative }}/search?query=Super+Metroid">Super Metroid</a>.</p>
     {% endif %}
 </div>
 {% endblock %}
@@ -39,8 +39,8 @@
                 {% for p in pages.children %}{% if p.visible %}
                     <li><a href="{{ p.rawRoute() }}" class="no-u">{{ p.title }}</a></li>
                 {% endif %}{% endfor %}
+                    <li><a href="/ru{{ page.rawRoute() }}" class="no-u">По-русски</a></li>
                 </ul>
-                    {# <li><a href="/en{{ page.rawRoute() }}" class="no-u">In English</a></li> #}
             </nav>
         </div>
     </div>

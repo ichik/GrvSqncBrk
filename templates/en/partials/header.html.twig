@@ -20,7 +20,7 @@
 				{% for p in pages.children %}{% if p.visible %}
 					<li><a href="{{ p.rawRoute() }}" class="no-u">{{ p.title }}</a></li>
 				{% endif %}{% endfor %}
-					{# <li><a href="/en{{ page.rawRoute() }}" class="no-u">In English</a></li> #}
+					<li><a href="/ru{{ page.rawRoute() }}" class="no-u">По-русски</a></li>
 				</ul>
 			</nav>
 			{% include 'partials/simplesearch_searchbox.html.twig' %}

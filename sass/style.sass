@@ -180,11 +180,6 @@ p,blockquote,li
 	line-height: $baselineheight
 	margin-bottom: $baselineheight
 
-	&.mark
-		font-size: $basefontsize * 0.8
-		line-height: $baselineheight * 2 / 3
-		font-family: MuseoSansItalic
-
 	+mobile
 		font-size: $basefontsize * 0.8
 		line-height: $baselineheight * 0.7
@@ -192,6 +187,12 @@ p,blockquote,li
 	+tablet
 		font-size: $basefontsize * 0.9
 		line-height: $baselineheight * 0.9
+
+aside.caption
+	font-size: $basefontsize * 0.8
+	line-height: $baselineheight * 2 / 3
+	font-family: MuseoSansItalic
+	margin-bottom: $baselineheight
 
 abbr
 	text-transform: uppercase
@@ -782,7 +783,7 @@ article.post
 	+tabletandmobile
 		+transform(translateY(60px))
 
-#primary #platforms,#primary p,#primary blockquote,#primary h3
+#primary #platforms,#primary p,#primary blockquote,#primary h3,#primary aside
 	width: $mainwidth
 	margin: 0 auto $baselineheight auto
 

@@ -23,7 +23,8 @@
 		{% block stylesheets %}
 			{% do assets.add('theme://css/style.css',100) %}
 			{% if page.header.customcss %}
-				{% do assets.add(page.url(true) ~ '/custom.css',10,false) %}
+				{% set path = base_url ~ '/' ~ page.filePathClean|replace({('/'~page.name): ''}) %}
+				{% do assets.add(path ~ '/custom.css',10,false) %}
 			{% endif %}
 			{{ assets.css() }}
 		{% endblock %}

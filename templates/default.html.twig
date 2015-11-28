@@ -17,14 +17,16 @@
       </footer>
     </div>
 </div>
-<div id="primary" class="article-area">
-  {% if page.header.platform %}
-  <ul id="platforms">
-    {% for p in page.header.platform %}
-    <li>{{ p }}</li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-  {{ page.content }}
+<div id="primary">
+    <div class="article-area">
+      {% if page.header.platform %}
+      <ul id="platforms">
+        {% for p in page.header.platform %}
+        <li>{{ p }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {{ page.content }}
+    </div>
 </div>
 {% endblock %}

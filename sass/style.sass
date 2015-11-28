@@ -4,7 +4,7 @@
 //variables
 $basefontsize: 20px
 $baselineheight: 36px
-$mainwidth: 740px
+$mainwidth: 700px
 $yellow: #f0ad2c
 $white: rgb(255, 252, 250)
 $black: #000a14
@@ -738,6 +738,7 @@ article.post
 	+mobile
 		overflow: hidden
 		+transform(translateY(60px))
+		height: 70vh
 
 	.post-cover
 		// height: 100%
@@ -798,9 +799,16 @@ article.post
 	+tabletandmobile
 		+transform(translateY(60px))
 
-#primary #platforms,#primary p,#primary blockquote,#primary h3,#primary aside
+#primary #platforms,#primary p,#primary blockquote,#primary h3
 	width: $mainwidth
-	margin: 0 auto $baselineheight auto
+	margin-bottom: $baselineheight
+	padding-right: $baselineheight
+
+#primary aside
+	width: 170px
+	padding-top: $baselineheight
+	border-top: 1px solid rgba(0,0,0,0.5)
+	margin-top: $baselineheight / 2
 
 	&.nomargin
 		margin-bottom: $baselineheight / 4
@@ -827,9 +835,14 @@ article.post
 	margin-top: $baselineheight * 2
 	margin-bottom: $baselineheight / 4
 
-#primary.article-area
+#primary .article-area
 	padding-top: $baselineheight
-	overflow: hidden
+	+flexbox
+	+flex-direction(row)
+	+flex-wrap(wrap)
+	+justify-content(space-between)
+	width: $desktop-width
+	padding-left: 150px
 
 	+mobile
 		padding-top: $baselineheight / 2

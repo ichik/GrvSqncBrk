@@ -806,16 +806,20 @@ article.post
 
 #primary aside
 	width: 170px
-	padding-top: $baselineheight
+	padding-top: $baselineheight / 2
 	border-top: 1px solid rgba(0,0,0,0.5)
 	margin-top: $baselineheight / 2
+	line-height: $baselineheight - 16
 
 	&.nomargin
 		margin-bottom: $baselineheight / 4
 
 	+mobile
-		width: 100%
-		padding: 0 10px
+		width: $mainwidth
+		padding-right: $baselineheight
+		border: 0
+		margin-top: 0
+		padding-top: 0
 
 #primary .search-link
 	width: $mainwidth + 60px
@@ -841,11 +845,16 @@ article.post
 	+flex-direction(row)
 	+flex-wrap(wrap)
 	+justify-content(space-between)
-	width: $desktop-width
+	max-width: $desktop-width
 	padding-left: 150px
+
+	+tablet
+		padding-left: 100px
+		max-width: $desktop-width - 50px
 
 	+mobile
 		padding-top: $baselineheight / 2
+		padding-left: 10px
 		+transform(translateY(80px))
 
 #primary img

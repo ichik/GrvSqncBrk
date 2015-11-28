@@ -4,15 +4,16 @@
 //variables
 $basefontsize: 20px
 $baselineheight: 36px
-$mainwidth: 700px
+$mainwidth: 680px
 $yellow: #f0ad2c
 $white: rgb(255, 252, 250)
 $black: #000a14
 $grey: #ccc
 $blue: #0c4f72
 $tablet-width: 760px
-$desktop-width: 1020px
+$desktop-width: 1024px
 $mobile-width: 320px
+$gutter: 170px
 
 
 // mixins
@@ -211,6 +212,7 @@ abbr
 	margin-bottom: $baselineheight
 	padding-top: 0
 	padding-bottom: 0
+	padding-left: $gutter
 	min-height: 420px
 	background-image: svg-url('<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g transform="translate(1 1)" stroke-width="2" fill="none" fill-rule="evenodd"><circle stroke-opacity=".5" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></svg>')
 	background-position: 50% 20%
@@ -240,6 +242,9 @@ abbr
 		max-width: 100%
 		margin: 0 auto
 		display: block
+
+.highlight.nogutter
+	padding-left: 0
 
 button:focus
 	outline: 0
@@ -652,7 +657,7 @@ article.post
 	position: relative
 	top: 50%
 	+transform(translateY(-50%))
-	padding: 0 150px
+	padding: 0 $gutter
 	background: rgba(0,0,0,0.15)
 	box-shadow: 0 0px 100px 71px rgba(0, 0, 0, 0.15)
 	+transition(all 0.3s ease)
@@ -727,7 +732,7 @@ article.post
 //article
 .article-cover
 	width: 100%
-	height: 90vh
+	height: 80vh
 	background: $black
 	overflow: hidden
 	position: relative
@@ -799,17 +804,22 @@ article.post
 	+tabletandmobile
 		+transform(translateY(60px))
 
-#primary #platforms,#primary p,#primary blockquote,#primary h3
+#primary p,#primary blockquote,#primary h3
 	width: $mainwidth
 	margin-bottom: $baselineheight
 	padding-right: $baselineheight
 
+#primary #platforms
+	width: $mainwidth + $gutter
+	margin-bottom: $baselineheight / 2
+	padding-right: $baselineheight
+
 #primary aside
-	width: 170px
+	width: $gutter
 	padding-top: $baselineheight / 2
 	border-top: 1px solid rgba(0,0,0,0.5)
 	margin-top: $baselineheight / 2
-	line-height: $baselineheight - 16
+	line-height: $baselineheight - 18
 
 	&.nomargin
 		margin-bottom: $baselineheight / 4
@@ -846,15 +856,16 @@ article.post
 	+flex-wrap(wrap)
 	+justify-content(space-between)
 	max-width: $desktop-width
-	padding-left: 150px
+	padding-left: 170px
+	margin-bottom: $baselineheight
 
 	+tablet
-		padding-left: 100px
+		padding-left: 75px
 		max-width: $desktop-width - 50px
 
 	+mobile
 		padding-top: $baselineheight / 2
-		padding-left: 10px
+		padding-left: 20px
 		+transform(translateY(80px))
 
 #primary img
@@ -967,7 +978,7 @@ a.search-link
 
 	p, ul
 		width: $mainwidth
-		margin: 0 auto
+		padding-left: $gutter
 		font-size: $basefontsize * 0.65
 		height: $baselineheight
 

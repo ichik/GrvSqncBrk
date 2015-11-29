@@ -458,9 +458,10 @@ h1
 	top: 0
 	overflow: hidden
 	+flexbox()
-	+justify-content(center)
+	+justify-content(flex-start)
 	+transition(height 0.3s ease-out)
 	+transform(translate3d(0,0,0))
+	padding-left: $gutter
 
 	+mobile
 		height: 60px
@@ -471,7 +472,7 @@ h1
 		height: 60px
 
 .hamburger-insides
-	width: $mainwidth
+	width: $mainwidth + $gutter
 	margin-top: 66px
 	+flexbox()
 	+flex-wrap(wrap)
@@ -584,7 +585,7 @@ h1
 	opacity: 0
 
 .open .morphsearch-form
-	width: $mainwidth
+	width: $mainwidth + $gutter * 2
 	+mobile
 		width: 100%
 
@@ -603,7 +604,7 @@ h1
 .search-form
 	@extend .morphsearch-form
 	display: block
-	margin: 0 auto
+	padding-left: $gutter
 	position: relative
 	height: auto
 	clear: both
@@ -819,7 +820,7 @@ article.post
 
 #primary .search-link
 	width: $mainwidth + 60px
-	margin: 0 auto $baselineheight auto
+	margin: 0 0 $baselineheight $gutter - 20px
 
 	+tablet
 		width: 100%

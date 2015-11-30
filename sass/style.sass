@@ -10,10 +10,12 @@ $white: rgb(255, 252, 250)
 $black: #000a14
 $grey: #ccc
 $blue: #0c4f72
-$tablet-width: 760px
+$tablet-width: 768px
 $desktop-width: 1024px
 $mobile-width: 320px
 $gutter: 170px
+$gutter-tablet: 50px
+$gutter-mobile: 20px
 
 
 // mixins
@@ -47,7 +49,7 @@ $gutter: 170px
 	animation-iteration-count: #{$str}
 
 =tablet
-	@media (min-width: $tablet-width) and (max-width: $desktop-width)
+	@media (min-width: $tablet-width + 1) and (max-width: $desktop-width)
 		@content
 
 =mobile
@@ -225,9 +227,11 @@ abbr
 
 	+tablet
 		min-height: 300px
+		padding-left: $gutter-tablet
 
 	+mobile
 		min-height: 100px
+		padding-left: $gutter-mobile
 
 	p
 		font-family: MuseoSansItalic
@@ -466,10 +470,11 @@ h1
 	+mobile
 		height: 60px
 		+justify-content(center)
-		padding-left: 10px
+		padding-left: $gutter-mobile
 
 	+tablet
 		height: 60px
+		padding-left: $gutter-tablet
 
 .hamburger-insides
 	width: $mainwidth + $gutter
@@ -479,7 +484,7 @@ h1
 	+align-content(flex-start)
 
 	+tablet
-		margin: 16px auto 0 auto
+		margin-top: 16px
 
 	+mobile
 		//+flex-direction(column)
@@ -611,11 +616,11 @@ h1
 	float: none
 
 	+tablet
-		margin: 0 0 0 20px
+		padding-left: $gutter-tablet
 
 	+mobile
 		margin-top: 80px
-		padding: 10px
+		padding-left: $gutter-mobile
 
 .search-input
 	@extend .morphsearch-input
@@ -667,8 +672,11 @@ article.post
 	box-shadow: 0 0px 100px 71px rgba(0, 0, 0, 0.15)
 	+transition(all 0.3s ease)
 
+	+tablet
+		padding: 0 $gutter-tablet
+
 	+mobile
-		padding: 0 10px
+		padding: 0 $gutter-mobile
 
 .post-cover
 	opacity: 0.7
@@ -788,6 +796,10 @@ article.post
 	margin-bottom: $baselineheight
 	padding-right: $baselineheight
 
+	+mobile
+		max-width: $mainwidth
+		width: auto
+
 #primary #platforms
 	width: $mainwidth + $gutter
 	margin-bottom: $baselineheight / 2
@@ -823,10 +835,12 @@ article.post
 	margin: 0 0 $baselineheight $gutter - 20px
 
 	+tablet
-		width: 100%
+		width: $mainwidth
+		margin: 0 0 $baselineheight / 2 $gutter-tablet - 30px
 
 	+mobile
 		width: 100%
+		margin: 0 0 $baselineheight / 2 $gutter-mobile
 
 	p
 		+tablet
@@ -835,6 +849,9 @@ article.post
 #primary h3
 	margin-top: $baselineheight * 2
 	margin-bottom: $baselineheight / 4
+
+	+mobile
+		margin-top: $baselineheight
 
 #primary .article-area
 	padding-top: $baselineheight
@@ -847,7 +864,7 @@ article.post
 	margin-bottom: $baselineheight
 
 	+tablet
-		padding-left: 75px
+		padding-left: $gutter-tablet
 		max-width: $desktop-width - 50px
 
 	+mobile
@@ -911,7 +928,7 @@ a.search-link
 	padding: 10px 30px 10px 30px !important
 	+transition(all 0.2s ease)
 
-	+tabletandmobile
+	+mobile
 		padding: 0 !important
 
 	&:hover
@@ -969,9 +986,12 @@ a.search-link
 		font-size: $basefontsize * 0.65
 		height: $baselineheight
 
+		+tablet
+			padding-left: $gutter-tablet
+
 		+mobile
 			width: auto
-			padding: 0 10px
+			padding-left: $gutter-mobile
 			font-size: $basefontsize * 0.55
 
 		li

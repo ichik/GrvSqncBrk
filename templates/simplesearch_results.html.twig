@@ -10,8 +10,10 @@
         {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
     {% endfor %}
     {% if search_results.count == 0 %}
-    <p>К сожалению, по запросу «{{ query }}» ничего не найдено.</p>
-    <p>Поищите что-нибудь ещё, например, <a href="{{ base_url_relative }}/search?query=Super+Metroid">Super Metroid</a>.</p>
+    <div class="article-area">
+        <p>К сожалению, по запросу «{{ query }}» ничего не найдено.</p>
+        <p>Поищите что-нибудь ещё, например, <a href="{{ base_url_relative }}/search?query=Super+Metroid">Super Metroid</a>.</p>
+    </div>
     {% endif %}
 </div>
 {% endblock %}

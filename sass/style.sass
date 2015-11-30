@@ -4,15 +4,18 @@
 //variables
 $basefontsize: 20px
 $baselineheight: 36px
-$mainwidth: 740px
+$mainwidth: 680px
 $yellow: #f0ad2c
 $white: rgb(255, 252, 250)
 $black: #000a14
 $grey: #ccc
 $blue: #0c4f72
-$tablet-width: 760px
-$desktop-width: 1020px
+$tablet-width: 768px
+$desktop-width: 1024px
 $mobile-width: 320px
+$gutter: 170px
+$gutter-tablet: 50px
+$gutter-mobile: 20px
 
 
 // mixins
@@ -46,7 +49,7 @@ $mobile-width: 320px
 	animation-iteration-count: #{$str}
 
 =tablet
-	@media (min-width: $tablet-width) and (max-width: $desktop-width)
+	@media (min-width: $tablet-width + 1) and (max-width: $desktop-width)
 		@content
 
 =mobile
@@ -211,6 +214,7 @@ abbr
 	margin-bottom: $baselineheight
 	padding-top: 0
 	padding-bottom: 0
+	padding-left: $gutter
 	min-height: 420px
 	background-image: svg-url('<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g transform="translate(1 1)" stroke-width="2" fill="none" fill-rule="evenodd"><circle stroke-opacity=".5" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></svg>')
 	background-position: 50% 20%
@@ -219,12 +223,15 @@ abbr
 
 	&.b-loaded
 		background-size: auto
+		background-position: 20% 0
 
 	+tablet
 		min-height: 300px
+		padding-left: $gutter-tablet
 
 	+mobile
 		min-height: 100px
+		padding-left: $gutter-mobile
 
 	p
 		font-family: MuseoSansItalic
@@ -240,6 +247,20 @@ abbr
 		max-width: 100%
 		margin: 0 auto
 		display: block
+
+.highlight.nogutter
+	padding-left: 0
+
+.highlight.white
+	background: $white
+	background-image: svg-url('<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" stroke="#000a14"><g transform="translate(1 1)" stroke-width="2" fill="none" fill-rule="evenodd"><circle stroke-opacity=".5" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></svg>')
+
+	&.b-loaded
+		background-size: auto
+		background-position: 20% 0
+
+	p,blockquote,abbr
+		color: $black
 
 button:focus
 	outline: 0
@@ -273,14 +294,6 @@ a,a:link
 +keyframes(hvr-pop)
 	50%
 		+transform(scale3d(1.3, 1.3, 1))
-
-+keyframes(scroll)
-	0%
-		opacity: 1
-		+transform(translate3d(0, 0, 0))
-	100%
-		opacity: 0
-		+transform(translate3d(0, 10px, 0))
 
 +keyframes(loader)
 	0%
@@ -449,27 +462,29 @@ h1
 	top: 0
 	overflow: hidden
 	+flexbox()
-	+justify-content(center)
+	+justify-content(flex-start)
 	+transition(height 0.3s ease-out)
 	+transform(translate3d(0,0,0))
+	padding-left: $gutter
 
 	+mobile
 		height: 60px
 		+justify-content(center)
-		padding-left: 10px
+		padding-left: $gutter-mobile
 
 	+tablet
 		height: 60px
+		padding-left: $gutter-tablet
 
 .hamburger-insides
-	width: $mainwidth
+	width: $mainwidth + $gutter
 	margin-top: 66px
 	+flexbox()
 	+flex-wrap(wrap)
 	+align-content(flex-start)
 
 	+tablet
-		margin: 16px auto 0 auto
+		margin-top: 16px
 
 	+mobile
 		//+flex-direction(column)
@@ -575,7 +590,7 @@ h1
 	opacity: 0
 
 .open .morphsearch-form
-	width: $mainwidth
+	width: $mainwidth + $gutter * 2
 	+mobile
 		width: 100%
 
@@ -594,18 +609,18 @@ h1
 .search-form
 	@extend .morphsearch-form
 	display: block
-	margin: 0 auto
+	padding-left: $gutter
 	position: relative
 	height: auto
 	clear: both
 	float: none
 
 	+tablet
-		margin: 0 0 0 20px
+		padding-left: $gutter-tablet
 
 	+mobile
 		margin-top: 80px
-		padding: 10px
+		padding-left: $gutter-mobile
 
 .search-input
 	@extend .morphsearch-input
@@ -643,17 +658,25 @@ article.post
 		&:hover .post-cover
 			opacity: 1
 
+	.post-cover-link
+		+flexbox()
+		+flex-direction(column)
+		+justify-content(space-around)
+
 .post-content
 	position: relative
 	top: 50%
 	+transform(translateY(-50%))
-	text-align: center
-	padding: 0 150px
+	padding: 0 $gutter
 	background: rgba(0,0,0,0.15)
 	box-shadow: 0 0px 100px 71px rgba(0, 0, 0, 0.15)
+	+transition(all 0.3s ease)
+
+	+tablet
+		padding: 0 $gutter-tablet
 
 	+mobile
-		padding: 0 10px
+		padding: 0 $gutter-mobile
 
 .post-cover
 	opacity: 0.7
@@ -675,6 +698,10 @@ article.post
 	+mobile
 		.article-cover &
 			height: 70vh
+
+.post-cover-link:hover
+	.post-content
+		+transform(translateY(-60%))
 
 #load-more-holder
 	height: 150px
@@ -718,20 +745,27 @@ article.post
 //article
 .article-cover
 	width: 100%
-	height: 100vh
+	height: 80vh
 	background: $black
 	overflow: hidden
+	position: relative
+	+flexbox()
+	+flex-direction(column)
+	+justify-content(space-between)
 
 	+mobile
-		height: 70vh
 		overflow: hidden
 		+transform(translateY(60px))
+		height: 70vh
+
+	.post-cover
+		// height: 100%
 
 	.post-content
 		color: $white
+		top: 85%
 		z-index: 200
 		position: absolute
-		width: 100%
 
 	video
 		position: relative
@@ -753,56 +787,60 @@ article.post
 		+tabletandmobile
 			opacity: 1
 
-#scroll-to-content
-	width: 100%
-	height: 40px
-	position: absolute
-	padding-bottom: 20px
-	bottom: 40px
-	left: 0
-	border: 0
-	text-align: center
-	color: $white
-	z-index: 200
-
-	.mouse
-		border: 2px solid $white
-		border-radius: 12px
-		width: 26px
-		height: 40px
-		margin: 0 auto
-
-	p
-		+animation(scroll 2s infinite)
-		font-size: $basefontsize * 0.8
-
-	+mobile
-		display: none
-
 .content-area
 	+tabletandmobile
 		+transform(translateY(60px))
 
-#primary #platforms,#primary p,#primary blockquote,#primary h3,#primary aside
+#primary p,#primary blockquote,#primary h3
 	width: $mainwidth
-	margin: 0 auto $baselineheight auto
+	margin-bottom: $baselineheight
+	padding-right: $baselineheight
+
+	+mobile
+		max-width: $mainwidth
+		width: auto
+
+#primary #platforms
+	width: $mainwidth + $gutter
+	margin-bottom: $baselineheight / 2
+	padding-right: $baselineheight
+
+#primary aside
+	width: $gutter
+	padding-top: $baselineheight / 2
+	border-top: 1px solid rgba(0,0,0,0.5)
+	margin-top: $baselineheight / 2
+	line-height: $baselineheight - 18
 
 	&.nomargin
 		margin-bottom: $baselineheight / 4
 
 	+mobile
-		width: 100%
-		padding: 0 10px
+		width: $mainwidth
+		padding-right: $baselineheight
+		border: 0
+		margin-top: 0
+		padding-top: 0
+
+#primary aside.nogutter
+	width: $mainwidth
+	padding-top: 0
+	border: 0
+	padding-right: $baselineheight
+	margin-top: 0
+	margin-bottom: $baselineheight
 
 #primary .search-link
 	width: $mainwidth + 60px
-	margin: 0 auto $baselineheight auto
+	margin: 0 0 $baselineheight $gutter - 20px
 
 	+tablet
-		width: 100%
+		width: $mainwidth
+		margin: 0 0 $baselineheight / 2 $gutter-tablet - 30px
 
 	+mobile
 		width: 100%
+		margin: 0 0 $baselineheight / 2 $gutter-mobile
 
 	p
 		+tablet
@@ -812,12 +850,26 @@ article.post
 	margin-top: $baselineheight * 2
 	margin-bottom: $baselineheight / 4
 
-#primary.article-area
+	+mobile
+		margin-top: $baselineheight
+
+#primary .article-area
 	padding-top: $baselineheight
-	overflow: hidden
+	+flexbox
+	+flex-direction(row)
+	+flex-wrap(wrap)
+	+justify-content(space-between)
+	max-width: $desktop-width
+	padding-left: 170px
+	margin-bottom: $baselineheight
+
+	+tablet
+		padding-left: $gutter-tablet
+		max-width: $desktop-width - 50px
 
 	+mobile
 		padding-top: $baselineheight / 2
+		padding-left: 20px
 		+transform(translateY(80px))
 
 #primary img
@@ -876,7 +928,7 @@ a.search-link
 	padding: 10px 30px 10px 30px !important
 	+transition(all 0.2s ease)
 
-	+tabletandmobile
+	+mobile
 		padding: 0 !important
 
 	&:hover
@@ -930,13 +982,16 @@ a.search-link
 
 	p, ul
 		width: $mainwidth
-		margin: 0 auto
+		padding-left: $gutter
 		font-size: $basefontsize * 0.65
 		height: $baselineheight
 
+		+tablet
+			padding-left: $gutter-tablet
+
 		+mobile
 			width: auto
-			padding: 0 10px
+			padding-left: $gutter-mobile
 			font-size: $basefontsize * 0.55
 
 		li

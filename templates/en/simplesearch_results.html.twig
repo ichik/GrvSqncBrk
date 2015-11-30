@@ -10,8 +10,10 @@
         {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
     {% endfor %}
     {% if search_results.count == 0 %}
-    <p>Nothing found on “{{ query }}”.</p>
-    <p>Let's look for something else, like <a href="{{ base_url_relative }}/search?query=Super+Metroid">Super Metroid</a>.</p>
+    <div class="article-area">
+        <p>Nothing found on “{{ query }}”.</p>
+        <p>Let's look for something else, like <a href="{{ base_url_relative }}/search?query=Super+Metroid">Super Metroid</a>.</p>
+    </div>
     {% endif %}
 </div>
 {% endblock %}

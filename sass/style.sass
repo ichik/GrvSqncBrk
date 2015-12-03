@@ -794,6 +794,14 @@ article.post
 	+tabletandmobile
 		+transform(translateY(60px))
 
+#primary
+	+flexbox()
+	+flex-direction(column)
+	+flex-wrap(no-wrap)
+
+	+mobile
+		+transform(translateY(80px))
+
 #primary p,#primary blockquote,#primary h3
 	width: $mainwidth
 	margin-bottom: $baselineheight
@@ -873,7 +881,6 @@ article.post
 	+mobile
 		padding-top: $baselineheight / 2
 		padding-left: 20px
-		+transform(translateY(80px))
 
 	&:first-child
 		padding-top: $baselineheight
@@ -887,6 +894,9 @@ article.post
 	padding: 5px 10px
 	display: inline-block
 	margin: 10px 10px 10px 0
+
+	+mobile
+		margin: 5px 5px 5px 0
 
 	&::selection
 		color: $white

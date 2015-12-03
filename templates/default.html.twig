@@ -18,15 +18,15 @@
     </div>
 </div>
 <div id="primary">
-    <div class="article-area">
       {% if page.header.platform %}
-      <ul id="platforms">
-        {% for p in page.header.platform %}
-        <li>{{ p }}</li>
-        {% endfor %}
-      </ul>
+      <div class="article-area">
+          <ul id="platforms">
+            {% for p in page.header.platform %}
+            <li>{{ p }}</li>
+            {% endfor %}
+          </ul>
+      </div>
       {% endif %}
       {{ page.content }}
-    </div>
 </div>
 {% endblock %}

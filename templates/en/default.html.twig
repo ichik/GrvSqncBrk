@@ -19,15 +19,15 @@
   <div id="scroll-to-content"><div class="mouse"><span><p>↓</p></span></div></div>
 </div>
 <div id="primary" class="article-area">
+    {% if page.header.platform %}
     <div class="article-area">
-        {% if page.header.platform %}
         <ul id="platforms">
-            {% for p in page.header.platform %}
-            <li>{{ p }}</li>
-            {% endfor %}
+          {% for p in page.header.platform %}
+          <li>{{ p }}</li>
+          {% endfor %}
         </ul>
-        {% endif %}
-        {{ page.content }}
     </div>
+    {% endif %}
+    {{ page.content }}
 </div>
 {% endblock %}

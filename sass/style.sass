@@ -195,7 +195,9 @@ aside.caption
 	font-size: $basefontsize * 0.8
 	line-height: $baselineheight * 2 / 3
 	font-family: MuseoSansItalic
-	//margin-bottom: $baselineheight
+
+	.highlight &
+		font-family: MuseoSans
 
 abbr
 	text-transform: uppercase
@@ -223,6 +225,7 @@ em
 	background-position: 50% 20%
 	background-size: 38px 38px
 	background-repeat: no-repeat
+	+flexbox
 
 	&.b-loaded
 		background-size: auto
@@ -833,6 +836,9 @@ article.post
 		margin-top: 0
 		padding-top: 0
 		margin-bottom: $baselineheight
+
+#primary .highlight aside
+	border-top: 1px solid rgba(255,255,255,0.5)
 
 #primary aside.nogutter
 	width: $mainwidth

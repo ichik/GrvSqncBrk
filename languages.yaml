@@ -1,8 +1,8 @@
 ru:
-    MONTHS_OF_THE_YEAR: [января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+    SQNC_MONTHS: [января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
     SEARCH: Поиск
     LOAD_MORE: Давай ещё
 en:
-    MONTHS_OF_THE_YEAR: [January, February, March, April, May, June, July, August, September, October, November, December]
+    SQNC_MONTHS: [January, February, March, April, May, June, July, August, September, October, November, December]
     SEARCH: Search
     LOAD_MORE: Gimme more

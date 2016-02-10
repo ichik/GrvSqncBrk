@@ -229,7 +229,7 @@ em
 	background-size: 38px 38px
 	background-repeat: no-repeat
 	+flexbox
-	+flex-direction(row)
+	+flex-direction(column)
 	+flex-wrap(wrap)
 	+justify-content(flex-start)
 
@@ -248,6 +248,13 @@ em
 	p
 		font-family: MuseoSansItalic
 		margin-bottom: $baselineheight - 1 !important
+
+	.withcaption
+		max-width: $mainwidth + $gutter
+		+flexbox
+		+flex-direction(row)
+		+flex-wrap(wrap)
+		+justify-content(flex-start)
 
 	p,blockquote,abbr
 		color: $white

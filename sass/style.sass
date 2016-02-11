@@ -48,6 +48,10 @@ $gutter-mobile: 20px
 	-webkit-animation-iteration-count: #{$str}
 	animation-iteration-count: #{$str}
 
+=desktop
+	@media (min-width: $desktop-width)
+		@content
+
 =tablet
 	@media (min-width: $tablet-width + 1) and (max-width: $desktop-width)
 		@content
@@ -435,21 +439,25 @@ h1
 	+tablet
 		display: none
 
-	&:after
-		position: absolute
-		top: 50%
-		left: 50%
-		margin: -35px 0 0 -35px
-		width: 70px
-		height: 70px
-		border-radius: 50%
-		content: ''
-		opacity: 1
-		pointer-events: none
+	+desktop
+		&:after
+			position: absolute
+			top: 50%
+			left: 50%
+			margin: -35px 0 0 -35px
+			width: 70px
+			height: 70px
+			border-radius: 50%
+			content: ''
+			opacity: 1
+			pointer-events: none
 
-	&:hover:after
-		border: 5px solid rgba(255,255,255,0.5)
-		+animation(menu-button-hover 0.3s ease-out forwards)
+			+mobile
+				display: none
+
+		&:hover:after
+			border: 5px solid rgba(255,255,255,0.5)
+			+animation(menu-button-hover 0.3s ease-out forwards)
 
 	.spinner
 		width: 30px

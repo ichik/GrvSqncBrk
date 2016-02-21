@@ -650,7 +650,7 @@ h1
 		padding-left: $gutter-tablet
 
 	+mobile
-		margin-top: 80px
+		margin-bottom: 0
 		padding-left: $gutter-mobile
 
 .search-input
@@ -892,11 +892,12 @@ article.post
 
 	+mobile
 		width: 100%
-		margin: 0 0 $baselineheight / 2 $gutter-mobile
+		margin: 0
 
 	p
 		+tablet
 			width: 100%
+
 
 #primary h3
 	margin-top: $baselineheight
@@ -1000,6 +1001,7 @@ a.search-link
 
 		+mobile
 			border: 0
+			padding-left: $gutter-mobile
 
 
 	img
@@ -1016,7 +1018,11 @@ a.search-link
 		margin-bottom: $baselineheight / 2
 
 		+mobile
-			padding: 0 10px
+			padding-left: $gutter-mobile
+
+	p
+		+mobile
+			padding-left: $gutter-mobile
 
 	#primary &:visited h3
 		color: #8c66b2

@@ -832,7 +832,11 @@ article.post
 	+flex-wrap(no-wrap)
 
 	+mobile
-		+transform(translateY(80px))
+		+transform(translateY(60px))
+
+	&.content-area
+		+mobile
+			+transform(translateY(0))
 
 #primary p,#primary blockquote,#primary h3
 	width: $mainwidth

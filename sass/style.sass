@@ -195,13 +195,21 @@ p,blockquote,li
 		font-size: $basefontsize * 0.9
 		line-height: $baselineheight * 0.9
 
+	&.bandcamp
+		padding-top: $baselineheight / 2
+
 aside.caption
 	font-size: $basefontsize * 0.8
 	line-height: $baselineheight * 2 / 3
 	font-family: MuseoSansItalic
+	border-top: 1px solid rgba(0,0,0,0.5)
 
 	.highlight &
 		font-family: MuseoSans
+		border-color: rgba(255,255,255,0.5)
+
+	.highlight.white &
+		border-color: rgba(0,0,0,0.5)
 
 abbr
 	text-transform: uppercase
@@ -263,7 +271,7 @@ em
 		+mobile
 			max-width: 100%
 
-	p,blockquote,abbr
+	p,blockquote,abbr,aside
 		color: $white
 
 	abbr
@@ -286,8 +294,9 @@ em
 		background-size: auto
 		background-position: 20% 0
 
-	p,blockquote,abbr
+	p,blockquote,abbr,aside
 		color: $black
+
 
 button:focus
 	outline: 0
@@ -861,7 +870,6 @@ article.post
 #primary aside
 	width: $gutter
 	padding-top: $baselineheight / 2
-	border-top: 1px solid rgba(0,0,0,0.5)
 	margin-top: $baselineheight / 2
 	line-height: $baselineheight - 18
 
@@ -875,10 +883,6 @@ article.post
 		margin-top: 0
 		padding-top: 0
 		margin-bottom: $baselineheight
-
-#primary .highlight aside
-	border-top: 1px solid rgba(255,255,255,0.5)
-	color: $white
 
 	+mobile
 		width: $mainwidth

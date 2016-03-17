@@ -769,10 +769,6 @@ article.post
 		+transition(all 0.5s ease)
 		cursor: pointer
 
-		&:hover
-			background: $black
-			color: $white
-
 	&:after
 		content: ''
 		display: none
@@ -791,6 +787,10 @@ article.post
 		border-bottom-color: rgba(0,0,0,0.2)
 		border-left-color: rgba(0,0,0,0.2)
 		+animation(loader 1.1s linear infinite)
+
+#load-more:hover
+	background: $black
+	color: $white
 
 //article
 .article-cover

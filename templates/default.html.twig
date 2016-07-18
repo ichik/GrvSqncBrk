@@ -4,7 +4,7 @@
 <div class="article-cover">
   {% if page.header.videocover %}
   <video id="video_background" preload="auto" autoplay loop muted volume="0" poster="/{{ page.slug }}/cover.jpg">
-    <source src="/user/pages/{{ page.slug }}/cover.webm" type='video/webm;codecs="vp8, vorbis"'/>
+    <source src="/{{ page.slug }}/cover.webm" type='video/webm;codecs="vp8, vorbis"'/>
     <source src="/{{ page.slug }}/cover.mp4" type="video/mp4"/>
   </video>
   {% endif %}

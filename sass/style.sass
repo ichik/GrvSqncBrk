@@ -237,14 +237,16 @@ em
 	padding-bottom: 0
 	padding-left: $gutter
 	min-height: 420px
-	background-image: svg-url('<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g transform="translate(1 1)" stroke-width="2" fill="none" fill-rule="evenodd"><circle stroke-opacity=".5" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></svg>')
-	background-position: 50% 20%
-	background-size: 38px 38px
-	background-repeat: no-repeat
 	+flexbox
 	+flex-direction(column)
 	+flex-wrap(wrap)
 	+justify-content(flex-start)
+
+	&.b-lazy
+		background-image: svg-url('<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g transform="translate(1 1)" stroke-width="2" fill="none" fill-rule="evenodd"><circle stroke-opacity=".5" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></svg>')
+		background-position: 50% 20%
+		background-size: 38px 38px
+		background-repeat: no-repeat
 
 	&.b-loaded
 		background-size: auto
@@ -286,10 +288,16 @@ em
 .highlight.nogutter
 	padding-left: 0
 	display: block
+	background-image: svg-url('<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g transform="translate(1 1)" stroke-width="2" fill="none" fill-rule="evenodd"><circle stroke-opacity=".5" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></svg>')
+	background-position: 50% 20%
+	background-size: 38px 38px
+	background-repeat: no-repeat
 
 .highlight.white
 	background: $white
-	background-image: svg-url('<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" stroke="#000a14"><g transform="translate(1 1)" stroke-width="2" fill="none" fill-rule="evenodd"><circle stroke-opacity=".5" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></svg>')
+
+	&.b-lazy
+		background-image: svg-url('<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" stroke="#000a14"><g transform="translate(1 1)" stroke-width="2" fill="none" fill-rule="evenodd"><circle stroke-opacity=".5" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></svg>')
 
 	&.b-loaded
 		background-size: auto

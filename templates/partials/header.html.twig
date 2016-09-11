@@ -6,7 +6,7 @@
 	</a>
 {% endif %}
 
-	<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+	<input type="checkbox" id="nav-trigger" class="nav-trigger" checked />
 	<label for="nav-trigger" id="open-button">
     	<div class="spinner diagonal part-1"></div>
     	<div class="spinner horizontal"></div>
@@ -18,9 +18,9 @@
 			<nav id="about-links">
 				<ul>
 				{% for p in pages.children %}{% if p.visible %}
-					<li><a href="{{ p.rawRoute() }}" class="no-u">{{ p.title }}</a></li>
+					<li><a href="{{ p.rawRoute() }}" class="no-u"><span>{{ p.title }}</span></a></li>
 				{% endif %}{% endfor %}
-					<li><a href="/en{{ page.rawRoute() }}" class="no-u">In English</a></li>
+					<li><a href="/en{{ page.rawRoute() }}" class="no-u"><span>In English</span></a></li>
 				</ul>
 			</nav>
 			{% include 'partials/simplesearch_searchbox.html.twig' %}

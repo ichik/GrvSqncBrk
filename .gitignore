@@ -4,3 +4,5 @@ Thumbs.db
 templates/index.html
 
 templates/article.html
+
+.DS_Store

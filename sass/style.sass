@@ -518,8 +518,8 @@ h1
 
 	+mobile
 		justify-content: flex-start
-		margin-top: 12px
-		// padding-top: $baselineheight * 1.5
+		align-content: flex-start
+		margin-top: $baselineheight * 2
 
 	#about-links
 		+tablet
@@ -530,6 +530,13 @@ h1
 	ul
 		display: flex
 		height: 160px
+
+		+tablet
+			height: 80px
+
+		+mobile
+			flex-direction: column
+			height: auto
 
 	li
 		+tablet
@@ -555,6 +562,15 @@ h1
 
 			&:hover,&:active
 				background-color: rgba(red($yellow),green($yellow),blue($yellow),.05)
+
+			+tabletandmobile
+				height: 60px
+
+			+tablet
+				padding: 16px 16px 0 16px
+
+			+mobile
+				padding: 16px 16px 0 0
 
 .nav-trigger
 	position: fixed
@@ -613,9 +629,13 @@ h1
 	padding-left: 10px
 	+transition(width 0.3s ease, padding-left 0.2s ease-in)
 
+	+tabletandmobile
+		height: 60px
+
 	+mobile
 		width: 100%
-		margin-bottom: $baselineheight
+		// margin-bottom: $baselineheight
+		padding-left: 0
 
 	+tablet
 		font-size: $basefontsize * 0.8
@@ -633,6 +653,9 @@ h1
 
 	&:focus
 		outline: 0
+
+	+tabletandmobile
+		height: 60px
 
 	+mobile
 		//text-align: center
@@ -859,10 +882,6 @@ article.post
 
 	+mobile
 		+transform(translateY(60px))
-
-	&.content-area
-		+mobile
-			+transform(translateY(0))
 
 #primary p,#primary blockquote,#primary h3
 	width: $mainwidth

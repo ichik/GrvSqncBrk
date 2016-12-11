@@ -18,9 +18,9 @@
 			<nav id="about-links">
 				<ul>
 				{% for p in pages.children %}{% if p.visible %}
-					<li><a href="{{ p.rawRoute() }}" class="no-u">{{ p.title }}</a></li>
+					<li><a href="{{ p.rawRoute() }}" class="no-u"><span>{{ p.title }}</span></a></li>
 				{% endif %}{% endfor %}
-					<li><a href="/ru{{ page.rawRoute() }}" class="no-u">По-русски</a></li>
+					<li><a href="/ru{{ page.rawRoute() }}" class="no-u"><span>По-русски</span></a></li>
 				</ul>
 			</nav>
 			{% include 'partials/simplesearch_searchbox.html.twig' %}

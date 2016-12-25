@@ -17,6 +17,7 @@ $mobile-width: 320px
 $gutter: 170px
 $gutter-tablet: 50px
 $gutter-mobile: 20px
+$gutter-hd: 20%
 
 
 // mixins
@@ -247,6 +248,9 @@ em
 		min-height: 100px
 		padding-left: $gutter-mobile
 
+	+for-size(big-desktop-up)
+		padding-left: $gutter-hd
+
 	p
 		font-family: MuseoSansItalic
 		margin-bottom: $baselineheight - 1 !important
@@ -388,6 +392,9 @@ h1
 	+for-size(phone-only)
 		left: $gutter-mobile
 
+	+for-size(big-desktop-up)
+		left: calc(#{$gutter-hd}/2 - 50px)
+
 	.msie &,.edge &
 		mix-blend-mode: normal
 
@@ -445,6 +452,9 @@ h1
 		&:hover:after
 			border: 5px solid rgba(255,255,255,0.5)
 			+animation(menu-button-hover 0.3s ease-out forwards)
+
+	+for-size(big-desktop-up)
+		right: calc(#{$gutter-hd}/2 - 50px)
 
 	.msie &,.edge &
 		mix-blend-mode: normal
@@ -508,8 +518,10 @@ h1
 
 	+for-size(desktop-up)
 		height: 0px
-		padding-left: $gutter
+		padding-left: $gutter - 20px
 
+	+for-size(big-desktop-up)
+		padding-left: calc(#{$gutter-hd} - 20px)
 
 .hamburger-insides
 	width: $mainwidth + $gutter
@@ -691,6 +703,9 @@ h1
 	+for-size(desktop-up)
 		padding-left: $gutter
 
+	+for-size(big-desktop-up)
+		padding-left: $gutter-hd
+
 	+for-size(phone-only)
 		margin-bottom: 0
 		padding-left: $gutter-mobile
@@ -754,6 +769,9 @@ article.post
 
 	+for-size(phone-only)
 		padding: 0 $gutter-mobile
+
+	+for-size(big-desktop-up)
+		padding: 0 0 0 $gutter-hd
 
 .post-cover
 	opacity: 0.7
@@ -918,6 +936,9 @@ article.post
 		width: $mainwidth + 60px
 		margin: 0 0 $baselineheight $gutter - 20px
 
+	+for-size(big-desktop-up)
+		margin: 0 0 $baselineheight calc(#{$gutter-hd} - 30px)
+
 	+for-size(phone-only)
 		width: 100%
 		margin: 0
@@ -949,6 +970,10 @@ article.post
 	+for-size(phone-only)
 		padding-top: $baselineheight / 2
 		padding-left: 20px
+
+	+for-size(big-desktop-up)
+		padding-left: $gutter-hd
+		max-width: calc(#{$desktop-width} + #{$gutter-hd})
 
 	&:first-child
 		padding-top: $baselineheight
@@ -1076,6 +1101,10 @@ a.search-link
 
 		+for-size(desktop-up)
 			padding-left: $gutter
+
+		+for-size(big-desktop-up)
+			padding-left: $gutter-hd
+			width: $desktop-width
 
 		+for-size(phone-only)
 			width: auto

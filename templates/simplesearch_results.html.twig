@@ -39,10 +39,10 @@
             <nav id="about-links">
                 <ul>
                 {% for p in pages.children %}{% if p.visible %}
-                    <li><a href="{{ p.rawRoute() }}" class="no-u">{{ p.title }}</a></li>
+                    <li><a href="{{ p.rawRoute() }}" class="no-u"><span>{{ p.title }}</span></a></li>
                 {% endif %}{% endfor %}
+                    {# <li><a href="/en{{ page.rawRoute() }}" class="no-u"><span>In English</span></a></li> #}
                 </ul>
-                    {# <li><a href="/en{{ page.rawRoute() }}" class="no-u">In English</a></li> #}
             </nav>
         </div>
     </div>

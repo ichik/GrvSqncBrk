@@ -168,7 +168,10 @@ h3
 p,blockquote,li
 	font-size: $basefontsize * 0.8
 	line-height: $baselineheight * 0.8
-	margin-bottom: $baselineheight
+	margin-bottom: $baselineheight / 2
+
+	&:last-child
+		margin-bottom: 0
 
 	+for-size(phone-only)
 		font-size: $basefontsize * 0.8
@@ -185,7 +188,9 @@ aside.caption
 	font-size: $basefontsize * 0.8
 	line-height: $baselineheight * 2 / 3
 	font-family: MuseoSansItalic
-	border-top: 1px solid rgba(0,0,0,0.5)
+
+	+for-size(tablet-landscape-up)
+		border-top: 1px solid rgba(0,0,0,0.5)
 
 	.highlight &
 		font-family: MuseoSans
@@ -262,11 +267,6 @@ em
 	abbr
 		border-color: rgba(255,255,255,0.4)
 
-	// img
-	// 	max-width: 100%
-	// 	margin: 0 auto
-	// 	display: block
-
 .highlight.nogutter
 	padding-left: 0
 	padding-top: 0
@@ -275,6 +275,9 @@ em
 	background-position: 50% 20%
 	background-size: 38px 38px
 	background-repeat: no-repeat
+
+	+for-size(phone-only)
+		margin-bottom: 0
 
 .highlight.white
 	background: $white
@@ -417,6 +420,7 @@ h1
 	mix-blend-mode: exclusion
 
 	+for-size(phone-only)
+		display: block
 		top: 15px
 		right: 10px
 		mix-blend-mode: normal
@@ -523,6 +527,7 @@ h1
 		+for-size(desktop-up)
 			padding-left: 0
 		+for-size(phone-only)
+			padding-left: 0
 			order: 2
 
 	ul
@@ -606,7 +611,6 @@ h1
 
 	li
 		display: inline-block
-		margin: 0 10px 0 0
 
 		+for-size(phone-only)
 			display: block
@@ -872,33 +876,31 @@ article.post
 
 #primary p,#primary blockquote,#primary h3
 	width: $mainwidth
-	margin-bottom: $baselineheight
 	padding-right: $baselineheight
 
 	+for-size(phone-only)
 		max-width: $mainwidth
-		width: auto
+		width: 100%
 
 #primary #platforms
 	width: $mainwidth + $gutter
 	padding-right: $baselineheight
 
 #primary aside
-	width: $gutter
-	padding-top: $baselineheight / 2
-	margin-top: $baselineheight / 2
+	width: $mainwidth
 	line-height: $baselineheight - 18
+	margin-bottom: $baselineheight / 2
+
+	+for-size(tablet-landscape-up)
+		width: $gutter
+		padding-top: $baselineheight / 2
+		margin-top: $baselineheight / 2
 
 	&.nomargin
 		margin-bottom: $baselineheight / 4
 
 	+for-size(phone-only)
-		width: $mainwidth
 		padding-right: $baselineheight
-		border: 0
-		margin-top: 0
-		padding-top: 0
-		margin-bottom: $baselineheight
 
 #primary aside.nogutter
 	width: $mainwidth
@@ -935,9 +937,9 @@ article.post
 	display: flex
 	flex-direction: row
 	flex-wrap: wrap
-	justify-content: space-between
+	justify-content: flex-start
 	padding-left: $gutter-tablet
-	max-width: $desktop-width - 50px
+	max-width: $mainwidth + $gutter + $gutter-tablet * 2
 	margin-bottom: $baselineheight
 
 	+for-size(desktop-up)

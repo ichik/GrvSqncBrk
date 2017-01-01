@@ -4,20 +4,19 @@
 //variables
 $basefontsize: 20px
 $baselineheight: 36px
-$mainwidth: 680px
 $yellow: #f0ad2c
 $white: rgb(255, 252, 250)
 $black: #000a14
 $highlight: #000
 $grey: #ccc
 $blue: #0c4f72
-$tablet-width: 768px
-$desktop-width: 1024px
-$mobile-width: 320px
+$tablet-width: 620px
+$desktop-width: 680px
 $gutter: 170px
 $gutter-tablet: 50px
 $gutter-mobile: 20px
 $gutter-hd: 20%
+$caption-width: 170px
 
 
 // mixins
@@ -256,7 +255,7 @@ em
 		margin-bottom: $baselineheight - 1 !important
 
 	.withcaption
-		max-width: $mainwidth + $gutter
+		max-width: $desktop-width + $gutter
 		display: flex
 		flex-direction: row
 		flex-wrap: wrap
@@ -416,24 +415,26 @@ h1
 
 // navigation
 #open-button
-	display: none
+	display: block
 	position: fixed
-	right: 30px
-	top: 70px
+	top: 15px
+	right: 10px
 	width: 30px
 	height: 30px
 	z-index: 1000
 	cursor: pointer
-	mix-blend-mode: exclusion
 
-	+for-size(phone-only)
-		display: block
-		top: 15px
-		right: 10px
-		mix-blend-mode: normal
+	+for-size(tablet-portrait-up)
+		right: 50px
+
+	+for-size(tablet-landscape-up)
+		display: none
 
 	+for-size(desktop-up)
+		mix-blend-mode: exclusion
 		display: block
+		right: 30px
+		top: 70px
 		&:after
 			position: absolute
 			top: 50%
@@ -445,9 +446,6 @@ h1
 			content: ''
 			opacity: 1
 			pointer-events: none
-
-			+for-size(phone-only)
-				display: none
 
 		&:hover:after
 			border: 5px solid rgba(255,255,255,0.5)
@@ -478,16 +476,15 @@ h1
 	.spinner
 		width: 30px
 		height: 2px
-		background-color: $white
+		background-color: $black
 		margin-bottom: 5px
 		border-radius: 2px
 		+transition(all 0.3s)
 
-		+for-size(phone-only)
-			background-color: $black
-
-		.msie &, .edge &
-			background-color: $black
+		+for-size(desktop-up)
+			background-color: $white
+			.msie &, .edge &
+				background-color: $black
 
 	.horizontal
 		width: 26px
@@ -512,8 +509,6 @@ h1
 	padding-left: $gutter-tablet
 
 	+for-size(phone-only)
-		height: 60px
-		justify-content: center
 		padding-left: $gutter-mobile
 
 	+for-size(desktop-up)
@@ -524,40 +519,46 @@ h1
 		padding-left: calc(#{$gutter-hd} - 20px)
 
 .hamburger-insides
-	width: $mainwidth + $gutter
 	display: flex
-	flex-wrap: wrap
-	align-content: center
+	justify-content: flex-start
+	align-content: flex-start
+	margin-top: $baselineheight * 2
+	flex-direction: column
 
-	+for-size(phone-only)
-		justify-content: flex-start
-		align-content: flex-start
-		margin-top: $baselineheight * 2
+	+for-size(tablet-landscape-up)
+		width: $desktop-width + $gutter
+		flex-wrap: wrap
+		align-content: center
+		flex-direction: row
+		margin: 0
 
 	#about-links
-		padding-left: 190px
+		order: 2
+		+for-size(tablet-landscape-up)
+			padding-left: 180px
+			order: 0
+
 		+for-size(desktop-up)
-			padding-left: 0
-		+for-size(phone-only)
-			padding-left: 0
-			order: 2
+			padding: 0
 
 	ul
+		flex-direction: column
+		height: auto
 		display: flex
 		height: 80px
 
+		+for-size(tablet-landscape-up)
+			flex-direction: row
+
 		+for-size(desktop-up)
 			height: 160px
-
-		+for-size(phone-only)
-			flex-direction: column
-			height: auto
 
 	li
 		a
 			display: block
 			height: 60px
-			padding: 16px 16px 0 16px
+			+for-size(tablet-portrait-up)
+				padding: 16px 10px 0 10px
 
 			&:link
 				span
@@ -591,10 +592,10 @@ h1
 
 .nav-trigger:checked ~ .menu-wrap
 	visibility: visible
-	height: 160px
+	height: 100vh
 
-	+for-size(phone-only)
-		height: 100vh
+	+for-size(desktop-up)
+		height: 160px
 
 .nav-trigger:checked ~ #backtoindex
 	position: fixed
@@ -638,16 +639,18 @@ h1
 	font-size: $basefontsize * 0.8
 	line-height: $baselineheight * 0.8
 	+transform(translate3d(0, 0, 0))
-	padding-left: 10px
-	+transition(width 0.3s ease, padding-left 0.2s ease-in)
+	width: 100%
+	transition: width 0.3s ease, padding-left 0.2s ease-in
 
-	+for-size(phone-only)
-		width: 100%
-		padding-left: 0
+	+for-size(tablet-portrait-up)
+		margin-bottom: 120px
+
+	+for-size(tablet-landscape-up)
+		width: 150px
+		padding-left: 20px
 
 	+for-size(desktop-up)
 		height: 160px
-		width: 150px
 		font-size: $basefontsize
 		line-height: $baselineheight
 
@@ -676,9 +679,13 @@ h1
 	opacity: 0
 
 .open .morphsearch-form
-	width: $mainwidth + $gutter * 2
+	width: $desktop-width + $gutter * 2
+	padding-left: 0
 	+for-size(phone-only)
 		width: 100%
+
+	+for-size(desktop-up)
+		padding-left: 20px
 
 .open .morphsearch-input
 	font-size: $basefontsize * 5
@@ -714,7 +721,7 @@ h1
 	@extend .morphsearch-input
 	font-size: $basefontsize * 5
 	line-height: $baselineheight * 5
-	width: $mainwidth
+	width: $desktop-width
 
 // index
 article.post
@@ -894,19 +901,19 @@ article.post
 		+transform(translateY(60px))
 
 #primary p,#primary blockquote,#primary h3
-	width: $mainwidth
-	padding-right: $baselineheight
-
-	+for-size(phone-only)
-		max-width: $mainwidth
-		width: 100%
+	width: 100%
+	+for-size(tablet-portrait-up)
+		width: $tablet-width
+		padding-right: $baselineheight
+	+for-size(desktop-up)
+		width: $desktop-width
 
 #primary #platforms
-	width: $mainwidth + $gutter
+	width: $desktop-width + $gutter
 	padding-right: $baselineheight
 
 #primary aside
-	width: $mainwidth
+	width: $desktop-width
 	line-height: $baselineheight - 18
 	margin-bottom: $baselineheight / 2
 
@@ -922,7 +929,7 @@ article.post
 		padding-right: $baselineheight
 
 #primary aside.nogutter
-	width: $mainwidth
+	width: $desktop-width
 	padding-top: 0
 	border: 0
 	padding-right: $baselineheight
@@ -930,11 +937,11 @@ article.post
 	margin-bottom: $baselineheight
 
 #primary .search-link
-	width: $mainwidth
+	width: $desktop-width
 	margin: 0 0 $baselineheight / 2 $gutter-tablet - 30px
 
 	+for-size(desktop-up)
-		width: $mainwidth + 60px
+		width: $desktop-width + 60px
 		margin: 0 0 $baselineheight $gutter - 20px
 
 	+for-size(big-desktop-up)
@@ -960,21 +967,21 @@ article.post
 	flex-direction: row
 	flex-wrap: wrap
 	justify-content: flex-start
-	padding-left: $gutter-tablet
-	max-width: $mainwidth + $gutter + $gutter-tablet * 2
+	padding: 0 $gutter-tablet
+	max-width: 100%
 	margin-bottom: $baselineheight
 
 	+for-size(desktop-up)
-		max-width: $desktop-width
+		max-width: $desktop-width + $gutter * 2 + $caption-width
 		padding-left: $gutter
 
 	+for-size(phone-only)
 		padding-top: $baselineheight / 2
-		padding-left: 20px
+		padding: 0 $gutter-mobile
 
 	+for-size(big-desktop-up)
 		padding-left: $gutter-hd
-		max-width: calc(#{$desktop-width} + #{$gutter-hd})
+		max-width: calc(#{$desktop-width} + #{$gutter-hd} * 2 + #{$caption-width})
 
 	&:first-child
 		padding-top: $baselineheight
@@ -983,6 +990,9 @@ article.post
 	max-width: 100%
 	margin: 0 auto
 	display: block
+
+	&.left
+		margin: 0
 
 #platforms li
 	color: $yellow
@@ -1095,7 +1105,7 @@ a.search-link
 	margin-top: 100px
 
 	p, ul
-		width: $mainwidth
+		width: 100%
 		padding-left: $gutter-tablet
 		font-size: $basefontsize * 0.65
 		height: $baselineheight
@@ -1105,7 +1115,6 @@ a.search-link
 
 		+for-size(big-desktop-up)
 			padding-left: $gutter-hd
-			width: $desktop-width
 
 		+for-size(phone-only)
 			width: auto

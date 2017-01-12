@@ -643,9 +643,10 @@ h1
 	transition: width 0.3s ease, padding-left 0.2s ease-in
 
 	+for-size(tablet-portrait-up)
-		margin-bottom: 120px
+		padding-left: 10px
 
 	+for-size(tablet-landscape-up)
+		margin-bottom: 120px
 		width: 150px
 		padding-left: 20px
 
@@ -653,6 +654,19 @@ h1
 		height: 160px
 		font-size: $basefontsize
 		line-height: $baselineheight
+
+	.open &
+		width: 90vw
+		padding-left: 0
+
+		+for-size(tablet-portrait-up)
+			padding-left: 10px
+
+		+for-size(tablet-landscape-up)
+			width: 100%
+
+		+for-size(desktop-up)
+			padding-left: 20px
 
 .morphsearch-input
 	+transition(font-size 0.4s ease, line-height 0.1s ease-in-out, margin-top 0.4s ease, width 0.9s ease)
@@ -678,50 +692,48 @@ h1
 .morphsearch-submit,.search-submit
 	opacity: 0
 
-.open .morphsearch-form
-	width: $desktop-width + $gutter * 2
-	padding-left: 0
-	+for-size(phone-only)
-		width: 100%
-
-	+for-size(desktop-up)
-		padding-left: 20px
-
-.open .morphsearch-input
-	font-size: $basefontsize * 5
-	line-height: $baselineheight * 5
+.open .morphsearch-input, .search-input
 	width: 100%
+	padding-top: 0
+	margin-top: 0
+	font-size: $basefontsize * 1.2
+	line-height: $baselineheight
 
-	+for-size(phone-only)
-		padding-top: 0
-		font-size: $basefontsize * 1.2
-		margin-top: 0
-		line-height: $baselineheight
+	&:focus
+		outline: none
+
+	+for-size(tablet-portrait-up)
+		font-size: $basefontsize * 0.8
+		line-height: $baselineheight * 0.8
+
+	+for-size(tablet-landscape-up)
+		font-size: $basefontsize * 5
+		line-height: $baselineheight * 5
 
 .search-form
 	@extend .morphsearch-form
 	display: block
-	padding-left: $gutter-tablet
+	padding-left: $gutter-mobile
 	position: relative
 	height: auto
 	clear: both
 	float: none
+	width: 100%
+	margin: 28px 0 0 0
+
+	+for-size(tablet-portrait-up)
+		padding-left: $gutter-tablet
 
 	+for-size(desktop-up)
+		margin-top: 140px
 		padding-left: $gutter
 
 	+for-size(big-desktop-up)
 		padding-left: $gutter-hd
 
-	+for-size(phone-only)
-		margin-bottom: 0
-		padding-left: $gutter-mobile
-
-.search-input
-	@extend .morphsearch-input
-	font-size: $basefontsize * 5
-	line-height: $baselineheight * 5
-	width: $desktop-width
+// .search-input
+// 	@extend .morphsearch-input
+// 	width: 100%
 
 // index
 article.post

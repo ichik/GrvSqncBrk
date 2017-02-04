@@ -1,5 +1,9 @@
 {% extends 'partials/base.html.twig' %}
 
+{% block title %}
+<title>{{ query }} {{ header.title|lower }} | {{ site.title }}</title>
+{% endblock %}
+
 {% block content %}
 <div id="primary" class="search-results content-area">
     <form class="search-form" action="{{ base_url_relative }}/search" method="get">

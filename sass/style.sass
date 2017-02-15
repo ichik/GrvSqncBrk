@@ -1024,19 +1024,16 @@ article.post
 
 blockquote
     border-left: 4px solid $grey
-    padding: 10px 0 10px 50px
-
+    padding: 10px 0 10px 30px
+            
     &:before
         display: block
         content: "\201C"
         font-size: 80px
-        margin-left: -40px
+        font-size: $basefontsize * 2
+        margin-left: -20px
         color: $grey
         float: left
-
-        +for-size(phone-only)
-            font-size: $basefontsize * 2
-            margin-left: -10px
 
     #primary & p:last-of-type
         margin: 0 auto

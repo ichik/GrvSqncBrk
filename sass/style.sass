@@ -198,6 +198,11 @@ aside.caption
 
     .highlight.white &
         border-color: rgba(0,0,0,0.5)
+        
+    &.cover
+        order: -1
+        +for-size(tablet-landscape-up)
+            order: 0
 
 abbr
     text-transform: uppercase

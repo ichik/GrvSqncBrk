@@ -5,13 +5,13 @@
   {% if page.header.videocover %}
   <video id="video_background" preload="auto" autoplay loop muted volume="0" poster="/{{ page.slug }}/cover.jpg">
     <source src="/{{ page.slug }}/cover.webm" type='video/webm;codecs="vp8, vorbis"'/>
-    <source src="/{{ page.slug }}/cover.mp4" type="video/mp4"/>
+    <source src="/{{ page.slug }}/cover.mp4" type="video/mp4">
   </video>
   {% endif %}
   <div class="post-cover b-lazy" data-src="{{ page.media['cover.jpg'].url }}" data-src-small="{{ page.media['cover.jpg'].cropResize(750,420).url }}"></div>
     <div class="post-content">
       <header class="entry-meta">
-        <time class="entry-date" datetime="{{ page.date|date('Y-m-d') }}">{{ page.date|date('d') }} {{ 'SQNC_MONTHS'|ta(page.date|date('n') - 1) }}, {{ page.date|date('Y') }}</time>
+        <time class="entry-date" datetime="{{ page.date|date('Y-m-d') }}">{{ 'SQNC_MONTHS'|ta(page.date|date('n') - 1) }} {{ page.date|date('d') }}, {{ page.date|date('Y') }}</time>
       </header>
       <footer class="entry-header">
         <h2 class="entry-title">{{ page.title }}</h2>
@@ -19,15 +19,15 @@
     </div>
 </div>
 <div id="primary">
-      {% if page.header.platform %}
-      <div class="article-area">
-          <ul id="platforms">
-            {% for p in page.header.platform %}
-            <li>{{ p }}</li>
-            {% endfor %}
-          </ul>
-      </div>
-      {% endif %}
-      {{ page.content }}
+    {% if page.header.platform %}
+    <div class="article-area">
+        <ul id="platforms">
+          {% for p in page.header.platform %}
+          <li>{{ p }}</li>
+          {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {{ page.content }}
 </div>
 {% endblock %}

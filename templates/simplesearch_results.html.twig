@@ -1,7 +1,7 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block title %}
-<title>{{ query }} — результаты поиска | {{ site.title }}</title>
+<title>{{ query }} {{ header.title|lower }} | {{ site.title }}</title>
 {% endblock %}
 
 {% block content %}
@@ -15,8 +15,8 @@
     {% endfor %}
     {% if search_results.count == 0 %}
     <div class="article-area">
-        <p>К сожалению, по запросу «{{ query }}» ничего не найдено.</p>
-        <p>Поищите что-нибудь ещё, например, <a href="{{ base_url_relative }}/search?query=Super+Metroid">Super Metroid</a>.</p>
+        <p>Nothing found on “{{ query }}”.</p>
+        <p>Let's look for something else, like <a href="{{ base_url_relative }}/search?query=Super+Metroid">Super Metroid</a>.</p>
     </div>
     {% endif %}
 </div>
@@ -45,7 +45,7 @@
                 {% for p in pages.children %}{% if p.visible %}
                     <li><a href="{{ p.rawRoute() }}" class="no-u"><span>{{ p.title }}</span></a></li>
                 {% endif %}{% endfor %}
-                    {# <li><a href="/en{{ page.rawRoute() }}" class="no-u"><span>In English</span></a></li> #}
+                    {# <li><a href="/ru{{ page.rawRoute() }}" class="no-u">По-русски</a></li> #}
                 </ul>
             </nav>
         </div>

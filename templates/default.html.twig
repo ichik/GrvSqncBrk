@@ -8,7 +8,9 @@
     <source src="/{{ page.slug }}/cover.mp4" type="video/mp4">
   </video>
   {% endif %}
-  <div class="post-cover b-lazy" data-src="{{ page.media['cover.jpg'].url }}" data-src-small="{{ page.media['cover.jpg'].cropResize(750,420).url }}"></div>
+  <div class="post-cover b-lazy" data-src="{{ page.media['cover.jpg'].url }}" data-src-small="{{ page.media['cover.jpg'].cropResize(750,420).url }}">
+	  <div class="fader"></div>
+  </div>
     <div class="post-content">
       <header class="entry-meta">
         <time class="entry-date" datetime="{{ page.date|date('Y-m-d') }}">{{ 'SQNC_MONTHS'|ta(page.date|date('n') - 1) }} {{ page.date|date('d') }}, {{ page.date|date('Y') }}</time>

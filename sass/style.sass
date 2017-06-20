@@ -209,18 +209,18 @@ aside.caption
 
 abbr
     text-transform: uppercase
-    font-size: $basefontsize * 0.75
-    letter-spacing: $basefontsize * 0.1
+    font-size: $basefontsize * .75
+    letter-spacing: $basefontsize * .15
     font-family: MuseoBold
     cursor: help
     border-bottom: 0
+    margin-right: -$basefontsize * .15
+    text-decoration: none
+    background-color: rgba($yellow, .1)
+    padding: 4px 4px 4px 6px
 
     +for-size(phone-only)
         font-size: $basefontsize * 0.6
-
-    +for-size(desktop-up)
-        border-bottom: 1px dotted rgba(0,0,0,0.4)
-        text-decoration: none
 
 em
     font-family: MuseoSansItalic
@@ -277,7 +277,7 @@ em
         color: $white
 
     abbr
-        border-color: rgba(255,255,255,0.4)
+        background-color: rgba($yellow, .15)
 
 .highlight.nogutter
     padding-left: 0

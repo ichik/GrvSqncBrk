@@ -1151,9 +1151,10 @@ a.search-link
         li
             display: inline-block
             list-style-type: none
-            margin-bottom: $basefontsize
+            // margin-bottom: $basefontsize
             padding-left: $gutter-mobile
-            font-size: $basefontsize * 1.2
+            font-size: $basefontsize
+            margin-bottom: 0
             
             +for-size(tablet-portrait-up)
                 padding-left: $gutter-tablet
@@ -1164,6 +1165,8 @@ a.search-link
 
         a
             border-bottom: 0
+            height: 48px
+            display: block
 
         .donut
             opacity: 0.5
@@ -1210,7 +1213,7 @@ a.search-link
                 text-align: left
                 
             +for-size(desktop-up)
-                font-size: $basefontsize + 4
+                font-size: $basefontsize
                 margin-top: 40px
             
         ul
@@ -1225,7 +1228,8 @@ a.search-link
                 max-width: 200px
             
             li
-                margin: 20px 0 20px 0
+                margin-top: 20px
+                margin-bottom: 0
                 padding-left: 0
                 
                 +for-size(tablet-portrait-up)

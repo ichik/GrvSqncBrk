@@ -134,7 +134,7 @@ body
 ::selection
     background: $yellow
 
-h1,h2,h3
+h1,h2,h3,h4
     font-family: Museo
     -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1
     -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1
@@ -167,6 +167,10 @@ h3
     +for-size(phone-only)
         font-size: $basefontsize * 1.2
         line-height: $baselineheight * 0.8
+        
+h4
+    font-size: $basefontsize
+    line-height: $baselineheight
 
 p,blockquote,li
     font-size: $basefontsize * 0.8
@@ -1235,7 +1239,7 @@ a.search-link
     .greatbarrierrief
         max-width: 599px
         width: 100%
-        padding: 0 10%
+        padding-left: $gutter-mobile
         
         +for-size(tablet-portrait-up)
             width: auto
@@ -1247,8 +1251,7 @@ a.search-link
         +for-size(big-desktop-up)
             padding-left: $gutter-hd
         
-        h3
-            text-align: center
+        h4
             margin-top: 30px
             
             +for-size(tablet-portrait-up)
@@ -1261,17 +1264,15 @@ a.search-link
             
         ul
             display: flex
-            justify-content: space-around
+            justify-content: space-between
             flex-direction: row
-            max-width: 599px
+            width: 220px
             
             +for-size(desktop-up)
                 padding-left: 0
-                justify-content: space-between
-                width: 200px
             
             li
-                margin-top: 20px
+                margin-top: 10px
                 margin-bottom: 0
                 padding-left: 0
                 

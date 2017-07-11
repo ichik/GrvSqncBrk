@@ -1,12 +1,15 @@
 <footer id="page-footer">
-
-	<ul>
-		<li><a href="{{ site.author.site }}">{{ site.author.site_title }}</a></li>
-
-		{% for p in pages.children %}{% if p.visible %}
-			<li><a href="{{ p.rawRoute() }}">{{ p.title }}</a></li>
-		{% endif %}{% endfor %}
-	</ul>
+	<div class="smallbarrierrief">
+		<ul>
+			{% for p in pages.children %}{% if p.visible %}
+				<li><a href="{{ p.rawRoute() }}">{{ p.title }}</a></li>
+			{% endif %}{% endfor %}
+		</ul>
+		<div class="hi">
+			<time>2014–2017</time>
+            <a href="{{ site.author.site }}">{{ site.author.name }}</a>
+		</div>
+	</div>
 	<div class="greatbarrierrief">
 		<h3>Subscribe</h3>
 		<ul>

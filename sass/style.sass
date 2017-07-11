@@ -1204,13 +1204,42 @@ a.search-link
             @extend .donut
             background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><path fill="#A3A3A3" fill-rule="evenodd" d="M3.12 20.79C4.67 10.65 13.43 2.88 24 2.88c11.664 0 21.12 9.456 21.12 21.12 0 11.664-9.456 21.12-21.12 21.12-10.412 0-19.064-7.536-20.8-17.45l9.6 3.97c.38 1.706 1.56 3.208 3.292 3.932 2.836 1.18 6.104-.166 7.284-3 .308-.74.45-1.516.43-2.29l7.036-5.02c.06.012.12.012.18.012 4.21 0 7.632-3.424 7.632-7.632S35.232 10 31.012 10c-4.206 0-7.63 3.424-7.63 7.632l.012.1-4.92 7.128c-.792-.034-1.592.104-2.352.416-.334.14-.646.306-.94.496L3.13 20.792l-.01-.002zM24 48c13.254 0 24-10.746 24-24S37.254 0 24 0 0 10.746 0 24s10.746 24 24 24zm-1.8-15.92c-.908 2.19-3.432 3.226-5.62 2.316-1.01-.42-1.77-1.19-2.212-2.11l2.486 1.03c.4.166.81.244 1.216.244 1.24 0 2.416-.732 2.92-1.948.674-1.612-.088-3.466-1.7-4.14l-2.57-1.06c.99-.374 2.116-.392 3.168.048 1.06.44 1.884 1.27 2.32 2.332.44 1.06.436 2.23-.006 3.288H22.2zm8.812-9.364c-2.8 0-5.084-2.28-5.084-5.084s2.284-5.086 5.084-5.086c2.806 0 5.086 2.28 5.086 5.086 0 2.804-2.28 5.084-5.096 5.084h.01z"/></svg>')
 
+    .smallbarrierrief
+        display: flex
+        flex-direction: column
+        
+        +for-size(desktop-up)
+            flex-direction: row
+        .hi
+            padding-left: $gutter-mobile
+            font-size: $basefontsize
+            display: flex
+            flex-direction: column
+            width: 160px
+            
+            +for-size(tablet-portrait-up)
+                padding-left: $gutter-tablet
+                width: 190px
+            
+            +for-size(desktop-up)
+                padding-left: 320px
+                width: auto
+                
+                time
+                    line-height: 40px
+                    
+                a
+                    padding: 0
+			
+    
     .greatbarrierrief
         max-width: 599px
         width: 100%
+        padding: 0 10%
         
         +for-size(tablet-portrait-up)
             width: auto
-            padding-left: 50px
+            padding: 0 0 0 50px
             
         +for-size(desktop-up)
             padding-left: $gutter
@@ -1239,7 +1268,7 @@ a.search-link
             +for-size(desktop-up)
                 padding-left: 0
                 justify-content: space-between
-                max-width: 200px
+                width: 200px
             
             li
                 margin-top: 20px

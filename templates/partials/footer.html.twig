@@ -2,7 +2,7 @@
 	<div class="smallbarrierrief">
 		<ul>
 			{% for p in pages.children %}{% if p.visible %}
-				<li><a href="{{ p.rawRoute() }}">{{ p.title }}</a></li>
+				<li><a href="{{ p.rawRoute() }}">{{ p.menu }}</a></li>
 			{% endif %}{% endfor %}
 		</ul>
 		<div class="hi">

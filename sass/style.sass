@@ -1164,6 +1164,7 @@ a.search-link
             flex-direction: row
 
         +for-size(big-desktop-up)
+            width: calc(#{$desktop-width} + #{$gutter-hd})
             padding-left: $gutter-hd
 
         li
@@ -1214,6 +1215,8 @@ a.search-link
         
         +for-size(desktop-up)
             flex-direction: row
+            height: 70px
+            
         .hi
             padding-left: $gutter-mobile
             font-size: $basefontsize
@@ -1234,6 +1237,9 @@ a.search-link
                     
                 a
                     padding: 0
+                    
+            +for-size(big-deskop-up)
+                padding-left: 0
 			
     
     .greatbarrierrief

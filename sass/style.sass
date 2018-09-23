@@ -147,11 +147,11 @@ blockquote
 h2
     font-size: $basefontsize * 1.5
     line-height: $baselineheight
-	
+
     +for-size(tablet-portrait-up)
         font-size: $basefontsize * 2.5
         line-height: $baselineheight * 1.5
-        
+
     +for-size(tablet-landscape-up)
         font-size: $basefontsize * 3
         line-height: $baselineheight * 2
@@ -167,7 +167,7 @@ h3
     +for-size(phone-only)
         font-size: $basefontsize * 1.2
         line-height: $baselineheight * 0.8
-        
+
 h4
     font-size: $basefontsize
     line-height: $baselineheight
@@ -205,7 +205,7 @@ aside.caption
 
     .highlight.white &
         border-color: rgba(0,0,0,0.5)
-        
+
     &.cover
         order: -1
         +for-size(tablet-landscape-up)
@@ -651,10 +651,10 @@ h1
     +transform(translate3d(0, 0, 0))
     width: 100%
     transition: width 0.3s ease, padding-left 0.2s ease-in
-    
+
     label
         display: none
-        
+
         +for-size(desktop-up)
             display: block
             opacity: 0
@@ -677,7 +677,7 @@ h1
     .open &
         width: 90vw
         padding-left: 0
-        
+
         label
             opacity: 1
 
@@ -742,7 +742,7 @@ h1
     float: none
     width: 100%
     margin: 28px 0 0 0
-    
+
     +for-size(tablet-portrait-up)
         padding-left: $gutter-tablet
 
@@ -752,10 +752,10 @@ h1
 
     +for-size(big-desktop-up)
         padding-left: $gutter-hd
-        
+
     input:focus ~ label
         opacity: 1
-        
+
     input
         +for-size(desktop-up)
             height: 156px
@@ -768,7 +768,7 @@ article.post
     background-color: $black
     margin-bottom: 5px
     overflow: hidden
-    
+
     +for-size(desktop-up)
         height: 560px
 
@@ -803,7 +803,7 @@ article.post
     top: 0
     width: 100%
     height: 100%
-    padding: 0 $gutter-tablet $gutter-tablet $gutter-tablet            
+    padding: 0 $gutter-tablet $gutter-tablet $gutter-tablet
     background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 34%, rgba(0,0,0,0.1) 47%, rgba(0,0,0,0.05) 67%, transparent 96.5%)
     display: flex
     flex-direction: column
@@ -817,7 +817,7 @@ article.post
 
     +for-size(big-desktop-up)
         padding: 0 0 $gutter-hd / 4 $gutter-hd
-		
+
     footer,header
         +transition(all 0.3s ease)
 
@@ -840,7 +840,7 @@ article.post
     +for-size(phone-only)
         .article-cover &
             height: 70vh
-			
+
 .post-cover-link:hover
     .post-content
         footer,header
@@ -993,6 +993,7 @@ article.post
 
     p
         width: 100%
+        color: $black
 
     img
         margin: 0 $baselineheight $baselineheight / 2 0
@@ -1050,7 +1051,7 @@ article.post
 blockquote
     border-left: 4px solid $grey
     padding: 10px 0 10px 30px
-            
+
     &:before
         display: block
         content: "\201C"
@@ -1084,7 +1085,7 @@ a.search-link
     display: block
     border: 0
     color: $black
-    padding: 10px 30px 10px 30px !important
+    padding: 20px 30px 20px 30px
     +transition(all 0.2s ease)
 
     +for-size(phone-only)
@@ -1144,21 +1145,21 @@ a.search-link
     background: rgba($grey, .1)
     display: flex
     flex-wrap: wrap
-    
+
     +for-size(desktop-up)
         flex-direction: column
         padding-top: 80px
-        
+
     ul
         width: 100%
         display: flex
         flex-wrap: wrap
         flex-direction: column
         font-size: $basefontsize * 1.2
-        
+
         +for-size(tablet-portrait-up)
             width: auto
-		
+
         +for-size(desktop-up)
             padding-left: $gutter
             flex-direction: row
@@ -1174,10 +1175,10 @@ a.search-link
             padding-left: $gutter-mobile
             font-size: $basefontsize
             margin-bottom: 0
-            
+
             +for-size(tablet-portrait-up)
                 padding-left: $gutter-tablet
-                
+
             +for-size(desktop-up)
                 padding-left: 0
                 margin-right: $gutter / 4
@@ -1212,78 +1213,78 @@ a.search-link
     .smallbarrierrief
         display: flex
         flex-direction: column
-        
+
         +for-size(desktop-up)
             flex-direction: row
             height: 70px
-            
+
         .hi
             padding-left: $gutter-mobile
             font-size: $basefontsize
             display: flex
             flex-direction: column
             width: 160px
-            
+
             +for-size(tablet-portrait-up)
                 padding-left: $gutter-tablet
                 width: 190px
-            
+
             +for-size(desktop-up)
                 padding-left: 320px
                 width: auto
-                
+
                 time
                     line-height: 40px
-                    
+
                 a
                     padding: 0
-                    
+
             +for-size(big-deskop-up)
                 padding-left: 0
-			
-    
+
+
     .greatbarrierrief
         max-width: 599px
         width: 100%
         padding-left: $gutter-mobile
-        
+
         +for-size(tablet-portrait-up)
             width: auto
             padding: 0 0 0 50px
-            
+
         +for-size(desktop-up)
             padding-left: $gutter
-            
+
         +for-size(big-desktop-up)
             padding-left: $gutter-hd
-        
+
         h4
             margin-top: 30px
-            
+
             +for-size(tablet-portrait-up)
                 margin-top: 0
                 text-align: left
-                
+
             +for-size(desktop-up)
                 font-size: $basefontsize
                 margin-top: 40px
-            
+
         ul
             display: flex
             justify-content: space-between
             flex-direction: row
             width: 220px
-            
+
             +for-size(desktop-up)
                 padding-left: 0
-            
+
             li
                 margin-top: 10px
                 margin-bottom: 0
                 padding-left: 0
-                
+
                 +for-size(tablet-portrait-up)
                     margin-right: 20px
-                    
+
                 +for-size(desktop-up)
                     margin: 10px 0 0 0

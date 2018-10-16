@@ -114,7 +114,7 @@ iframe
     src: url("../fonts/museosansitalic.woff2") format("woff2")
 
 @font-face
-    font-family: MuseoBold
+    font-family: MuseoSansBold
     src: url("../fonts/museosansbold.woff2") format("woff2")
 
 @font-face
@@ -140,6 +140,7 @@ h1,h2,h3,h4
     -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1
     font-weight: normal
+    margin: 0
 
 blockquote
     font-family: MuseoSansItalic
@@ -215,7 +216,7 @@ abbr
     text-transform: uppercase
     font-size: $basefontsize * .75
     letter-spacing: $basefontsize * .15
-    font-family: MuseoBold
+    font-family: MuseoSansBold
     cursor: help
     border-bottom: 0
     margin-right: -$basefontsize * .15
@@ -810,13 +811,13 @@ article.post
     justify-content: flex-end
 
     +for-size(desktop-up)
-        padding: 0 $gutter $gutter / 4 $gutter
+        padding: 0 $gutter $gutter / 3 $gutter
 
     +for-size(phone-only)
         padding: 0 $gutter-mobile $gutter-mobile $gutter-mobile
 
     +for-size(big-desktop-up)
-        padding: 0 0 $gutter-hd / 4 $gutter-hd
+        padding: 0 0 $gutter / 3 $gutter-hd
 
     footer,header
         +transition(all 0.3s ease)

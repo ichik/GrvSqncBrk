@@ -130,6 +130,7 @@ body
     -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0
     -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0
+    overflow: hidden
 
 ::selection
     background: $yellow
@@ -558,6 +559,7 @@ h1
         display: flex
         height: 80px
         margin: 0
+        padding: 0
 
         +for-size(tablet-landscape-up)
             flex-direction: row
@@ -636,23 +638,29 @@ h1
 
     li
         display: inline-block
+        font-size: $basefontsize * 1.2
 
         +for-size(phone-only)
             display: block
             margin-right: 0
             margin-bottom: 20px
-            font-size: $basefontsize * 1.2
             line-height: $baselineheight
+
+        +for-size(tablet-landscape-up)
+            font-size: $basefontsize * 0.8
 
 // morphing search
 .morphsearch-form
     width: 90px
     height: 60px
-    font-size: $basefontsize * 0.8
+    font-size: $basefontsize * 1.2
     line-height: $baselineheight * 0.8
     +transform(translate3d(0, 0, 0))
     width: 100%
     transition: width 0.3s ease, padding-left 0.2s ease-in
+
+    +for-size(tablet-landscape-up)
+        font-size: $basefontsize * 0.8
 
     label
         display: none
@@ -673,7 +681,6 @@ h1
 
     +for-size(desktop-up)
         height: 160px
-        font-size: $basefontsize
         line-height: $baselineheight
 
     .open &
@@ -724,6 +731,12 @@ h1
     margin-top: 0
     font-size: $basefontsize * 1.2
     line-height: $baselineheight
+
+    +for-size(tablet-landscape-up)
+        height: 120px
+
+    +for-size(desktop-up)
+        height: 160px
 
     &:focus
         outline: none
@@ -1221,16 +1234,29 @@ a.search-link
             flex-direction: row
             height: 70px
 
+        ul
+          margin: 0
+          padding: 0
+
+          +for-size(desktop-up)
+              padding-left: $gutter
+
+          +for-size(big-desktop-up)
+              padding-left: $gutter-hd
+
         .hi
             padding-left: $gutter-mobile
             font-size: $basefontsize
             display: flex
             flex-direction: column
-            width: 160px
+            width: 190px
+
+            a
+              line-height: $baselineheight
 
             +for-size(tablet-portrait-up)
                 padding-left: $gutter-tablet
-                width: 190px
+                width: 280px
 
             +for-size(desktop-up)
                 padding-left: 320px
@@ -1277,6 +1303,7 @@ a.search-link
             justify-content: space-between
             flex-direction: row
             width: 220px
+            padding-left: 0
 
             +for-size(desktop-up)
                 padding-left: 0

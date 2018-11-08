@@ -7,7 +7,7 @@
 {% block content %}
 <div id="primary" class="search-results content-area">
     <form class="search-form" action="{{ base_url_relative }}/search" method="get">
-		<input class="search-input" type="search" placeholder="{{ "SEARCH"|t }}" id="search-input" autocomplete="off" value="{{ query }}" autofocus onfocus="this.value = this.value;" name="query">
+		<input class="search-input" type="search" placeholder="{{ "SEARCH"|t }}" id="search-input" autocomplete="off" value="{{ query }}" autofocus="true" onfocus="this.value = this.value;" name="query">
 		<label for="morphsearch-input">Press Enter to search</label>
 		<button class="search-submit" type="submit">{{ "SEARCH"|t }}</button>
 	</form>

@@ -1,21 +1,21 @@
 function showContent(e) {
     var t = document.getElementById("load-more-holder"),
-        n = document.getElementById("primary"),
+        n = document.getElementById("feed"),
         r = createRequestObject();
-    t.className = t.className + "progress", r && (r.open("get", e), r.onreadystatechange = function() {
-        if (4 == r.readyState) {
+        t.className = t.className + "progress", r && (r.open("get", e), r.onreadystatechange = function() {
+          if (4 == r.readyState) {
             t.remove(), n.innerHTML = n.innerHTML + r.responseText;
             new Blazy({
-                breakpoints: [{
-                    width: 420,
-                    src: "data-src-small"
-                }, {
-                    width: 1024,
-                    src: "data-src-medium"
-                }]
+              breakpoints: [{
+                width: 420,
+                src: "data-src-small"
+              }, {
+                width: 1024,
+                src: "data-src-medium"
+              }]
             })
-        }
-    }, r.send(null))
+          }
+        }, r.send(null))
 };
 
 function createRequestObject() {

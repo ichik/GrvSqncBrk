@@ -1,23 +1,21 @@
 .sqncbrk-header
+  mix-blend-mode: exclusion
+  position: fixed
+
   > .logo
     display: inline-block
-    position: relative
-    mix-blend-mode: exclusion
+    position: fixed
     color: #fff
     &:hover
       animation: glitch 0.8s infinite
 
-$red: rgb(192, 20, 124)
-$blue: rgb(0, 170, 255)
-$yellow: rgb(255, 238, 0)
-$green: rgb(0, 255, 128)
 $colors: $red $blue $yellow $green
 
 =glitch
    $color: nth($colors, random(length($colors)))
    $shadow-distance: ($spacing / 4)
    text-shadow: random($shadow-distance * 2) - $shadow-distance random($shadow-distance * 2) - $shadow-distance 0 $color
-   left: random($shadow-distance * 2) - $shadow-distance
+   left: $spacing * 4 + random($shadow-distance * 2) - $shadow-distance
 
 @keyframes glitch
   @for $i from 0 through 100

@@ -24,7 +24,7 @@ $colors: $red $blue $yellow $green
 
 =glitch
    $color: nth($colors, random(length($colors)))
-   $shadow-distance: ($spacing / 4)
+   $shadow-distance: 3px
    text-shadow: random($shadow-distance * 2) - $shadow-distance random($shadow-distance * 2) - $shadow-distance 0 $color
    left: $spacing * 4 + random($shadow-distance * 2) - $shadow-distance
 

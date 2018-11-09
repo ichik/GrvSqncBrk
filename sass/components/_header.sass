@@ -1,13 +1,23 @@
 .sqncbrk-header
   mix-blend-mode: exclusion
   position: fixed
+  z-index: 1
 
   > .logo
     display: inline-block
-    position: fixed
     color: #fff
+    justify-self: center
+    padding: $spacing * 4
     &:hover
       animation: glitch 0.8s infinite
+
+  > .button
+      background: transparent
+      border: 0
+      justify-self: end
+      grid-area: 1 / 4
+      height: 32px
+      padding: $spacing * 5
 
 $colors: $red $blue $yellow $green
 

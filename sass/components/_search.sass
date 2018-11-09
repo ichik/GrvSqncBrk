@@ -25,7 +25,7 @@
 
     > .input
       -webkit-appearance: none
-      font-size: 10vw
+      font-size: $basefontsize * 5
       width: 100%
       padding: 0.05em 0
       color: $yellow
@@ -45,25 +45,34 @@
       &::selection
         color: $black
 
-    > .info
-      color: $white
-      z-index: 1000
-      transition: opacity 0.4s, transform 0.4s
-      transform: translate3d(0, $spacing * 2, 0)
-      opacity: 0
-      align-self: end
+  .info
+    color: $white
+    z-index: 1000
+    transition: opacity 0.4s, transform 0.4s
+    transform: translate3d(0, $spacing * 2, 0)
+    opacity: 0
+    align-self: end
 
-  > .btn--search-close
+  > .close
     justify-self: end
     grid-area: 1 / 4
-    height: 32px
-    padding: $spacing * 5
+    height: 112px
+    padding: $spacing * 4
     background: transparent
     border: 0
     cursor: pointer
     mix-blend-mode: exclusion
     opacity: 0
     transition: opacity 0.3s
+
+  > .card
+    align-self: start
+
+    &:nth-child(odd)
+      grid-area: 3 / 2
+
+    &:nth-child(even)
+      grid-area: 3 / 3
 
 .search--open
   pointer-events: auto
@@ -77,9 +86,9 @@
     > .input
       transform: scale3d(1,1,1)
 
-    > .info
-      transform: translate3d(0, 0, 0)
-      opacity: 1
+  .info
+    transform: translate3d(0, 0, 0)
+    opacity: 1
 
-  > .btn--search-close
+  > .close
       opacity: 1

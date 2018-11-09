@@ -1,6 +1,8 @@
 <a class="search-link" href="{{ page. url }}"><div class="search-result">
     <h3>{{ page. title }}</h3>
     <time class="entry-date" datetime="{{ page.date|date('Y-m-d') }}">{{ page.date|date('d') }} {{ 'MONTHS_OF_THE_YEAR'|ta(page.date|date('n') - 1) }}, {{ page.date|date('Y') }}</time>
-    <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ page.media['cover.jpg'].cropZoom(320,180).url }}" />
-    <p>{{ page.header.description }}</p>
+    <img class="b-lazy" width="320" height="180" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ page.media['cover.jpg'].cropZoom(320,180).url }}" />
+    <p>
+        'one sentence. two sentences'|truncate(5)
+    </p>
 </div></a>

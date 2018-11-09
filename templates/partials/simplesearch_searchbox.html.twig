@@ -1,7 +1,17 @@
 <div class="sqncbrk-search sqncbrk-outer">
-  <button id="btn-search-close" class="btn btn--search-close" aria-label="Close search form"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" aria-labelledby="closeIconTitle closeIconDesc" stroke="rgb(255,252,250)" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="rgb(255,252,250)"> <title id="closeIconTitle">Close</title> <desc id="closeIconDesc">Icon of a cross (x)</desc> <path d="M6.34314575 6.34314575L17.6568542 17.6568542M6.34314575 17.6568542L17.6568542 6.34314575"/> </svg></button>
+  <button id="btn-search-close" class="close" aria-label="Close search form"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" aria-labelledby="closeIconTitle closeIconDesc" stroke="rgb(255,252,250)" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="rgb(255,252,250)"> <title id="closeIconTitle">Close</title> <desc id="closeIconDesc">Icon of a cross (x)</desc> <path d="M6.34314575 6.34314575L17.6568542 17.6568542M6.34314575 17.6568542L17.6568542 6.34314575"/> </svg></button>
   <form class="form" action="{{ base_url_relative }}/search" method="get">
     <input class="input" name="search" type="search" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="query" />
-    <span class="info">Hit enter to search or escape to close</span>
+    <label class="info">Hit enter to search or escape to close</label>
   </form>
+  {% for p in pages.children %}{% if p.visible %}
+    <article class="card info">
+      <a href="{{ p.rawRoute() }}">
+        <img class="b-lazy cover" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ p.media['cover.jpg'].cropZoom(240,180).quality(100).url }}" />
+        <time class="entry-date" datetime="{{ p.date|date('Y-m-d') }}">{{ p.date|date('d') }} {{ 'MONTHS_OF_THE_YEAR'|ta(p.date|date('n') - 1) }}, {{ p.date|date('Y') }}</time>
+        <h3>{{ p. title }}</h3>
+        <p>{{ p.header.description|truncate(170, true) }}</p>
+      </a>
+    </article>
+  {% endif %}{% endfor %}
 </div>

@@ -1,6 +1,18 @@
 @import '../vendors/sanitize.css/sanitize.css'
 /* All my styles go now */
 
+input
+    background: transparent
+    border: 0
+    -webkit-appearance: none
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration
+      -webkit-appearance: none
+
+    &::-ms-clear
+      display: none
+
 //variables
 $basefontsize: 20px
 $baselineheight: 36px

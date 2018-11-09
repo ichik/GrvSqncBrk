@@ -23,6 +23,7 @@
 		{% endblock %}
 
 		{% block stylesheets %}
+			<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 			{% do assets.add('theme://css/style.css',100) %}
 			{% if page.header.customcss %}
 				{% set path = base_url ~ '/' ~ page.filePathClean|replace({('/'~page.name): ''}) %}
@@ -60,7 +61,7 @@
 
 		{% block javascript %}
 			{% do assets.add('theme://vendors/blazy/blazy.min.js',11) %}
-			{% do assets.add('theme://js/sqncbrk.js',10) %}
+			{% do assets.add('theme://js/sqncbrk.min.js',10) %}
 			{{ assets.js() }}
 		{% endblock %}
 

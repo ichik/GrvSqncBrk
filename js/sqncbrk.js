@@ -6,13 +6,11 @@ function showContent(e) {
           if (4 == r.readyState) {
             t.remove(), n.innerHTML = n.innerHTML + r.responseText;
             new Blazy({
-              breakpoints: [{
-                width: 420,
-                src: "data-src-small"
-              }, {
-                width: 1024,
-                src: "data-src-medium"
-              }]
+                breakpoints: [{
+                    width: 375,
+                    src: "data-src-small"
+                }],
+                offset: 400
             })
           }
         }, r.send(null))

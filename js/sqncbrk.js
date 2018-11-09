@@ -39,3 +39,45 @@ function createRequestObject() {
         offset: 400
     })
 }();
+;(function(window) {
+
+	'use strict';
+
+	var openCtrl = document.getElementById('btn-search'),
+		closeCtrl = document.getElementById('btn-search-close'),
+		searchContainer = document.querySelector('.sqncbrk-search'),
+		inputSearch = searchContainer.querySelector('.input');
+
+	function init() {
+		initEvents();
+	}
+
+	function initEvents() {
+		openCtrl.addEventListener('click', openSearch);
+		closeCtrl.addEventListener('click', closeSearch);
+		document.addEventListener('keyup', function(ev) {
+			// escape key.
+			if( ev.keyCode == 27 ) {
+				closeSearch();
+			}
+		});
+	}
+
+	function openSearch() {
+		searchContainer.classList.add('search--open');
+        openCtrl.classList.add('closed')
+		setTimeout(function() {
+			inputSearch.focus();
+		}, 600);
+	}
+
+	function closeSearch() {
+		searchContainer.classList.remove('search--open');
+        openCtrl.classList.remove('closed');
+		inputSearch.blur();
+		inputSearch.value = '';
+	}
+
+	init();
+
+})(window);

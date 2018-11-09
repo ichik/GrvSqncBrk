@@ -53,10 +53,13 @@
 
 		{% block header %}{% include 'partials/header.html.twig' %}{% endblock %}
 
-        {% block content %}
+    {% block content %}
 
-        {% endblock %}
-    </main>
+    {% endblock %}
+
+    {% block search %}
+      {% include 'partials/simplesearch_searchbox.html.twig' %}
+    {% endblock %}
 
 		{% block footer %}{% include 'partials/footer.html.twig' %}{% endblock %}
 

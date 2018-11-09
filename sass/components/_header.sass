@@ -5,7 +5,7 @@
 
   > .logo
     display: inline-block
-    color: #fff
+    color: $white
     justify-self: center
     padding: $spacing * 4
     &:hover
@@ -19,6 +19,13 @@
       background: transparent
       border: 0
       cursor: pointer
+      opacity: 1
+      transition: opacity 0.3s
+
+      &.closed
+        opacity: 0
+        pointer-events: none
+        display: none
 
 $colors: $red $blue $yellow $green
 

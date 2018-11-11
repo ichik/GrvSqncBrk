@@ -51,7 +51,7 @@
       +for-size(tablet-landscape-up)
         font-size: 5rem
 
-    >label
+    >.desktop
       display: none
 
       +for-size(desktop-up)
@@ -86,7 +86,7 @@
       height: $spacing * 13
       padding: $spacing * 4
 
-  >.card
+  >.sqncbrk-card
     align-self: start
 
     &:nth-child(odd)
@@ -113,13 +113,13 @@
       +for-size(desktop-up)
         grid-area: 3 / 3
 
-  >.card>a>.cover
+  >.sqncbrk-card>.link>.cover
     grid-area: 1 / 1 / 3 / 1
 
     +for-size(tablet-landscape-up)
       grid-area: 1 / 1 / 4 / 1
 
-  >.card>a>p
+  >.sqncbrk-card>.link>.description
     display: none
 
     +for-size(tablet-landscape-up)

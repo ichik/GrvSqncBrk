@@ -20,8 +20,9 @@
     transition: opacity 0.5s $fade
 
   >.form
-    display: flex
-    flex-direction: column
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: auto auto
 
     grid-area: 2 / 1 / 2 / 3
 
@@ -34,6 +35,7 @@
     >.input
       width: 100%
       padding: 0.05em 0
+      height: 3rem
 
       color: $yellow
       background: transparent
@@ -53,6 +55,8 @@
         display: none
 
       +for-size(tablet-landscape-up)
+        height: 8rem
+
         font-size: 5rem
 
     >.desktop
@@ -60,11 +64,16 @@
 
       +for-size(desktop-up)
         display: block
+        height: $spacing * 4
+        justify-self: end
+
+        font-size: 1rem
+        line-height: 2rem
 
   .info
     z-index: 1000
 
-    align-self: end
+    align-self: start
 
     color: $white
     opacity: 0

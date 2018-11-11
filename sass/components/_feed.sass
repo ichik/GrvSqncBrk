@@ -48,14 +48,16 @@
         > .wrap
           transition: transform 0.3s $jump
 
-        > .wrap > time
+        > .wrap > .date
           grid-area: 1 / 1 / 1 / 3
           height: $spacing * 4
+
+          font-size: 1rem
 
           +for-size(tablet-landscape-up)
             grid-area: 1 / 2
 
-        > .wrap > h2
+        > .wrap > .title
           grid-area: 2 / 1 / 2 / 3
 
           +for-size(tablet-landscape-up)

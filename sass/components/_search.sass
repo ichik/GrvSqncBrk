@@ -18,14 +18,20 @@
     transition: opacity 0.5s
     opacity: 0
 
-  > .form
-    grid-area: 2 / 2 / 2 / 4
+  >.form
+    grid-area: 2 / 1 / 2 / 3
     display: flex
     flex-direction: column
 
-    > .input
+    +for-size(tablet-portrait-up)
+      grid-area: 2 / 1 / 2 / 5
+
+    +for-size(tablet-landscape-up)
+      grid-area: 2 / 2 / 2 / 4
+
+    >.input
       -webkit-appearance: none
-      font-size: $basefontsize * 5
+      font-size: 3rem
       width: 100%
       padding: 0.05em 0
       color: $yellow
@@ -42,6 +48,12 @@
       &::-ms-clear
         display: none
 
+    >label
+      display: none
+
+      +for-size(desktop-up)
+        display: block
+
   .info
     color: $white
     z-index: 1000
@@ -50,11 +62,10 @@
     opacity: 0
     align-self: end
 
-  > .close
+  >.close
     justify-self: end
-    grid-area: 1 / 4
-    height: 112px
-    padding: $spacing * 4
+    grid-area: 1 / 2
+    height: $spacing * 6
     background: transparent
     border: 0
     cursor: pointer
@@ -62,14 +73,50 @@
     opacity: 0
     transition: opacity 0.3s
 
-  > .card
+    +for-size(tablet-portrait-up)
+      grid-area: 1 / 4
+
+    +for-size(tablet-landscape-up)
+      padding: $spacing
+
+  >.card
     align-self: start
 
     &:nth-child(odd)
-      grid-area: 3 / 2
+      grid-area: 3 / 1 / 3 / 3
+
+      +for-size(tablet-portrait-up)
+        grid-area: 3 / 1 / 3 / 3
+
+      +for-size(tablet-landscape-up)
+        grid-area: 3 / 2 / 3 / 4
+
+      +for-size(desktop-up)
+        grid-area: 3 / 2
 
     &:nth-child(even)
-      grid-area: 3 / 3
+      grid-area: 4 / 1 / 4 / 3
+
+      +for-size(tablet-portrait-up)
+        grid-area: 3 / 3 / 3 / 5
+
+      +for-size(tablet-landscape-up)
+        grid-area: 4 / 2 / 4 / 4
+
+      +for-size(desktop-up)
+        grid-area: 3 / 3
+
+  >.card>a>.cover
+    grid-area: 1 / 1 / 3 / 1
+
+    +for-size(tablet-landscape-up)
+      grid-area: 1 / 1 / 4 / 1
+
+  >.card>a>p
+    display: none
+
+    +for-size(tablet-landscape-up)
+      display: block
 
 .search--open
   pointer-events: auto
@@ -79,13 +126,13 @@
     opacity: 1
 
 .search--open
-  > .form
-    > .input
+  >.form
+    >.input
       transform: scale3d(1,1,1)
 
   .info
     transform: translate3d(0, 0, 0)
     opacity: 1
 
-  > .close
+  >.close
       opacity: 1

@@ -1,20 +1,30 @@
 .card a
   color: $white
   display: grid
-  grid-template-columns: 240px 1fr
+  grid-template-columns: 90px 1fr
   grid-template-rows: $basefontsize $baselineheight auto
-  grid-gap: 0 $spacing * 2
-  padding: $spacing * 2
+  grid-gap: $spacing
   background: 0
   transition: background-color .6s $easing
+  min-height: $spacing * 10.5
+  padding: $spacing 0
 
-  &:hover
+  +for-size(tablet-landscape-up)
+    grid-template-columns: 160px 1fr
+    padding: $spacing
+
+  +for-size(desktop-up-up)
+    grid-template-columns: 240px 1fr
+    grid-gap: 0 $spacing * 2
+    padding: $spacing * 2
+
+  &:hover,&:active
     background: rgba($yellow, .05)
 
   >.cover
     grid-area: 1 / 1 / 4 / 1
 
   >time, >p
-    font-size: $basefontsize * .8
-    line-height: $baselineheight * .5
+    font-size: 0.8rem
+    line-height: 0.9rem
     justify-self: start

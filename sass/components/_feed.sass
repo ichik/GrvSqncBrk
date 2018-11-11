@@ -1,5 +1,8 @@
 .feed
-  padding-top: $spacing * 14
+  padding-top: $spacing * 7.5
+
+  +for-size(desktop-up)
+    padding-top: $spacing * 14
 
   > .sqncbrk-post
     position: relative
@@ -8,6 +11,9 @@
     margin-bottom: $spacing / 2
 
     > a
+      display: block
+      height: 100%
+      width: 100%
       color: $white
 
       > .cover
@@ -29,17 +35,25 @@
         min-height: 120px
         background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 34%, rgba(0,0,0,0.1) 47%, rgba(0,0,0,0.05) 67%, transparent 96.5%)
 
-        > time
-          grid-area: 1 / 2
+        > .wrap
           transition: transform 0.3s $easing
+
+        > .wrap > time
+          grid-area: 1 / 1 / 1 / 3
           height: $spacing * 4
 
-        > h2
-          grid-area: 2 / 2 / 2 / 4
-          transition: transform 0.3s $easing
+          +for-size(tablet-landscape-up)
+            grid-area: 1 / 2
+
+        > .wrap > h2
+          grid-area: 2 / 1 / 2 / 3
+
+          +for-size(tablet-landscape-up)
+            grid-area: 2 / 2 / 2 / 5
+
     > a:hover
       > .cover
         opacity: 1
 
-      > .meta > time, >.meta > h2
+      > .meta > .wrap
         transform: translate3d(0, -$spacing * 2, 0)

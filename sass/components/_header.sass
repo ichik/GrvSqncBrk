@@ -2,26 +2,41 @@
   mix-blend-mode: exclusion
   position: fixed
   z-index: 1
-  height: $spacing * 14
+  height: $spacing * 7.5
+
+  +for-size(desktop-up)
+    height: $spacing * 14
+
+  > *
+    +for-size(desktop-up)
+      padding: $spacing * 4
 
   > .logo
     display: inline-block
     color: $white
-    justify-self: center
-    padding: $spacing * 4
+    justify-self: start
+
+    +for-size(tablet-landscape-up)
+      justify-self: center
+
     &:hover
       animation: glitch 0.8s infinite
 
   > .button
       justify-self: end
-      grid-area: 1 / 4
+      grid-area: 1 / 2
       height: 100%
-      padding: $spacing * 4
       background: transparent
       border: 0
       cursor: pointer
       opacity: 1
       transition: opacity 0.3s
+
+      +for-size(tablet-portrait-up)
+        grid-area: 1 / 4
+
+      +for-size(tablet-landscape-up)
+        padding: $spacing
 
       &.closed
         opacity: 0

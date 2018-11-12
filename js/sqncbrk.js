@@ -64,8 +64,8 @@ function createRequestObject() {
 	}
 
 	function openSearch() {
-		searchContainer.classList.add('search--open');
-        openCtrl.classList.add('closed')
+	searchContainer.classList.add('search--open');
+    openCtrl.classList.add('closed');
 		setTimeout(function() {
 			inputSearch.focus();
 		}, 600);

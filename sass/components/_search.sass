@@ -5,6 +5,7 @@
   left: 0
   width: 100%
   height: 100vh
+
   pointer-events: none
 
   &:before
@@ -34,8 +35,8 @@
 
     >.input
       width: 100%
+      height: auto
       padding: 0.05em 0
-      height: 3rem
 
       color: $yellow
       background: transparent
@@ -55,8 +56,6 @@
         display: none
 
       +for-size(tablet-landscape-up)
-        height: 8rem
-
         font-size: 5rem
 
     >.desktop
@@ -65,7 +64,7 @@
       +for-size(desktop-up)
         display: block
         height: $spacing * 4
-        justify-self: end
+        place-self: start end
 
         font-size: 1rem
         line-height: 2rem
@@ -102,6 +101,12 @@
     +for-size(desktop-up)
       height: $spacing * 13
       padding: $spacing * 4
+
+      transition: transform 0.4s $jump
+
+    &:hover
+      +for-size(desktop-up)
+        transform: rotate(90deg)
 
   >.sqncbrk-card
     align-self: start
@@ -161,3 +166,16 @@
 
   >.close
       opacity: 1
+
+@keyframes spin
+  0%
+    transform: rotate(120deg)
+
+  30%
+    transform: rotate(359deg)
+
+  60%
+    transform: rotate(180deg)
+
+  100%
+    transform: rotate(0)

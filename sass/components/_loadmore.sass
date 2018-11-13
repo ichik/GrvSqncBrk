@@ -1,0 +1,125 @@
+.sqncbrk-loadmore
+  height: 70vh
+
+  > .button
+    display: block
+    height: $spacing * 6
+    width: 16%
+    position: relative
+    top: 50%
+    grid-area: 1 / 2 / 1 / 4
+    margin: 0 auto
+
+    border-radius: $spacing / 2
+    color: darken($yellow,30%)
+    background: $yellow
+
+    font-size: 1rem
+    text-align: center
+
+    opacity: 1
+    transition: color 0.3s $fade, background-color 0.3s $fade, opacity 0.3s $fade, transform 0.3s $jump
+
+    cursor: pointer
+
+    &:after
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      top: 0
+      height: 2px
+
+      box-shadow: rgba($white,0.75) 0 0 15px 2px
+      background: $white
+      content: ''
+
+      opacity: 0
+
+    &:hover
+      animation: button-glitch 750ms infinite
+
+      &:after
+        animation: scan 2s infinite
+        opacity: 0.3
+
+  &:after
+    display: none
+    height: $spacing * 6
+    width: $spacing * 6
+    position: relative
+    top: 50%
+    grid-area: 1 / 2 / 1 / 4
+    margin: 0 auto
+
+    border: 2px solid rgba($yellow,0.2)
+    border-top-color: $yellow
+    border-radius: $spacing * 3
+
+    content: ''
+
+  &.progress > .button
+    transform: scaleX(0.25)
+    opacity: 0
+
+    pointer-events: none
+
+  &.progress
+    &:after
+      display: block
+      animation: loader 1s $jump infinite
+
+@keyframes button-glitch
+  0%
+    transform: skewX(0deg)
+  5%
+    transform: skewX(2deg)
+    opacity: 0.75
+  10%
+    transform: skewX(0deg)
+    opacity: 1
+  15%
+    transform: skewX(-5deg)
+    opacity: 0.75
+  20%
+    transform: skewX(0deg)
+    opacity: 1
+  45%
+    transform: skewX(3deg)
+    opacity: 0.75
+  50%
+    transform: skewX(0deg)
+    opacity: 1
+  55%
+    transform: skewX(0deg)
+    opacity: 0.75
+  60%
+    transform: skewX(0deg)
+    opacity: 1
+  75%
+    transform: skewX(2deg)
+  80%
+    transform: skewX(0deg)
+  85%
+    transform: skewX(-8deg)
+    opacity: 0.75
+  90%
+    transform: skewX(0deg)
+    opacity: 1
+  100%
+    transform: skewX(0deg)
+
+@keyframes scan
+  0%
+    top: 0%
+  50%
+    top: 97%
+  100%
+    top: 0%
+
+@keyframes loader
+  0%
+    transform: rotate(0)
+
+  100%
+    transform: rotate(360deg)

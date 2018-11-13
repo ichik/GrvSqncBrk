@@ -2,7 +2,7 @@ function showContent(e) {
     var t = document.getElementById("load-more-holder"),
         n = document.getElementById("feed"),
         r = createRequestObject();
-        t.className = t.className + "progress", r && (r.open("get", e), r.onreadystatechange = function() {
+        t.className = t.className + " progress", r && (r.open("get", e), r.onreadystatechange = function() {
           if (4 == r.readyState) {
             t.remove(), n.innerHTML = n.innerHTML + r.responseText;
             new Blazy({

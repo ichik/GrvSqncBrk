@@ -1,5 +1,5 @@
 {% if pagination.hasNext %}
-    <div id="load-more-holder" onclick="showContent('{{ base_url }}/tmpl:infinite{{ pagination.params }}{{ pagination.nextUrl }}')">
-        <button id="load-more">{{ "LOAD_MORE"|t }}</button>
-    </div>
+    <section class="sqncbrk-loadmore sqncbrk-outer" id="load-more-holder" onclick="showContent('{{ base_url }}/tmpl:infinite{{ pagination.params }}{{ pagination.nextUrl }}')">
+        <button class="button" id="load-more">{{ "LOAD_MORE"|t }}</button>
+    </section>
 {% endif %}

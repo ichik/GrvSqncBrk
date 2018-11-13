@@ -1,0 +1,15 @@
+.sqncbrk-outer
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-gap: 0 $spacing * 2
+  padding: $spacing $spacing * 2
+  width: 100%
+
+  +for-size(tablet-portrait-up)
+    grid-template-columns: $spacing 1fr 1fr $spacing
+
+  +for-size(tablet-landscape-up)
+    grid-template-columns: $gutter-tablet 1fr 1fr $gutter-tablet
+
+  +for-size(desktop-up)
+    grid-template-columns: $gutter-desktop 1fr 1fr $gutter-desktop

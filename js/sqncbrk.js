@@ -9,9 +9,7 @@ function showContent(e) {
                 breakpoints: [{
                     width: 375,
                     src: "data-src-small"
-                }],
-                offset: 400
-            })
+                }]            })
           }
         }, r.send(null))
 };
@@ -35,8 +33,7 @@ function createRequestObject() {
         breakpoints: [{
             width: 375,
             src: "data-src-small"
-        }],
-        offset: 400
+        }]
     })
 }();
 ;(function(window) {

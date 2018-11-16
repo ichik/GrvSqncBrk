@@ -1,27 +1,23 @@
-<footer id="page-footer">
-	<div class="smallbarrierrief">
-		<ul>
-			{% for p in pages.children %}{% if p.visible %}
-				<li><a href="{{ p.rawRoute() }}">{{ p.menu }}</a></li>
-			{% endif %}{% endfor %}
-		</ul>
-		<div class="hi">
-			<time>2014–{{ "now"|date("Y") }}</time>
-            <a class="no-u" href="{{ site.author.site }}">{{ site.author.name }}</a>
-		</div>
-	</div>
-	<div class="greatbarrierrief">
-		<h4>Subscribe</h4>
-		<ul>
-			<li>
-				<a href="{{ site.rss }}" class="no-u feed"></a>
-			</li>
-			<li>
-				<a href="http://twitter.com/{{ site.twitter_site }}" class="no-u donut"></a>
-			</li>
-			<li>
-				<a href="http://store.steampowered.com/curator/{{ site.steam_curator_id }}/"  class="no-u steam"></a>
-			</li>
-		</ul>
-	</div>
+<footer class="sqncbrk-footer sqncbrk-outer">
+  <ul class="pages">
+      {% for p in pages.children %}{% if p.visible %}
+          <li class="item"><a class="sqncbrk-footer-link" href="{{ p.rawRoute() }}"><span class="underline">{{ p.menu }}</span></a></li>
+      {% endif %}{% endfor %}
+  </ul>
+
+  <ul class="external">
+    <li><a class="sqncbrk-footer-link" href="{{ site.rss }}">
+      <span class="underline">RSS</span>
+    </a></li>
+    <li><a class="sqncbrk-footer-link" href="http://store.steampowered.com/curator/{{ site.steam_curator_id }}/">
+      <span class="underline">Steam</span>
+    </a></li>
+  </ul>
+
+  <section class="author">
+      <a class="sqncbrk-footer-link" href="{{ site.author.site }}">
+        <time class="time">2014–{{ "now"|date("Y") }}</time>
+        <span class="underline">{{ site.author.name }}</span>
+      </a>
+  </section>
 </footer>

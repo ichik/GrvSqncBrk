@@ -1,1 +1,75 @@
 .sqncbrk-footer
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  height: 100vh
+
+  grid-gap: $spacing * 6 $spacing * 2
+  padding: $spacing * 10 0
+
+  font-size: 1.2rem
+
+  z-index: -1
+
+  +for-size(tablet-landscape-up)
+    padding-top: $spacing * 20
+
+  >.pages
+    display: grid
+    grid-template-columns: auto
+    grid-area: 1 / 1 / 1 / 3
+
+    grid-gap: $spacing * 2
+    list-style-type: none
+
+    +for-size(tablet-landscape-up)
+      grid-area: 1 / 2 / 1 / 2
+      justify-content: start
+      grid-template-columns: auto auto
+
+  .sqncbrk-footer-link
+    padding: $spacing * 4 $spacing * 2
+
+  .sqncbrk-footer-link
+    >.underline
+      display: inline-block
+
+      color: rgba($white,0.7)
+      border-bottom: 1px solid rgba($yellow,0.5)
+
+      line-height: $baselineheight * 1.5
+
+      transition: color 0.3s $fade, border-color 0.3s $fade
+
+    &:hover
+      >.underline
+        color: $white
+        border-color: rgba($yellow,0.8)
+
+  >.external
+    display: grid
+    grid-template-columns: auto auto
+    grid-area: 2 / 1 / 2 / 2
+
+    grid-gap: $spacing * 2
+    list-style-type: none
+
+    +for-size(tablet-landscape-up)
+      grid-area: 1 / 3 / 1 / 4
+      justify-content: end
+
+  >.author
+    grid-template-rows: auto auto
+    grid-area: 3 / 1 / 3 / 3
+
+    >.sqncbrk-footer-link
+      display: grid
+      grid-template-columns: auto
+      justify-items: start
+
+    >.sqncbrk-footer-link>.time
+      color: rgba($white,0.7)
+
+    +for-size(tablet-landscape-up)
+      grid-area: 2 / 2 / 2 / 3

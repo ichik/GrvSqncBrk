@@ -19,7 +19,7 @@
     text-align: center
 
     opacity: 1
-    transition: color 0.3s $fade, background-color 0.3s $fade, opacity 0.3s $fade, transform 0.3s $jump
+    transition: color 0.3s $fade, background-color 0.3s $fade, opacity 0.2s $fade, transform 0.2s $jump
 
     cursor: pointer
 
@@ -55,11 +55,13 @@
     position: relative
     top: 50%
     grid-area: 1 / 2 / 1 / 4
-    margin: 0 auto
+    margin: -$spacing * 3 auto 0 auto
 
     border: 2px solid rgba($black,0.2)
     border-top-color: $black
     border-radius: $spacing * 3
+    transition: opacity 0.4s $fade
+    opacity: 0
 
     content: ''
 
@@ -72,6 +74,8 @@
   &.progress
     &:after
       display: block
+
+      opacity: 1
       animation: loader 1s $jump infinite
 
 @keyframes button-glitch

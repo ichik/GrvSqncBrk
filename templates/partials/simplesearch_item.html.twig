@@ -3,6 +3,6 @@
     <img class="b-lazy cover" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ page.media['cover.jpg'].cropZoom(240,180).quality(100).url }}" />
     <time class="date" datetime="{{ page.date|date('Y-m-d') }}">{{ page.date|date('d') }} {{ 'MONTHS_OF_THE_YEAR'|ta(page.date|date('n') - 1) }}, {{ page.date|date('Y') }}</time>
     <h3 class="title">{{ page. title }}</h3>
-    <p class="description">{{ page.header.description|truncate(170, true) }}</p>
+    <p class="description">{{ page.header.description|truncate(105, true) }}</p>
   </a>
 </article>

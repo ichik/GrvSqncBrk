@@ -50,8 +50,12 @@ h1
   text-transform: lowercase
 
 h2
-  font-size: 2.5rem
-  line-height: 2.5rem
+  font-size: 2.2rem
+  line-height: 2rem
+
+  +for-size(tablet-portrait-up)
+    font-size: 3rem
+    line-height: 2.5rem
 
   +for-size(tablet-landscape-up)
     font-size: 4.5rem
@@ -60,6 +64,10 @@ h2
 h3
   font-size: 1.35rem
   line-height: 1.2rem
+
+  +for-size(desktop-up)
+    font-size: 1rem
+    line-height: 1.1rem
 
 
 a,a:link

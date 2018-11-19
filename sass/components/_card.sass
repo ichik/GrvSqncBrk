@@ -11,7 +11,8 @@
   transition: background-color .6s $fade
 
   +for-size(tablet-landscape-up)
-    grid-template-columns: 160px 1fr
+    grid-gap: 0 $spacing
+    grid-template-columns: 140px 1fr
 
     padding: $spacing
 
@@ -30,8 +31,8 @@
   >.date, >.description
     justify-self: start
 
-    font-size: 0.8rem
-    line-height: 0.9rem
+    font-size: 0.9rem
+    line-height: 1rem
 
     +for-size(big-desktop-up)
       font-size: 1rem

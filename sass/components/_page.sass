@@ -5,3 +5,18 @@
 
 .sqncbrk-content
   padding-top: $spacing * 7.5
+
+.sqncbrk-content > .highlight
+  +for-size(tablet-landscape-up)
+    grid-column: first / last
+
+.sqncbrk-content,.highlight
+  > *
+    grid-column: span 2
+
+  > p, > iframe
+    padding: 0 $spacing * 2
+
+  +for-size (tablet-landscape-up)
+    > p, > iframe
+      grid-column: content-start / content-end

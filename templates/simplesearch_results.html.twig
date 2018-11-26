@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="sqncbrk-outer form">
+<div class="sqncbrk-outer form-wrapper">
   <form class="sqncbrk-form" action="{{ base_url_relative }}/search" method="get">
     <input class="input" type="search" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ query }}" autofocus="true" onfocus="this.value = this.value;" name="query" />
     <label class="info desktop">Hit enter to search</label>

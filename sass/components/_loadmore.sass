@@ -1,14 +1,23 @@
 .sqncbrk-loadmore
   height: 50vh
 
+  grid-template-areas: "button button"
+
+  +for-size(tablet-landscape-up)
+    grid-template-areas: ". button button ."
+
+  +for-size(desktop-up)
+    grid-template-areas: ". button button button button ."
+
   > .button
     display: block
     height: $spacing * 6
     width: $spacing * 20
     position: relative
-    grid-area: 1 / 1 / 1 / 3
     top: 50%
     margin: -$spacing * 3 auto 0 auto
+
+    grid-area: button
 
     border-radius: $spacing / 2
     color: $white
@@ -22,9 +31,6 @@
     transition: color 0.3s $fade, background-color 0.3s $fade, opacity 0.2s $fade, transform 0.2s $jump
 
     cursor: pointer
-
-    +for-size(tablet-landscape-up)
-      grid-area: 1 / 2 / 1 / 4
 
     &:after
       position: absolute

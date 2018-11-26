@@ -15,58 +15,15 @@
 
     background: $black
 
-    > .link
-      display: block
-      height: 100%
-      width: 100%
+    > .link > .cover
+      opacity: .9
+      transition: opacity 0.35s $fade
 
-      color: $white
+    > .link  > .meta > .wrap
+        transition: transform 0.3s $jump
 
-      > .cover
-        position: absolute
-        height: 100%
-        width: 100%
+    > .link:hover > .cover
+      opacity: 1
 
-        opacity: .9
-        transition: opacity 0.35s $fade
-
-      > .cover.b-loaded
-        background-size: cover
-        background-position: center center
-
-      > .meta
-        display: grid
-        position: absolute
-        bottom: 0
-        width: 100%
-        height: 100%
-
-        padding: 0 0 $spacing * 2 0
-        align-items: end
-
-        background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 34%, rgba(0,0,0,0.1) 47%, rgba(0,0,0,0.05) 67%, transparent 96.5%)
-
-        > .wrap
-          transition: transform 0.3s $jump
-
-        > .wrap > .date
-          grid-area: 1 / 1 / 1 / 3
-          height: $spacing * 4
-
-          font-size: 1rem
-
-          +for-size(tablet-landscape-up)
-            grid-area: 1 / 2
-
-        > .wrap > .title
-          grid-area: 2 / 1 / 2 / 3
-
-          +for-size(tablet-landscape-up)
-            grid-area: 2 / 2 / 2 / 5
-
-    > .link:hover
-      > .cover
-        opacity: 1
-
-      > .meta > .wrap
+    > .link:hover  > .meta > .wrap
         transform: translate3d(0, -$spacing * 2, 0)

@@ -1,16 +1,97 @@
+.sqncbrk-search
+  position: fixed
+  z-index: 1000
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+
+  grid-template-areas: ". close" "form form" "first first" "second second"
+
+  padding: $spacing $spacing * 2
+
+  pointer-events: none
+
+  +for-size(tablet-portrait-up)
+    grid-template-areas: ". close" "form form" "first second"
+
+  +for-size(tablet-landscape-up)
+    grid-template-areas: ". . . . . close" ". form form form form ." ". first first first first ." ". second second second second ."
+
+  +for-size(desktop-up)
+    grid-template-areas: ". . . . . close" ". form form form form ." ". first first second second ."
+
+  &:before
+    position: absolute
+    top: 0
+    right: 0
+    width: 100%
+    height: 100%
+    content: ''
+
+    background: $black
+    opacity: 0
+    transition: opacity 0.5s $fade
+
+
+  .info
+    z-index: 1000
+
+    align-self: start
+
+    color: $white
+    opacity: 0
+    transform: translate3d(0, $spacing * 2, 0)
+    transition: opacity 0.4s $fade, transform 0.4s $fade
+
+  >.close
+    justify-self: end
+    grid-area: close
+    height: $spacing * 6
+
+    mix-blend-mode: exclusion
+    background: transparent
+    border: 0
+    opacity: 0
+    transition: opacity 0.3s
+
+    cursor: pointer
+
+    +for-size(tablet-landscape-up)
+      padding: $spacing
+
+    +for-size(desktop-up)
+      height: $spacing * 13
+      padding: $spacing * 4
+
+      transition: transform 0.4s $jump
+
+    &:hover
+      +for-size(desktop-up)
+        transform: rotate(90deg)
+
+  >.sqncbrk-card
+    align-self: start
+
+    &:nth-child(odd)
+      grid-area: first
+
+    &:nth-child(even)
+      grid-area: second
+
+  >.sqncbrk-form>.input
+    transform: scale3d(0,1,1)
+    transform-origin: 0% 50%
+    transition: transform 0.3s $fade
+
+
 .sqncbrk-form
   display: grid
   grid-template-columns: auto
   grid-template-rows: auto auto
   align-content: start
 
-  grid-area: 2 / 1 / 2 / 3
-
-  +for-size(tablet-portrait-up)
-    grid-area: 2 / 1 / 2 / 5
-
-  +for-size(tablet-landscape-up)
-    grid-area: 2 / 2 / 2 / 4
+  grid-area: form
 
   >.input
     width: 100%
@@ -47,99 +128,6 @@
       font-size: 1rem
       line-height: 2rem
 
-.sqncbrk-search
-  position: fixed
-  z-index: 1000
-  top: 0
-  left: 0
-  width: 100%
-  height: 100vh
-
-  pointer-events: none
-
-  &:before
-    position: absolute
-    top: 0
-    right: 0
-    width: 100%
-    height: 100%
-    content: ''
-
-    background: $black
-    opacity: 0
-    transition: opacity 0.5s $fade
-
-
-  .info
-    z-index: 1000
-
-    align-self: start
-
-    color: $white
-    opacity: 0
-    transform: translate3d(0, $spacing * 2, 0)
-    transition: opacity 0.4s $fade, transform 0.4s $fade
-
-  >.close
-    justify-self: end
-    grid-area: 1 / 2
-    height: $spacing * 6
-
-    mix-blend-mode: exclusion
-    background: transparent
-    border: 0
-    opacity: 0
-    transition: opacity 0.3s
-
-    cursor: pointer
-
-    +for-size(tablet-portrait-up)
-      grid-area: 1 / 4
-
-    +for-size(tablet-landscape-up)
-      padding: $spacing
-
-    +for-size(desktop-up)
-      height: $spacing * 13
-      padding: $spacing * 4
-
-      transition: transform 0.4s $jump
-
-    &:hover
-      +for-size(desktop-up)
-        transform: rotate(90deg)
-
-  >.sqncbrk-card
-    align-self: start
-
-    &:nth-child(odd)
-      grid-area: 3 / 1 / 3 / 3
-
-      +for-size(tablet-portrait-up)
-        grid-area: 3 / 1 / 3 / 3
-
-      +for-size(tablet-landscape-up)
-        grid-area: 3 / 2 / 3 / 4
-
-      +for-size(desktop-up)
-        grid-area: 3 / 2
-
-    &:nth-child(even)
-      grid-area: 4 / 1 / 4 / 3
-
-      +for-size(tablet-portrait-up)
-        grid-area: 3 / 3 / 3 / 5
-
-      +for-size(tablet-landscape-up)
-        grid-area: 4 / 2 / 4 / 4
-
-      +for-size(desktop-up)
-        grid-area: 3 / 3
-
-  >.sqncbrk-form>.input
-    transform: scale3d(0,1,1)
-    transform-origin: 0% 50%
-    transition: transform 0.3s $fade
 
 .search--open
   z-index: 2

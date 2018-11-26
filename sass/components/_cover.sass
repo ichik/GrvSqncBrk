@@ -1,0 +1,44 @@
+.sqncbrk-cover
+  display: block
+  height: 70vh
+  width: 100%
+
+  position: relative
+
+  color: $white
+
+  > .cover
+    position: absolute
+    height: 100%
+    width: 100%
+
+  > .cover.b-loaded
+    background-size: cover
+    background-position: center center
+
+  > .meta
+    display: grid
+    position: absolute
+    bottom: 0
+    width: 100%
+    height: 100%
+
+    padding: 0 0 $spacing * 2 0
+    align-items: end
+
+    background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 34%, rgba(0,0,0,0.1) 47%, rgba(0,0,0,0.05) 67%, transparent 96.5%)
+
+    > .wrap > .date
+      grid-area: 1 / 1 / 1 / 3
+      height: $spacing * 4
+
+      font-size: 1rem
+
+      +for-size(tablet-landscape-up)
+        grid-area: 1 / 2
+
+    > .wrap > .title
+      grid-area: 2 / 1 / 2 / 3
+
+      +for-size(tablet-landscape-up)
+        grid-area: 2 / 2 / 2 / 5

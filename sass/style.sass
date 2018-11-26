@@ -1116,11 +1116,10 @@ a.search-link
     display: block
     border: 0
     color: $black
-    padding: 20px 30px 20px 30px
+    padding: $gutter-mobile
     +transition(all 0.2s ease)
 
     +for-size(phone-only)
-        padding: 0 !important
 
     &:hover
         box-shadow: 0 2px 12px -4px rgba(31, 31, 31, 0.5)
@@ -1138,7 +1137,6 @@ a.search-link
 
         +for-size(phone-only)
             border: 0
-            padding-left: $gutter-mobile
             display: block
             margin-right: 0
             width: 100%
@@ -1150,12 +1148,7 @@ a.search-link
         margin-bottom: $baselineheight / 2
 
         +for-size(phone-only)
-            padding-left: $gutter-mobile
             margin-top: 4px
-
-    p
-        +for-size(phone-only)
-            padding-left: $gutter-mobile
 
     #primary &:visited h3
         color: #8c66b2

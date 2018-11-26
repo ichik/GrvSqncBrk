@@ -246,7 +246,7 @@ em
 
 .highlight
     background: $highlight
-    margin-bottom: $baselineheight
+    margin: $baselineheight 0
     padding-top: $baselineheight
     padding-bottom: 0
     padding-left: $gutter-tablet
@@ -981,8 +981,7 @@ article.post
         width: $desktop-width
 
 #primary #platforms
-    // width: $desktop-width + $gutter
-    padding-right: $baselineheight
+    padding: 0 $baselineheight 0 0
 
 #primary aside
     width: $desktop-width
@@ -1041,14 +1040,12 @@ article.post
     justify-content: flex-start
     padding: 0 $gutter-tablet
     max-width: 100%
-    margin-bottom: $baselineheight
 
     +for-size(desktop-up)
         max-width: $desktop-width + $gutter * 2 + $caption-width
         padding-left: $gutter
 
     +for-size(phone-only)
-        padding-top: $baselineheight / 2
         padding: 0 $gutter-mobile
 
     +for-size(big-desktop-up)

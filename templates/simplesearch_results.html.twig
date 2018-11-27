@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-<div class="sqncbrk-outer form-wrapper">
+<div class="sqncbrk-grid form-wrapper">
   <form class="sqncbrk-form" action="{{ base_url_relative }}/search" method="get">
     <input class="input" type="search" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ query }}" autofocus="true" onfocus="this.value = this.value;" name="query" />
     <label class="info desktop">Hit enter to search</label>
   </form>
 </div>
-<div class="sqncbrk-outer sqncbrk-searchfeed">
+<div class="sqncbrk-grid sqncbrk-searchfeed">
   {% for page in search_results %}
   {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
   {% endfor %}
@@ -23,7 +23,7 @@
 {% endblock %}
 
 {% block header %}
-<header class="sqncbrk-header sqncbrk-outer">
+<header class="sqncbrk-header sqncbrk-grid">
 	<a href="/" class="logo"><h1>{{ site.title }}</h1></a>
 </header>
 {% endblock %}

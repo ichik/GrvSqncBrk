@@ -7,17 +7,14 @@
   padding-top: $baselineheight * 2
 
 .sqncbrk-content > .highlight
+  grid-column: first / last
   margin: $baselineheight 0
 
-  +for-size(tablet-landscape-up)
-    grid-column: first / last
-
 .sqncbrk-content,.highlight
-  > *
-    grid-column: span 2
-    margin: $baselineheight / 4 0 $baselineheight / 4 * 3 0
 
   > p, > iframe, > aside
+    grid-column: span 2
+    margin: $baselineheight / 4 0 $baselineheight / 4 * 3 0
     padding: 0 $spacing * 2
 
   > aside

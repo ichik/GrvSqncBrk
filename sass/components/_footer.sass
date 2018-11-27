@@ -14,12 +14,12 @@
   z-index: -1
 
   +for-size(tablet-landscape-up)
-    grid-template-areas: ". pages external ." ". author . ."
+    grid-template-areas: ". pages pages pages external external external ." ". author author author . . . ."
 
     padding-top: 30vh
 
   +for-size(desktop-up)
-    grid-template-areas: ". pages pages external external ." " . author author . . ."
+    grid-template-areas: ". pages pages pages external external external ." " . author author author . . . . ."
 
   > .pages
     display: grid

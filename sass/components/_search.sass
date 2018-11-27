@@ -16,10 +16,10 @@
     grid-template-areas: ". close" "form form" "first second"
 
   +for-size(tablet-landscape-up)
-    grid-template-areas: ". . . close" ". form form ." ". first first ." ". second second ."
+    grid-template-areas: ". . . . . . . close" ". form form form form form form ." ". first first first first first first ." ". second second second second second second ."
 
   +for-size(desktop-up)
-    grid-template-areas: ". . . . . close" ". form form form form ." ". first first second second ."
+    grid-template-areas: ". . . . . . . close" ". form form form form form form ." ". first first first second second second ."
 
   &:before
     position: absolute
@@ -170,11 +170,9 @@
     background: $black
 
     +for-size(tablet-landscape-up)
-      grid-template-areas: ". form form ."
+      grid-template-areas: ". form form form form form form ."
 
     +for-size(desktop-up)
-      grid-template-areas: ". form form form form ."
-
       padding-top: $spacing * 15
 
 .sqncbrk-searchfeed
@@ -191,7 +189,7 @@
       grid-column: span 1
 
     +for-size(tablet-landscape-up)
-      grid-column: content-start / content-end
+      grid-column: content-start / gutter-end
 
     +for-size(desktop-up)
 
@@ -199,4 +197,4 @@
         grid-column: content-start / content-center
 
       &:nth-child(even)
-        grid-column: content-center / content-end
+        grid-column: content-center / gutter-end

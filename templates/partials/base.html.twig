@@ -27,7 +27,7 @@
 			{% do assets.add('theme://css/style.css',100) %}
 			{% if page.header.customcss %}
 				{% set path = base_url ~ '/' ~ page.filePathClean|replace({('/'~page.name): ''}) %}
-				{% do assets.add(path ~ '/custom.css',10,false) %}
+				{% do assets.add(path ~ '/custom.css',10) %}
 			{% endif %}
 			{{ assets.css() }}
 		{% endblock %}

@@ -33,3 +33,30 @@
 
       font-size: 0.9rem
       line-height: $baselineheight / 2
+
+.sqncbrk-content a
+
+  &:link
+    color: $blue
+    border-bottom: 1px solid rgba($blue,0.3)
+    transition: color 0.1s $fade, border-color 0.1s $fade
+
+  &:visited
+    color: $purple
+    border-color: rgba($purple,0.3)
+
+  &:hover,&:active
+    color: $red
+    border-color: rgba($red,0.3)
+
+.sqncbrk-content abbr[title]
+    text-transform: uppercase
+    font-size: .9rem
+    letter-spacing: $basefontsize * .15
+    font-family: MuseoSansBold
+    cursor: help
+    border-bottom: 0
+    margin-right: -$spacing / 2
+    text-decoration: none
+    background-color: rgba($yellow, .1)
+    padding: $spacing / 2 $spacing / 2 $spacing / 2 $spacing / 2 * 1.5

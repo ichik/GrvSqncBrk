@@ -12,16 +12,24 @@
 
 .sqncbrk-content,.highlight
 
-  > p, > iframe, > aside
+  > p, > iframe, > aside, > h3
     grid-column: span 2
-    margin: $baselineheight / 4 0 $baselineheight / 4 * 3 0
     padding: 0 $spacing * 2
+
+  > p, > iframe, > aside
+    margin: $baselineheight / 4 0 $baselineheight / 4 * 3 0
+
+  > iframe
+    justify-self: center
+
+  > h3
+    margin: $baselineheight * 2 0 $baselineheight / 4 * 3 0
 
   > aside
     font-family: MuseoSansItalic
 
   +for-size (tablet-landscape-up)
-    > p, > iframe
+    > p, > iframe, > h3
       grid-column: content-start / content-end
 
     > aside

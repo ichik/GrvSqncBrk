@@ -9,11 +9,17 @@
 
   > .sqncbrk-post
     position: relative
-    height: 70vh
+    height: 60vh
 
     margin-bottom: $spacing / 2
 
     background: $black
+
+    +for-size(tablet-landscape-up)
+      height: 70vh
+
+    +for-size(desktop-up)
+      height: 80vh
 
     > .link > .cover
       opacity: .9

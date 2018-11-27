@@ -1,10 +1,16 @@
 .sqncbrk-cover
   display: block
-  height: 70vh
+  height: 60vh
   width: 100%
   position: relative
 
   color: $white
+
+  +for-size(tablet-landscape-up)
+    height: 70vh
+
+  +for-size(desktop-up)
+    height: 80vh
 
   > .cover
     position: absolute

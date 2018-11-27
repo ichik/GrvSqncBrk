@@ -4,19 +4,35 @@
   box-shadow: 0 $spacing $spacing * 2 $spacing / 2 $black
 
 .sqncbrk-content
-  padding-top: $spacing * 7.5
+  padding-top: $baselineheight * 2
 
 .sqncbrk-content > .highlight
+  margin: $baselineheight 0
+
   +for-size(tablet-landscape-up)
     grid-column: first / last
 
 .sqncbrk-content,.highlight
   > *
     grid-column: span 2
+    margin: $baselineheight / 4 0 $baselineheight / 4 * 3 0
 
-  > p, > iframe
+  > p, > iframe, > aside
     padding: 0 $spacing * 2
+
+  > aside
+    font-family: MuseoSansItalic
 
   +for-size (tablet-landscape-up)
     > p, > iframe
       grid-column: content-start / content-end
+
+    > aside
+      grid-column: gutter-start / gutter-end
+      padding: $baselineheight / 4 + 1px 0 0 0
+
+      border-top: 1px solid rgba($black,0.5)
+      color: rgba($black,0.9)
+
+      font-size: 0.9rem
+      line-height: $baselineheight / 2

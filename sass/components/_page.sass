@@ -17,12 +17,15 @@
 
 .sqncbrk-content,.highlight
 
-  > p, > aside, > h3
+  > p, > aside, > h3, > blockquote
     grid-column: span 2
     padding: 0 $spacing * 2
 
-  > p, > aside
+  > p, > aside, > blockquote
     margin: $baselineheight / 4 0 $baselineheight / 4 * 3 0
+
+  > p
+    justify-self: center
 
   > h3
     margin: $baselineheight * 2 0 $baselineheight / 4 * 3 0
@@ -34,7 +37,7 @@
       margin-bottom: $spacing * 2
 
   +for-size (tablet-landscape-up)
-    > p, > h3
+    > p, > h3, > blockquote
       grid-column: content-start / content-end
 
     > aside
@@ -82,6 +85,9 @@
   margin: $baselineheight / 4 0 $baselineheight / 4 * 3 0
   overflow: hidden
   padding-bottom: 56.25%
+
+  &.bandcamp
+    padding-bottom: 120px
 
   > .sqncbrk-embed
     position: absolute

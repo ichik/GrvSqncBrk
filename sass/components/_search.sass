@@ -19,7 +19,7 @@
     grid-template-areas: ". . . . . . . close" ". form form form form form form ." ". first first first first first first ." ". second second second second second second ."
 
   +for-size(desktop-up)
-    grid-template-areas: ". . . . . . . close" ". form form form form form form ." ". first first first second second second ."
+    grid-template-areas: ". . . . . close" ". form form form form ." ". first first second second ."
 
   &:before
     position: absolute
@@ -176,6 +176,7 @@
       grid-template-areas: ". form form form form form form ."
 
     +for-size(desktop-up)
+      grid-template-areas: ". form form form form ."
       padding-top: $spacing * 15
 
 .sqncbrk-searchfeed

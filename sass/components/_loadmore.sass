@@ -7,7 +7,7 @@
     grid-template-areas: ". button button button button button button ."
 
   +for-size(desktop-up)
-    grid-template-areas: ". button button button button button button ."
+    grid-template-areas: ". . button button . ."
 
   > .button
     display: block
@@ -60,7 +60,7 @@
     width: $spacing * 6
     position: relative
     top: 50%
-    grid-area: 1 / 2 / 1 / 4
+    grid-area: button
     margin: -$spacing * 3 auto 0 auto
 
     border: 2px solid rgba($black,0.2)

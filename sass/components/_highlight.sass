@@ -10,6 +10,15 @@
   > aside
     color: rgba($white,0.9)
 
+  a
+    &:link
+      color: $yellow
+      border-bottom: 1px solid rgba($yellow,0.3)
+      transition: color 0.1s $fade
+
+    &:hover
+      color: $white
+
 .highlight.white
   background-color: $white
   color: $black

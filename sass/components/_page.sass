@@ -10,8 +10,10 @@
   grid-column: first / last
   margin: $baselineheight 0
 
-.sqncbrk-content > p:nth-of-type(1)
-    order: -1
+.sqncbrk-content
+  +for-size(tablet-landscape-up)
+    > p:nth-of-type(1)
+      order: -1
 
 .sqncbrk-content,.highlight
 
@@ -40,7 +42,6 @@
       padding: 6px 0 0 0
 
       border-top: 4px solid $yellow
-      color: rgba($black,0.9)
 
       font-size: 0.9rem
       line-height: $baselineheight / 2

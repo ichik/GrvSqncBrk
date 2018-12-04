@@ -1,0 +1,10 @@
+<video class="cover" preload="auto" autoplay loop muted playsinline volume="0" poster="/{{ page.slug }}/cover.jpg">
+  <source src="/{{ page.slug }}/cover.webm" type='video/webm;codecs="vp8, vorbis"'/>
+  <source src="/{{ page.slug }}/cover.mp4" type="video/mp4">
+</video>
+<div class="meta">
+  <div class="wrap sqncbrk-grid">
+    <time class="date" datetime="{{ page.date|date('Y-m-d') }}">{{ 'SQNC_MONTHS'|ta(page.date|date('n') - 1) }} {{ page.date|date('d') }}, {{ page.date|date('Y') }}</time>
+    <h2 class="title">{{ page.title }}</h2>
+  </div>
+</div>

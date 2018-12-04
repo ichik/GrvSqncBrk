@@ -3,7 +3,11 @@
 {% block content %}
 <main class="sqncbrk-page">
   <section class="sqncbrk-cover">
+    {% if page.header.videocover and (browser.platform == "macintosh" or browser.platform == "windows" or browser.platform == "linux") %}
+    {% include 'partials/post-cover-video.html.twig' %}
+    {% else %}
     {% include 'partials/post-cover.html.twig' %}
+    {% endif %}
   </section>
   <section class="sqncbrk-grid sqncbrk-content">
     {% if page.header.developer %}

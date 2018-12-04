@@ -76,15 +76,24 @@ strong
   font-weight: normal
 
 blockquote
-  font-size: 1.5rem
-
   border-left: 4px solid $yellow
 
+  font-size: 1.5rem
+  font-family: MuseoSansItalic
+
   &:before, &:after
-    display: inline-block
+    display: inline
     margin: 0 $spacing
 
-    content: "\201D"
     color: $yellow
 
     font-family: Museo
+    font-size: 2rem
+
+  &:before
+    float: left
+
+    content: "\201C"
+
+  &:after
+    content: "\201D"

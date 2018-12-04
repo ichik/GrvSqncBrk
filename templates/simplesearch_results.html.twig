@@ -12,8 +12,8 @@
   </form>
 </div>
 <div class="sqncbrk-grid sqncbrk-searchfeed">
-  {% for page in search_results %}
-  {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
+  {% for p in search_results %}
+  {% include 'partials/simplesearch_item.html.twig' %}
   {% endfor %}
 </div>
 {% endblock %}

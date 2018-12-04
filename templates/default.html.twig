@@ -6,17 +6,19 @@
     {% include 'partials/post-cover.html.twig' %}
   </section>
   <section class="sqncbrk-grid sqncbrk-content">
-    {% if page.header.platform %}
-    <p>
-    {% for p in page.header.platform %}
-      {% if loop.last %}{{ p }}{% else %}{{ p }}, {% endif %}
-    {% endfor %}
-    </p>
-    {% endif %}
     {% if page.header.developer %}
-    <p>
+    <aside>
+      <p>
       {% if page.header.developersite %}<a href="{{ page.header.developersite }}">{{ page.header.developer }}</a>, {{ page.header.release }}{% else %}{{ page.header.developer }}, {{page.header.release }}{% endif %}
-    </p>
+      </p>
+      {% if page.header.platform %}
+      <p>
+      {% for p in page.header.platform %}
+      {% if loop.last %}{{ p }}{% else %}{{ p }}, {% endif %}
+      {% endfor %}
+      </p>
+      {% endif %}
+    </aside>
     {% endif %}
     {{ page.content }}
   </section>

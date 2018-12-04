@@ -10,6 +10,9 @@
   grid-column: first / last
   margin: $baselineheight 0
 
+.sqncbrk-content > p:nth-of-type(1)
+    order: -1
+
 .sqncbrk-content,.highlight
 
   > p, > aside, > h3
@@ -25,15 +28,18 @@
   > aside
     font-family: MuseoSansItalic
 
+    > p
+      margin-bottom: $spacing * 2
+
   +for-size (tablet-landscape-up)
     > p, > h3
       grid-column: content-start / content-end
 
     > aside
       grid-column: gutter-start / gutter-end
-      padding: $baselineheight / 4 + 1px 0 0 0
+      padding: 6px 0 0 0
 
-      border-top: 1px solid rgba($black,0.5)
+      border-top: 4px solid $yellow
       color: rgba($black,0.9)
 
       font-size: 0.9rem

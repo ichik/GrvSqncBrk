@@ -1,5 +1,9 @@
-<div class="cover b-lazy" data-src="{{ page.media['cover.jpg'].url }}" data-src-small="{{ page.media['cover.jpg'].cropResize(750,420).url }}">
-</div>
+<img
+  class="cover lazyload"
+  src="{{ page.media['cover.jpg'].quality(1).url }}"
+  data-src="{{ page.media['cover.jpg'].url }}"
+  alt="{{ page.title }}"
+/>
 <div class="meta">
   <div class="wrap sqncbrk-grid">
     <time class="date" datetime="{{ page.date|date('Y-m-d') }}">{{ 'SQNC_MONTHS'|ta(page.date|date('n') - 1) }} {{ page.date|date('d') }}, {{ page.date|date('Y') }}</time>

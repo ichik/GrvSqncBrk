@@ -5,11 +5,6 @@ function showContent(e) {
         t.className = t.className + " progress", r && (r.open("get", e), r.onreadystatechange = function() {
           if (4 == r.readyState) {
             t.remove(), n.innerHTML = n.innerHTML + r.responseText;
-            new Blazy({
-                breakpoints: [{
-                    width: 375,
-                    src: "data-src-small"
-                }]            })
           }
         }, r.send(null))
 };
@@ -28,14 +23,8 @@ function createRequestObject() {
             }
         }
     }
-}! function() {
-    new Blazy({
-        breakpoints: [{
-            width: 375,
-            src: "data-src-small"
-        }]
-    })
-}();
+};
+
 ;(function(window) {
 
 	'use strict';

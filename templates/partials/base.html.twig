@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		{% block head %}
+	{% block head %}
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -23,15 +23,16 @@
 		{% endblock %}
 
 		{% block stylesheets %}
-			<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-			{% do assets.add('theme://css/style.css',100) %}
-			{% if page.header.customcss %}
-				{% set path = base_url ~ '/' ~ page.filePathClean|replace({('/'~page.name): ''}) %}
-				{% do assets.add(path ~ '/custom.css',10) %}
-			{% endif %}
-			{{ assets.css() }}
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		{% do assets.add('theme://css/style.css',100) %}
+		{% if page.header.customcss %}
+			{% set path = base_url ~ '/' ~ page.filePathClean|replace({('/'~page.name): ''}) %}
+			{% do assets.add(path ~ '/custom.css',10) %}
+		{% endif %}
+		{{ assets.css() }}
 		{% endblock %}
 
+		{% block opengraph %}
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="{{ site.twitter_site }}">
 		<meta name="twitter:title" content="{% if header.title %}{{ header.title }}{% else %}{{ site.title }}{% endif %}">
@@ -47,27 +48,24 @@
 		<meta property="og:description" content="{% if header.description %}{{ header.description }}{% else %}{{ site.metadata.description }}{% endif %}" />
 		<meta property="og:site_name" content="{{ site.twitter_domain }}" />
 		{% endblock %}
+
+	    {% block javascript %}
+	      {% do assets.add('theme://js/sqncbrk.min.js', {'priority':100, 'pipeline':false, 'loading':'defer'}) %}
+	      {{ assets.js('head', {'loading': 'defer'}) }}
+	    {% endblock %}
+
+	{% endblock %}
 	</head>
 
 	{% block body %}<body class="{{ browser.getbrowser }}">{% endblock %}
 
 		{% block header %}{% include 'partials/header.html.twig' %}{% endblock %}
 
-    {% block content %}
+	    {% block content %} {% endblock %}
 
-    {% endblock %}
-
-    {% block search %}
-      {% include 'partials/simplesearch_searchbox.html.twig' %}
-    {% endblock %}
+	    {% block search %}{% include 'partials/simplesearch_searchbox.html.twig' %}{% endblock %}
 
 		{% block footer %}{% include 'partials/footer.html.twig' %}{% endblock %}
-
-		{% block javascript %}
-			{% do assets.add('theme://vendors/blazy/blazy.min.js',11) %}
-			{% do assets.add('theme://js/sqncbrk.min.js',10) %}
-			{{ assets.js() }}
-		{% endblock %}
 
 	</body>
 </html>

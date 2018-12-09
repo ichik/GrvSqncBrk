@@ -1,4 +1,11 @@
-<video class="cover" preload="auto" autoplay loop muted playsinline volume="0" poster="/{{ page.slug }}/cover.jpg">
+<video
+  class="cover lazyload"
+  preload="none"
+  autoplay loop muted playsinline
+  volume="0"
+  poster="{{ page.media['cover.jpg'].quality(1).url }}"
+  data-poster="/{{ page.slug }}/cover.jpg"
+>
   <source src="/{{ page.slug }}/cover.webm" type='video/webm;codecs="vp8, vorbis"'/>
   <source src="/{{ page.slug }}/cover.mp4" type="video/mp4">
 </video>

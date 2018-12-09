@@ -1,6 +1,0 @@
-[submodule "vendors/sanitize.css"]
-	path = vendors/sanitize.css
-	url = https://github.com/jonathantneal/sanitize.css.git
-[submodule "vendors/blazy"]
-	path = vendors/blazy
-	url = https://github.com/dinbror/blazy.git

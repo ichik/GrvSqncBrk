@@ -6,6 +6,7 @@
 
   overflow: hidden
 
+  background: $black
   color: $white
 
   +for-size(tablet-landscape-up)
@@ -20,6 +21,14 @@
     height: 100%
     width: 100%
     object-fit: cover
+
+    color: $black
+    filter: blur($spacing / 2)
+    transition: filter 400ms $fade
+
+    &.lazyloaded
+      filter: blur(0)
+
 
   > .cover.b-loaded
     background-size: cover

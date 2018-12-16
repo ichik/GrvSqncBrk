@@ -40,20 +40,20 @@
 
     background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 34%, rgba(0,0,0,0.1) 47%, rgba(0,0,0,0.05) 67%, transparent 96.5%)
 
-    > .wrap
-      grid-template-areas: "time time" "title title"
+  > .meta > .wrap
+    grid-template-areas: "time time" "title title"
 
-      +for-size(tablet-landscape-up)
-        grid-template-areas: ". time time time . . . ." ". title title title title title title ."
+    +for-size(tablet-landscape-up)
+      grid-template-areas: ". time time time . . . ." ". title title title title title title ."
 
-      +for-size(desktop-up)
-        grid-template-areas: ". time time time time ." ". title title title title ."
+    +for-size(desktop-up)
+      grid-template-areas: ". time time time time ." ". title title title title ."
 
-    > .wrap > .date
-      grid-area: time
-      height: $spacing * 4
+  > .meta > .wrap > .date
+    grid-area: time
+    height: $spacing * 4
 
-      font-size: 1rem
+    font-size: 1rem
 
-    > .wrap > .title
-      grid-area: title
+  > .meta > .wrap > .title
+    grid-area: title

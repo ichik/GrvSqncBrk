@@ -1,6 +1,5 @@
 .sqncbrk-loadmore
   height: 50vh
-
   grid-template-areas: "button button"
 
   +for-size(tablet-landscape-up)
@@ -10,18 +9,17 @@
     grid-template-areas: ". . button button . ."
 
   > .button
-    display: block
-    height: $spacing * 6
-    width: $spacing * 20
     position: relative
+    display: block
     top: 50%
     margin: -$spacing * 3 auto 0 auto
-
+    height: $spacing * 6
+    width: $spacing * 20
     grid-area: button
 
+    background: $black
     border-radius: $spacing / 2
     color: $white
-    background: $black
     overflow: hidden
 
     font-size: 1rem
@@ -44,8 +42,8 @@
       background: $white
       content: ''
 
-      transform: rotate(0)
       opacity: 0
+      transform: rotate(0)
 
     &:hover
       animation: button-glitch 750ms infinite
@@ -55,20 +53,19 @@
         opacity: 0.3
 
   &:after
+    position: relative
     display: none
+    top: 50%
+    margin: -$spacing * 3 auto 0 auto
+    grid-area: button
     height: $spacing * 6
     width: $spacing * 6
-    position: relative
-    top: 50%
-    grid-area: button
-    margin: -$spacing * 3 auto 0 auto
 
     border: 2px solid rgba($black,0.2)
     border-top-color: $black
     border-radius: $spacing * 3
-    transition: opacity 0.4s $fade
     opacity: 0
-
+    transition: opacity 0.4s $fade
     content: ''
 
   &.progress > .button
@@ -81,58 +78,61 @@
     &:after
       display: block
 
-      opacity: 1
       animation: loader 1s $jump infinite
+      opacity: 1
 
 @keyframes button-glitch
   0%
     transform: skewX(0deg)
   5%
+    opacity: 0.75
     transform: skewX(2deg)
-    opacity: 0.75
   10%
-    transform: skewX(0deg)
     opacity: 1
+    transform: skewX(0deg)
   15%
+    opacity: 0.75
     transform: skewX(-5deg)
-    opacity: 0.75
   20%
-    transform: skewX(0deg)
     opacity: 1
+    transform: skewX(0deg)
   45%
+    opacity: 0.75
     transform: skewX(3deg)
-    opacity: 0.75
   50%
-    transform: skewX(0deg)
     opacity: 1
+    transform: skewX(0deg)
   55%
-    transform: skewX(0deg)
     opacity: 0.75
-  60%
     transform: skewX(0deg)
+  60%
     opacity: 1
+    transform: skewX(0deg)
   75%
     transform: skewX(2deg)
   80%
     transform: skewX(0deg)
   85%
-    transform: skewX(-8deg)
     opacity: 0.75
+    transform: skewX(-8deg)
   90%
-    transform: skewX(0deg)
     opacity: 1
+    transform: skewX(0deg)
   100%
     transform: skewX(0deg)
 
 @keyframes scan
   0%
     top: 0%
+
     transform: rotate(3deg)
   50%
     top: 97%
+
     transform: rotate(-2deg)
   100%
     top: 0%
+
     transform: rotate(1deg)
 
 @keyframes loader

@@ -1,11 +1,9 @@
 .sqncbrk-header
   position: fixed
-  z-index: 1
   height: $spacing * 7.5
-
-  grid-template-areas: "logo search"
-
+  z-index: 1
   padding: $spacing - 2px $spacing * 2 $spacing + 2px $spacing * 2
+  grid-template-areas: "logo search"
 
   mix-blend-mode: exclusion
 
@@ -13,15 +11,14 @@
     grid-template-areas: "logo . . . . . . . . search"
 
   +for-size(desktop-up)
-    grid-template-areas: "logo . . . . search"
     padding: $spacing $spacing * 2
+    grid-template-areas: "logo . . . . search"
 
   +for-size(desktop-up)
     height: $spacing * 15
 
   > .logo
     display: inline-block
-
     grid-area: logo
     justify-self: start
 
@@ -36,25 +33,22 @@
 
   > .button
       position: relative
-      height: $spacing * 6
-
       grid-area: search
       justify-self: end
+      height: $spacing * 6
       padding: $spacing / 4 0 0 0
 
       background: transparent
       border: 0
       opacity: 1
-
       cursor: pointer
 
       +for-size(tablet-landscape-up)
         padding: $spacing
 
       +for-size(desktop-up)
-        height: 100%
-
         padding: $spacing * 4
+        height: 100%
 
         >svg
           transform: rotate(15deg) scale(0.95)
@@ -86,8 +80,8 @@ $colors: $red $blue $yellow $green
     opacity: 0.3
 
   40%
-    opacity: 0.5
     box-shadow: 0 0 0 2px rgba($blue,0.5), 0 0 5px 5px $green, 0 0 0 5px rgba($white,0.5)
+    opacity: 0.5
 
   100%
     box-shadow: 0 0 0 2px rgba($green,0.1), 0 0 5px 5px $red, 0 0 0 5px rgba($yellow,0.5)

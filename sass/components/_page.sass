@@ -36,7 +36,10 @@
     > p
       margin-bottom: $spacing * 2
 
-  +for-size (tablet-landscape-up)
+      +for-size(big-desktop-up)
+        margin-bottom: $spacing
+
+  +for-size(tablet-landscape-up)
     > p, > h3, > blockquote
       grid-column: content-start / content-end
 
@@ -48,6 +51,11 @@
 
       font-size: 0.9rem
       line-height: $baselineheight / 2
+
+  +for-size(big-desktop-up)
+    > aside
+      font-size: 1.2rem
+      line-height: $baselineheight / 1.5
 
 .sqncbrk-content a
 

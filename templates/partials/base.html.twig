@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 	{% block head %}
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="theme-color" content="#000a14" />
+    	<meta name="theme-color" content="#000a14" />
 
 		{% if header.description %}
 		<meta name="description" content="{{ header.description }}">
@@ -51,7 +50,7 @@
 		{% endblock %}
 
 	    {% block javascript %}
-	      {% do assets.add('theme://js/sqncbrk.min.js', {'priority':100, 'pipeline':false, 'loading':'defer'}) %}
+	      {% do assets.add('theme://js/sqncbrk.min.js', {'priority':100, 'pipeline':false}) %}
 	      {{ assets.js('head', {'loading': 'defer'}) }}
 	    {% endblock %}
 

@@ -1,6 +1,7 @@
 <article class="sqncbrk-card info">
   <a class="link" href="{{ p.url }}">
     <img
+      alt="{{ p.title }}"
       class="cover lazyload"
       src="{{ p.media['cover.jpg'].cropZoom(240,180).quality(1).url }}"
       data-src="{{ p.media['cover.jpg'].cropZoom(240,180).quality(100).enableProgressive.url }}"

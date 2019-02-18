@@ -1,0 +1,126 @@
+@font-face
+  font-display: swap
+  font-family: MuseoSans
+  font-weight: normal
+  src: url("../fonts/museosans.woff2") format("woff2")
+
+@font-face
+  font-display: swap
+  font-family: MuseoSansItalic
+  font-weight: normal
+  src: url("../fonts/museosansitalic.woff2") format("woff2")
+
+@font-face
+  font-display: swap
+  font-family: MuseoSansBold
+  font-weight: bold
+  src: url("../fonts/museosansbold.woff2") format("woff2")
+
+@font-face
+  font-display: swap
+  font-family: Museo
+  font-weight: normal
+  src: url("../fonts/museo.woff2") format("woff2")
+
+@font-face
+  font-display: block
+  font-family: Logo
+  font-weight: normal
+  src: url("../fonts/logo.woff2") format("woff2")
+
+body
+  color: $white
+  background: $black
+
+  font-family: MuseoSans
+  font-size: $basefontsize
+  line-height: $baselineheight
+
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility: hidden
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0
+
+  +for-size(tablet-landscape-up)
+    font-size: $basefontsize * 1.25
+
+  +for-size(big-desktop-up)
+    font-size: $basefontsize * 1.5
+
+::selection
+  background: $yellow
+
+h2,h3,h4
+  font-family: Museo
+  font-weight: normal
+
+h1
+  font-family: Logo
+  font-size: $basefontsize * 3
+  line-height: $basefontsize * 2.5
+  text-transform: lowercase
+
+h2
+  font-size: 2rem
+  line-height: 1.7rem
+
+  +for-size(tablet-portrait-up)
+    font-size: 3rem
+    line-height: 2.5rem
+
+  +for-size(tablet-landscape-up)
+    font-size: 3.5rem
+    line-height: 3rem
+
+  +for-size(desktop-up)
+    font-size: 4.5rem
+    line-height: 4rem
+
+h3
+  font-size: 1.5rem
+  line-height: 1.2rem
+
+  +for-size(tablet-portrait-up)
+    font-size: 2rem
+    line-height: 1.5rem
+
+  +for-size(tablet-landscape-up)
+    font-size: 2.5rem
+    line-height: 2rem
+
+h4
+  font-size: 1.2rem
+  line-height: 1rem
+
+a
+  text-decoration: none
+
+em
+  font-family: MuseoSansItalic
+  font-style: normal
+
+strong
+  font-family: MuseoSansBold
+  font-weight: normal
+
+blockquote
+  border-left: 4px solid $yellow
+
+  font-size: 1.5rem
+  font-family: MuseoSansItalic
+
+  &:before, &:after
+    display: inline
+    margin: 0 $spacing
+
+    color: $yellow
+
+    font-family: Museo
+    font-size: 2rem
+
+  &:before
+    float: left
+
+    content: "\201C"
+
+  &:after
+    content: "\201D"

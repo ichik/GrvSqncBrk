@@ -1,0 +1,16 @@
+<img
+  alt="{{ page.title }}"
+  src="{{ page.media['cover.jpg'].quality(1).url }}"
+  data-sizes="auto"
+  data-srcset="{{ page.media['cover.jpg'].cropZoom(600,340).url }} 600w,
+  {{ page.media['cover.jpg'].cropZoom(1280,720).url }} 1280w,
+  {{ page.media['cover.jpg'].cropzoom(1920,1080).url }} 1920w"
+  data-src="{{ page.media['cover.jpg'].url }}"
+  class="cover lazyload"
+/>
+<div class="meta">
+  <div class="wrap sqncbrk-grid">
+    <time class="date" datetime="{{ page.date|date('Y-m-d') }}">{{ 'SQNC_MONTHS'|ta(page.date|date('n') - 1) }} {{ page.date|date('d') }}, {{ page.date|date('Y') }}</time>
+    <h2 class="title">{{ page.title }}</h2>
+  </div>
+</div>

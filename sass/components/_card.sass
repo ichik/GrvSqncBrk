@@ -1,0 +1,38 @@
+.sqncbrk-card .link
+  display: grid
+  grid-template-columns: 90px 1fr
+  grid-gap: $spacing
+  min-height: $spacing * 10.5
+
+  color: $white
+  background: $black
+  transition: background-color .6s $fade
+
+  +for-size(tablet-landscape-up)
+    grid-gap: 0 $spacing
+    grid-template-columns: 140px 1fr
+
+  +for-size(desktop-up)
+    padding: $spacing
+
+  &:hover,&:active
+    background: rgba($yellow, .05)
+
+  > .cover
+    grid-area: 1 / 1 / 4 / 1
+
+  > .date, > .description
+    justify-self: start
+
+    font-size: 0.9rem
+    line-height: 1rem
+
+    +for-size(big-desktop-up)
+      font-size: 1rem
+      line-height: 1rem
+
+  > .description
+    display: none
+
+    +for-size(tablet-landscape-up)
+      display: block

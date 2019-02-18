@@ -5,50 +5,28 @@
 {% endblock %}
 
 {% block content %}
-<div id="primary" class="search-results content-area">
-    <form class="search-form" action="{{ base_url_relative }}/search" method="get">
-		<input class="search-input" type="search" placeholder="{{ "SEARCH"|t }}" id="search-input" autocomplete="off" value="{{ query }}" autofocus="true" onfocus="this.value = this.value;" name="query">
-		<label for="morphsearch-input">Press Enter to search</label>
-		<button class="search-submit" type="submit">{{ "SEARCH"|t }}</button>
-	</form>
-    {% for page in search_results %}
-        {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
-    {% endfor %}
-    {% if search_results.count == 0 %}
-    <div class="article-area">
-        <p>Nothing found on “{{ query }}”.</p>
-        <p>Let's look for something else, like <a href="{{ base_url_relative }}/search?query=Super+Metroid">Super Metroid</a>.</p>
-    </div>
-    {% endif %}
+<div class="sqncbrk-grid form-wrapper">
+  <form class="sqncbrk-form" action="{{ base_url_relative }}/search" method="get">
+    <input class="input" type="search" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ query }}" autofocus="true" onfocus="this.value = this.value;" name="query" />
+    <label class="info desktop">Hit enter to search</label>
+  </form>
+</div>
+<div class="sqncbrk-grid sqncbrk-searchfeed">
+  {% for p in search_results %}
+  {% include 'partials/simplesearch_item.html.twig' %}
+  {% endfor %}
 </div>
 {% endblock %}
 
 {% block body %}
-<body class="{{ browser.getbrowser }}">
+<body class="{{ browser.getbrowser }} sqncbrk-searchresults">
 {% endblock %}
 
 {% block header %}
-    <a href="/" id="backtoindex">
-        <h1>{{ site.title }}</h1>
-    </a>
+<header class="sqncbrk-header sqncbrk-grid">
+	<a href="/" class="logo"><h1>{{ site.title }}</h1></a>
+</header>
+{% endblock %}
 
-    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-    <label for="nav-trigger" id="open-button">
-        <div class="spinner diagonal part-1"></div>
-        <div class="spinner horizontal"></div>
-        <div class="spinner diagonal part-2"></div>
-    </label>
-
-    <div class="menu-wrap" id="morphSearch">
-        <div class="hamburger-insides">
-            <nav id="about-links">
-                <ul>
-                {% for p in pages.children %}{% if p.visible %}
-                    <li><a href="{{ p.rawRoute() }}" class="no-u"><span>{{ p.title }}</span></a></li>
-                {% endif %}{% endfor %}
-                    {# <li><a href="/ru{{ page.rawRoute() }}" class="no-u">По-русски</a></li> #}
-                </ul>
-            </nav>
-        </div>
-    </div>
+{% block search %}
 {% endblock %}

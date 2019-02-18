@@ -1,0 +1,60 @@
+.sqncbrk-cover
+  display: block
+  position: relative
+  height: 60vh
+  width: 100%
+
+  overflow: hidden
+
+  background: $black
+  color: $white
+
+  +for-size(tablet-landscape-up)
+    height: 70vh
+
+  +for-size(desktop-up)
+    height: 80vh
+
+  > .cover
+    position: absolute
+    height: 100%
+    width: 100%
+    object-fit: cover
+
+    color: $black
+
+  > .cover.b-loaded
+    background-size: cover
+    background-position: center center
+
+  > .meta
+    display: grid
+    position: absolute
+    bottom: 0
+    height: 100%
+    width: 100%
+    padding: $spacing * 2
+    align-items: end
+
+    background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 34%, rgba(0,0,0,0.1) 47%, rgba(0,0,0,0.05) 67%, transparent 96.5%)
+
+  > .meta > .wrap
+    grid-template-areas: "time time" "title title"
+
+    +for-size(tablet-landscape-up)
+      grid-template-areas: ". time time time . . . ." ". title title title title title title ."
+
+    +for-size(desktop-up)
+      grid-template-areas: ". time time time time ." ". title title title title ."
+
+  > .meta > .wrap > .date
+    grid-area: time
+    height: $spacing * 4
+
+    font-size: 1rem
+
+    +for-size(big-desktop-up)
+      font-size: 1.2rem
+
+  > .meta > .wrap > .title
+    grid-area: title

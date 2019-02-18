@@ -4,11 +4,11 @@
 {% set pagination = collection.params.pagination %}
 
 {% block content %}
-<div id="primary" class="content-area">
+  <main class="sqncbrk-feed" id="feed">
     {% for page in collection %}
         {% include 'partials/post-item.html.twig' %}
     {% endfor %}
 
     {% include 'partials/load-more.html.twig' %}
-</div>
+  </main>
 {% endblock %}

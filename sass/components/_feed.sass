@@ -1,0 +1,38 @@
+.sqncbrk-feed
+  padding-top: $spacing * 7.5
+
+  background: $white
+  box-shadow: 0 $spacing $spacing * 2 $spacing / 2 $black
+
+  will-change: contents
+
+  +for-size(desktop-up)
+    padding-top: $spacing * 15
+
+  > .sqncbrk-post
+    position: relative
+    height: 60vh
+    margin-bottom: $spacing / 2
+
+    background: $black
+
+    +for-size(tablet-landscape-up)
+      height: 70vh
+
+    +for-size(desktop-up)
+      height: 80vh
+
+    > .link > .cover
+      opacity: .9
+      transition: opacity 0.35s $fade
+      will-change: opacity
+
+    > .link  > .meta > .wrap
+        transition: transform 0.3s $jump
+        will-change: transform
+
+    > .link:hover > .cover
+      opacity: 1
+
+    > .link:hover  > .meta > .wrap
+        transform: translate3d(0, -$spacing * 2, 0)

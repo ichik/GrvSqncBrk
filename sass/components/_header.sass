@@ -1,0 +1,96 @@
+.sqncbrk-header
+  position: fixed
+  height: $spacing * 7.5
+  z-index: 1
+  padding: $spacing - 2px $spacing * 2 $spacing + 2px $spacing * 2
+  grid-template-areas: "logo search"
+
+  mix-blend-mode: exclusion
+
+  +for-size(tablet-landscape-up)
+    grid-template-areas: "logo . . . . . . . . search"
+
+  +for-size(desktop-up)
+    padding: $spacing $spacing * 2
+    grid-template-areas: "logo . . . . search"
+
+  +for-size(desktop-up)
+    height: $spacing * 15
+
+  > .logo
+    display: inline-block
+    grid-area: logo
+    justify-self: start
+
+    color: $white
+
+    +for-size(desktop-up)
+      justify-self: center
+      padding: $spacing * 3 $spacing * 4 $spacing * 5 $spacing * 4
+
+
+  > a.logo:hover
+    animation: glitch 0.8s infinite
+
+  > .button
+      position: relative
+      grid-area: search
+      justify-self: end
+      height: $spacing * 6
+      padding: $spacing / 4 0 0 0
+
+      background: transparent
+      border: 0
+      opacity: 1
+      cursor: pointer
+
+      +for-size(tablet-landscape-up)
+        padding: $spacing
+
+      +for-size(desktop-up)
+        padding: $spacing * 4
+        height: 100%
+
+        >svg
+          transform: rotate(15deg) scale(0.95)
+          transform-origin: 41.5% 41.5%
+          transition: opacity 0.3s $fade, transform 0.3s $jump
+
+      &:hover
+        +for-size(desktop-up)
+          >svg
+            transform: rotate(0) scale(1)
+
+      &.closed
+        display: none
+
+        opacity: 0
+
+        pointer-events: none
+
+$colors: $red $blue $yellow $green
+
+=glitch
+   $color: nth($colors, random(length($colors)))
+   $shadow-distance: 2px
+   text-shadow: random($shadow-distance * 3) - $shadow-distance random($shadow-distance * 3) - $shadow-distance 0 $color
+   transform: translateX(random($shadow-distance * 2) - $shadow-distance)
+
+@keyframes pulse
+  0%
+    opacity: 0.3
+
+  40%
+    box-shadow: 0 0 0 2px rgba($blue,0.5), 0 0 5px 5px $green, 0 0 0 5px rgba($white,0.5)
+    opacity: 0.5
+
+  100%
+    box-shadow: 0 0 0 2px rgba($green,0.1), 0 0 5px 5px $red, 0 0 0 5px rgba($yellow,0.5)
+    transform: scale(1.2)
+    opacity: 0
+
+@keyframes glitch
+  @for $i from 0 through 100
+    $percent: 0% + $i
+    #{$percent}
+      +glitch

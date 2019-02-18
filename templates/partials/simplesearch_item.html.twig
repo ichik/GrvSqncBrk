@@ -1,6 +1,13 @@
-<a class="search-link" href="{{ page. url }}"><div class="search-result">
-    <h3>{{ page. title }}</h3>
-    <time class="entry-date" datetime="{{ page.date|date('Y-m-d') }}">{{ page.date|date('d') }} {{ 'MONTHS_OF_THE_YEAR'|ta(page.date|date('n') - 1) }}, {{ page.date|date('Y') }}</time>
-    <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ page.media['cover.jpg'].cropZoom(320,180).url }}" />
-    <p>{{ page.header.description }}</p>
-</div></a>
+<article class="sqncbrk-card info">
+  <a class="link" href="{{ p.url }}">
+    <img
+      alt="{{ p.title }}"
+      class="cover lazyload"
+      src="{{ p.media['cover.jpg'].cropZoom(240,180).quality(1).url }}"
+      data-src="{{ p.media['cover.jpg'].cropZoom(240,180).quality(100).enableProgressive.url }}"
+    />
+    <time class="date" datetime="{{ p.date|date('Y-m-d') }}">{{ p.date|date('d') }} {{ 'MONTHS_OF_THE_YEAR'|ta(p.date|date('n') - 1) }}, {{ p.date|date('Y') }}</time>
+    <h4 class="title">{{ p.title }}</h4>
+    <p class="description">{{ p.header.description|truncate(105, true) }}</p>
+  </a>
+</article>

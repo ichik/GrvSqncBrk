@@ -10,6 +10,9 @@
   grid-column: first / last
   margin: $baselineheight 0
 
+  +for-size(big-desktop-up)
+    margin: $baselineheight * 1.25 0
+
 .sqncbrk-content
   +for-size(tablet-landscape-up)
     > p:nth-of-type(1)
@@ -24,6 +27,9 @@
   > p, > aside
     margin: $baselineheight / 4 0 $baselineheight / 4 * 3 0
 
+    +for-size(big-desktop-up)
+      margin: $baselineheight / 4 0 $baselineheight 0
+
   > blockquote
     margin: $baselineheight / 4 0 $baselineheight / 4 * 3 $spacing * 2
 
@@ -37,7 +43,7 @@
       margin-bottom: $spacing * 2
 
       +for-size(big-desktop-up)
-        margin-bottom: $spacing
+        margin: $spacing * 0.375 0 $spacing * 2.5 0
 
   +for-size(tablet-landscape-up)
     > p, > h3, > blockquote
@@ -55,7 +61,7 @@
   +for-size(big-desktop-up)
     > aside
       font-size: 1.2rem
-      line-height: $baselineheight / 1.5
+      line-height: $baselineheight * 0.625
 
 .sqncbrk-content a
 

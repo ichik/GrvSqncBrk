@@ -1,3 +1,7 @@
+# 1.0.2
+* Fixed JS error for opening search menu
+* Fixed date output for items in search menu
+
 # 1.0.1
 First set of bug-fixes:
 * Increased line-height for HD desktops, fixed aside line-height alignment

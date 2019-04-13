@@ -6,7 +6,7 @@
       src="{{ p.media['cover.jpg'].cropZoom(240,180).quality(1).url }}"
       data-src="{{ p.media['cover.jpg'].cropZoom(240,180).quality(100).enableProgressive.url }}"
     />
-    <time class="date" datetime="{{ p.date|date('Y-m-d') }}">{{ p.date|date('d') }} {{ 'MONTHS_OF_THE_YEAR'|ta(p.date|date('n') - 1) }}, {{ p.date|date('Y') }}</time>
+    <time class="date" datetime="{{ p.date|date('Y-m-d') }}">{{ p.date|date('d') }} {{ 'SQNC_MONTHS'|ta(p.date|date('n') - 1) }}, {{ p.date|date('Y') }}</time>
     <h4 class="title">{{ p.title }}</h4>
     <p class="description">{{ p.header.description|truncate(105, true) }}</p>
   </a>

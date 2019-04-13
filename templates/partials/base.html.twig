@@ -67,7 +67,7 @@
 		{% block footer %}{% include 'partials/footer.html.twig' %}{% endblock %}
 
     {% block bottom %}
-      {% do assets.add('theme://js/sqncbrk.js', {'priority':100, 'pipeline':false, 'group':'bottom'}) %}
+      {% do assets.add('theme://js/sqncbrk.min.js', {'priority':100, 'pipeline':false, 'group':'bottom'}) %}
       {{ assets.js('bottom') }}
     {% endblock %}
 

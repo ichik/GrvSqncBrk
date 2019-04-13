@@ -31,8 +31,8 @@ function createRequestObject() {
 
 	var openCtrl = document.getElementById('btn-search'),
 		closeCtrl = document.getElementById('btn-search-close'),
-		searchContainer = document.querySelector('.sqncbrk-search'),
-		inputSearch = searchContainer.querySelector('.input');
+		searchContainer = document.getElementById('sqncbrk-search'),
+		inputSearch = searchContainer.querySelector('input');
 
 	function init() {
 		initEvents();

@@ -49,10 +49,9 @@
 		<meta property="og:site_name" content="{{ site.twitter_domain }}" />
 		{% endblock %}
 
-	    {% block javascript %}
-	      {% do assets.add('theme://js/sqncbrk.min.js', {'priority':100, 'pipeline':false}) %}
-	      {{ assets.js('head', {'loading': 'defer'}) }}
-	    {% endblock %}
+    {% block javascript %}
+      {{ assets.js('head', {'loading': 'defer'}) }}
+    {% endblock %}
 
 	{% endblock %}
 	</head>
@@ -66,6 +65,11 @@
 	    {% block search %}{% include 'partials/simplesearch_searchbox.html.twig' %}{% endblock %}
 
 		{% block footer %}{% include 'partials/footer.html.twig' %}{% endblock %}
+
+    {% block bottom %}
+      {% do assets.add('theme://js/sqncbrk.js', {'priority':100, 'pipeline':false, 'group':'bottom'}) %}
+      {{ assets.js('bottom') }}
+    {% endblock %}
 
 	</body>
 </html>

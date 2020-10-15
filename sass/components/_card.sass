@@ -9,11 +9,11 @@
   transition: background-color .6s $fade
 
   +for-size(tablet-landscape-up)
-    grid-gap: 0 $spacing
-    grid-template-columns: 140px 1fr
+  grid-gap: 0 $spacing
+  grid-template-columns: 140px 1fr
 
   +for-size(desktop-up)
-    padding: $spacing
+  padding: $spacing
 
   &:hover,&:active
     background: rgba($yellow, .05)
@@ -32,7 +32,8 @@
       line-height: 1rem
 
   > .description
-    display: none
-
-    +for-size(tablet-landscape-up)
-      display: block
+    display: -webkit-box
+    -webkit-line-clamp: 3
+    -webkit-box-orient: vertical
+    overflow: hidden
+    align-self: start

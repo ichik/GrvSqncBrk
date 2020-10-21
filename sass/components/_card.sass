@@ -2,7 +2,9 @@
   display: grid
   grid-template-columns: 80px 1fr
   grid-gap: 0 $spacing
-  min-height: $spacing * 8
+  max-height: $spacing * 9.5
+  padding: $spacing
+  margin: -$spacing
 
   color: $white
   background: $black
@@ -11,11 +13,11 @@
   +for-size(tablet-landscape-up)
     grid-gap: 0 $spacing
     grid-template-columns: 96px 1fr
+    max-height: $spacing * 11
 
   +for-size(desktop-up)
     grid-template-columns: 136px 1fr
-    padding: $spacing
-    margin: -$spacing
+    max-height: $spacing * 15
 
   &:hover,&:active
     background: rgba($yellow, .05)

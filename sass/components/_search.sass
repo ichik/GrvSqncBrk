@@ -6,15 +6,17 @@
   width: 100%
   grid-template-areas: ". close" "form form" "first first" "second second"
   padding: $spacing $spacing * 2
-  grid-template-rows: repeat(auto-fit, 24vw)
+  grid-template-rows: repeat(auto-fit, 20vw)
+  grid-gap: $spacing * 2 0
 
   pointer-events: none
 
   +for-size(tablet-portrait-up)
     grid-template-areas: ". close" "form form" "first second"
+    grid-template-rows: repeat(auto-fit, 12vw)
 
   +for-size(tablet-landscape-up)
-    grid-template-areas: ". . . . . . . close" ". form form form form form form ." ". first first first first first first ." ". second second second second second second ."
+    grid-template-areas: ". . . . . . . close" ". form form form form form form ." ". first first first second second second ."
 
   +for-size(desktop-up)
     grid-template-areas: ". . . . . close" ". form form form form ." ". first first second second ."
@@ -176,10 +178,11 @@
 
 .sqncbrk-searchfeed
   padding: $spacing $spacing * 2 $spacing * 10 $spacing * 2
-  grid-row-gap: $spacing * 2
-
   box-shadow: 0 $spacing * 3 $spacing * 2 $spacing / 2 $white
   background: inherit
+
+  +for-size(desktop-up)
+    grid-gap: $spacing * 4 $spacing * 2
 
   > .sqncbrk-card
     grid-column: span 2

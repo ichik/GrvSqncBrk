@@ -1,6 +1,6 @@
 .sqncbrk-card .link
   display: grid
-  grid-template-columns: 88px 1fr
+  grid-template-columns: 80px 1fr
   grid-gap: 0 $spacing
   min-height: $spacing * 8
 
@@ -10,10 +10,12 @@
 
   +for-size(tablet-landscape-up)
     grid-gap: 0 $spacing
-    grid-template-columns: 140px 1fr
+    grid-template-columns: 96px 1fr
 
   +for-size(desktop-up)
+    grid-template-columns: 136px 1fr
     padding: $spacing
+    margin: -$spacing
 
   &:hover,&:active
     background: rgba($yellow, .05)
@@ -31,6 +33,12 @@
       font-size: 1rem
       line-height: 1rem
 
+  > .date
+    display: none
+
+    +for-size(desktop-up)
+      display: block
+
   > .description
     -webkit-box-orient: vertical
     -webkit-line-clamp: 2
@@ -38,5 +46,6 @@
     display: -webkit-box
     overflow: hidden
 
-    +for-size(tablet-portrait-up)
+    +for-size(tablet-landscape-up)
       -webkit-line-clamp: 3
+      max-width: 95%

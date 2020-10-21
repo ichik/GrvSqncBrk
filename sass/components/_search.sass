@@ -7,7 +7,6 @@
   grid-template-areas: ". close" "form form" "first first" "second second"
   padding: $spacing $spacing * 2
   grid-template-rows: repeat(auto-fit, 20vw)
-  grid-gap: $spacing * 2 0
 
   pointer-events: none
 
@@ -20,6 +19,8 @@
 
   +for-size(desktop-up)
     grid-template-areas: ". . . . . close" ". form form form form ." ". first first second second ."
+
+  +for-size(big-desktop-up)
 
   &:before
     position: absolute

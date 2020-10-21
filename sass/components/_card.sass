@@ -1,8 +1,8 @@
 .sqncbrk-card .link
   display: grid
-  grid-template-columns: 90px 1fr
-  grid-gap: $spacing
-  min-height: $spacing * 10.5
+  grid-template-columns: 88px 1fr
+  grid-gap: 0 $spacing
+  min-height: $spacing * 8
 
   color: $white
   background: $black
@@ -32,8 +32,11 @@
       line-height: 1rem
 
   > .description
-    display: -webkit-box
-    -webkit-line-clamp: 3
     -webkit-box-orient: vertical
-    overflow: hidden
+    -webkit-line-clamp: 2
     align-self: start
+    display: -webkit-box
+    overflow: hidden
+
+    +for-size(tablet-portrait-up)
+      -webkit-line-clamp: 3

@@ -7,11 +7,11 @@
     grid-gap: $spacing * 2 $spacing * 6
 
   +for-size(tablet-landscape-up)
-    grid-gap: $spacing * 4 $spacing
+    grid-gap: $spacing * 2 $spacing
     grid-template-columns: [first] $gutter-tablet [content-start] 1fr 1fr 1fr [content-center] 1fr 1fr [content-end gutter-start] 1fr [gutter-end] $gutter-tablet [last]
 
   +for-size(desktop-up)
-    grid-gap: $spacing * 4 $spacing * 2
+    grid-gap: $spacing * 2
     grid-template-columns: [first] $gutter-desktop [content-start] 1fr 1fr [content-center] 1fr [content-end gutter-start] 1fr [gutter-end] $gutter-desktop [last]
 
   +for-size(big-desktop-up)

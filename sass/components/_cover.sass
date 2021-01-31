@@ -43,12 +43,14 @@
 
   > .meta > .wrap
     grid-template-areas: "time time" "title title"
+    grid-gap: 0
 
     +for-size(tablet-landscape-up)
       grid-template-areas: ". time time time . . . ." ". title title title title title title ."
 
     +for-size(desktop-up)
       grid-template-areas: ". time time time time ." ". title title title title ."
+      grid-gap: $spacing $spacing * 2
 
   > .meta > .wrap > .date
     grid-area: time

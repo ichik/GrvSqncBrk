@@ -1,3 +1,10 @@
+# 1.1.0
+
+* Typography and grid refinements
+* Fix improper loading of JS on search results page
+* Empty search results template
+* Fixed layout shift when opening search form on mobile and tablet
+
 # 1.0.2
 * Fixed JS error for opening search menu
 * Fixed date output for items in search menu

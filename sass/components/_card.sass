@@ -30,9 +30,13 @@
     font-size: 0.75rem
     line-height: 0.8rem
 
+    +for-size(desktop-up)
+      font-size: 0.9rem
+      line-height: 1.125rem
+
     +for-size(big-desktop-up)
-      font-size: 1rem
-      line-height: 1rem
+      font-size: 1.25rem
+      line-height: 1.5rem
 
   > .date
     display: none
@@ -42,11 +46,10 @@
 
   > .description
     -webkit-box-orient: vertical
-    -webkit-line-clamp: 2
+    -webkit-line-clamp: 3
     align-self: start
     display: -webkit-box
     overflow: hidden
 
     +for-size(tablet-portrait-up)
-      -webkit-line-clamp: 3
       max-width: 95%

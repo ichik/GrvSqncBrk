@@ -1,8 +1,10 @@
 .sqncbrk-card .link
   display: grid
-  grid-template-columns: 90px 1fr
-  grid-gap: $spacing
-  min-height: $spacing * 10.5
+  grid-template-columns: 80px 1fr
+  grid-gap: 0 $spacing
+  max-height: $spacing * 9.5
+  padding: $spacing
+  margin: -$spacing
 
   color: $white
   background: $black
@@ -10,10 +12,17 @@
 
   +for-size(tablet-landscape-up)
     grid-gap: 0 $spacing
-    grid-template-columns: 140px 1fr
+    grid-template-columns: 96px 1fr
+    max-height: $spacing * 11
 
   +for-size(desktop-up)
-    padding: $spacing
+    grid-template-columns: 136px 1fr
+    max-height: $spacing * 15
+
+  +for-size(big-desktop-up)
+    grid-template-columns: 192px 1fr
+    max-height: $spacing * 20
+
 
   &:hover,&:active
     background: rgba($yellow, .05)
@@ -23,16 +32,32 @@
 
   > .date, > .description
     justify-self: start
+    font-size: 0.75rem
+    line-height: 0.8rem
 
-    font-size: 0.9rem
-    line-height: 1rem
+    +for-size(desktop-up)
+      font-size: 0.9rem
+      line-height: 1.125rem
 
     +for-size(big-desktop-up)
-      font-size: 1rem
-      line-height: 1rem
+      font-size: 1.25rem
+      line-height: 1.5rem
 
-  > .description
+  > .date
     display: none
 
-    +for-size(tablet-landscape-up)
+    +for-size(desktop-up)
       display: block
+
+  > .description
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 3
+    align-self: start
+    display: -webkit-box
+    overflow: hidden
+
+    +for-size(tablet-portrait-up)
+      max-width: 95%
+
+    +for-size(big-desktop-up)
+      max-width: 95%

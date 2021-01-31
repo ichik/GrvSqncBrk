@@ -6,14 +6,16 @@
   width: 100%
   grid-template-areas: ". close" "form form" "first first" "second second"
   padding: $spacing $spacing * 2
+  grid-template-rows: repeat(auto-fit, 20vw)
 
   pointer-events: none
 
   +for-size(tablet-portrait-up)
     grid-template-areas: ". close" "form form" "first second"
+    grid-template-rows: repeat(auto-fit, 12vw)
 
   +for-size(tablet-landscape-up)
-    grid-template-areas: ". . . . . . . close" ". form form form form form form ." ". first first first first first first ." ". second second second second second second ."
+    grid-template-areas: ". . . . . . . close" ". form form form form form form ." ". first first first second second second ."
 
   +for-size(desktop-up)
     grid-template-areas: ". . . . . close" ". form form form form ." ". first first second second ."
@@ -107,13 +109,9 @@
     &::-ms-clear
       display: none
 
-    &::selection
-      color: $black
-
     +for-size(tablet-landscape-up)
-      height: 8rem
-
-      font-size: 5rem
+      height: 6rem
+      font-size: 4rem
 
   > .desktop
     display: none
@@ -175,10 +173,17 @@
 
 .sqncbrk-searchfeed
   padding: $spacing $spacing * 2 $spacing * 10 $spacing * 2
-  grid-row-gap: $spacing * 2
-
   box-shadow: 0 $spacing * 3 $spacing * 2 $spacing / 2 $white
   background: inherit
+
+  +for-size(desktop-up)
+    grid-gap: $spacing * 4 $spacing * 2
+
+  > .sqncbrk-empty
+    grid-column: span 2
+
+    +for-size(tablet-landscape-up)
+      grid-column: content-start / gutter-end
 
   > .sqncbrk-card
     grid-column: span 2
@@ -187,12 +192,26 @@
       grid-column: span 1
 
     +for-size(tablet-landscape-up)
-      grid-column: content-start / gutter-end
-
-    +for-size(desktop-up)
 
       &:nth-child(odd)
         grid-column: content-start / content-center
 
       &:nth-child(even)
         grid-column: content-center / gutter-end
+
+.sqncbrk-empty .underline
+  display: inline-block
+
+  color: rgba($white,0.7)
+  background-image: linear-gradient(180deg,rgba($yellow, 0.5) 0,rgba($yellow, 0.5))
+  background-repeat: repeat-x
+  background-position: 0 90%
+  background-size: 1px 1px
+
+  transition: color 0.3s $fade
+
+  transition: color 0.3s $fade, background-image 0.3s $fade
+
+  &:hover
+    color: $white
+    background-image: linear-gradient(180deg,rgba($yellow, 0.8) 0,rgba($yellow, 0.8))

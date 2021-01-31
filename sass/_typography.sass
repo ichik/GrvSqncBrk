@@ -49,6 +49,7 @@ body
 
 ::selection
   background: $yellow
+  color: $black
 
 h2,h3,h4
   font-family: Museo
@@ -61,16 +62,16 @@ h1
   text-transform: lowercase
 
 h2
-  font-size: 2rem
-  line-height: 1.7rem
+  font-size: 1.75rem
+  line-height: 1.75rem
 
   +for-size(tablet-portrait-up)
-    font-size: 3rem
-    line-height: 2.5rem
+    font-size: 2.25rem
+    line-height: 2.25rem
 
   +for-size(tablet-landscape-up)
-    font-size: 3.5rem
-    line-height: 3rem
+    font-size: 2.5rem
+    line-height: 2.5rem
 
   +for-size(desktop-up)
     font-size: 4.5rem
@@ -78,19 +79,27 @@ h2
 
 h3
   font-size: 1.5rem
-  line-height: 1.2rem
+  line-height: 1.5rem
 
   +for-size(tablet-portrait-up)
     font-size: 2rem
-    line-height: 1.5rem
+    line-height: 1.95rem
 
   +for-size(tablet-landscape-up)
     font-size: 2.5rem
-    line-height: 2rem
+    line-height: 2.25rem
 
 h4
-  font-size: 1.2rem
-  line-height: 1rem
+  font-size: 0.8rem
+  line-height: 1.25rem
+
+  +for-size(desktop-up)
+    font-size: 1.25rem
+    line-height: 1.5rem
+
+  +for-size(big-desktop-up)
+    font-size: 1.375rem
+    line-height: 1.75rem
 
 a
   text-decoration: none

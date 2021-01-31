@@ -15,6 +15,12 @@
   {% for p in search_results %}
   {% include 'partials/simplesearch_item.html.twig' %}
   {% endfor %}
+  {% if search_results.count == 0 %}
+    <div class="sqncbrk-empty">
+      <p>Nothing found for request “{{ query }}”.</p>
+      <p>Let's look for something else, like <a class="underline" href="{{ base_url_relative }}/search?query=Super+Metroid">Super Metroid</a>.</p>
+    </div>
+  {% endif %}
 </div>
 {% endblock %}
 
@@ -29,4 +35,7 @@
 {% endblock %}
 
 {% block search %}
+{% endblock %}
+
+{% block bottom %}
 {% endblock %}

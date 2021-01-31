@@ -19,6 +19,11 @@
     grid-template-columns: 136px 1fr
     max-height: $spacing * 15
 
+  +for-size(big-desktop-up)
+    grid-template-columns: 192px 1fr
+    max-height: $spacing * 20
+
+
   &:hover,&:active
     background: rgba($yellow, .05)
 
@@ -52,4 +57,7 @@
     overflow: hidden
 
     +for-size(tablet-portrait-up)
+      max-width: 95%
+
+    +for-size(big-desktop-up)
       max-width: 95%

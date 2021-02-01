@@ -1,3 +1,7 @@
+# 1.1.1
+
+* Fixed “load more” button stay on-screen after tap on mobile
+
 # 1.1.0
 
 * Typography and grid refinements

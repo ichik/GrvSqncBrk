@@ -71,8 +71,11 @@
   &.progress > .button
     transform: scaleX(0.25)
     opacity: 0
-
     pointer-events: none
+    animation: none
+
+    &:after
+      animation: none
 
   &.progress
     &:after

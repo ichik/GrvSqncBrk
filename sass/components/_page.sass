@@ -61,18 +61,20 @@
 .sqncbrk-content a
 
   &:link
-    border-bottom: 1px solid rgba($blue,0.3)
+    text-decoration: underline
+    text-decoration-color: rgba($blue,0.3)
+    text-decoration-thickness: 1px
+    text-underline-offset: 25%
     color: $blue
-    transition: color 0.1s $fade, border-color 0.1s $fade
+    transition: color 0.1s $fade, text-decoration-color 0.1s $fade
 
   &:visited
-    border-color: rgba($purple,0.3)
     color: $purple
+    text-decoration-color: rgba($purple,0.3)
 
   &:hover,&:active
-    border-color: rgba($red,0.3)
     color: $red
-
+    text-decoration-color: rgba($red,0.3)
 
 .sqncbrk-content > p > img
   display: block

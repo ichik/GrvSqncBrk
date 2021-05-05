@@ -1,11 +1,21 @@
 <article class="sqncbrk-card info">
-  <a class="link" href="{{ p.url }}">
-    <img
-      alt="{{ p.title }}"
-      class="cover lazyload"
-      src="{{ p.media['cover.jpg'].cropZoom(240,180).quality(1).url }}"
-      data-src="{{ p.media['cover.jpg'].cropZoom(240,180).quality(100).enableProgressive.url }}"
-    />
+  <a class="link" href="{{ p.url }}" title="{{ p.title }}">
+    <picture class="cover">
+      <source
+        data-srcset="{{ p.media['cover.webp'].cropZoom(240,180).url }}"
+        type="image/webp"
+      />
+      <source
+        data-srcset="{{ p.media['cover.jpg'].cropZoom(240,180).url }}"
+        type="image/jpeg"
+      />
+      <img
+        alt="{{ p.title }}"
+        class="cover lazyload"
+        src="{{ p.media['cover.jpg'].cropZoom(240,180).quality(1).url }}"
+        data-src="{{ p.media['cover.jpg'].cropZoom(240,180).enableProgressive.url }}"
+      />
+    </picture>
     <time class="date" datetime="{{ p.date|date('Y-m-d') }}">{{ p.date|date('d') }} {{ 'SQNC_MONTHS'|ta(p.date|date('n') - 1) }}, {{ p.date|date('Y') }}</time>
     <h4 class="title">{{ p.title }}</h4>
     <p class="description">{{ p.header.description|truncate(105, true) }}</p>

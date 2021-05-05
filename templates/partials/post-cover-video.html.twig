@@ -4,10 +4,10 @@
   autoplay loop muted playsinline
   volume="0"
   poster="{{ page.media['cover.jpg'].quality(1).url }}"
-  data-poster="{{ page.media['cover.jpg'].enableProgressive.url }}"
+  data-poster="{{ page.media['cover.webp'].url }}"
 >
-  <source src="/{{ page.slug }}/cover.webm" type='video/webm;codecs="vp8, vorbis"'/>
-  <source src="/{{ page.slug }}/cover.mp4" type="video/mp4">
+  <source src="/{{ page.slug }}/cover.webm" type="video/webm;codecs='vp8, vorbis'" />
+  <source src="/{{ page.slug }}/cover.mp4" type="video/mp4" />
 </video>
 <div class="meta">
   <div class="wrap sqncbrk-grid">

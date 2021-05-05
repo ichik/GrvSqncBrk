@@ -1,13 +1,59 @@
-<img
-  alt="{{ page.title }}"
-  src="{{ page.media['cover.jpg'].quality(1).url }}"
-  data-sizes="auto"
-  data-srcset="{{ page.media['cover.jpg'].cropZoom(600,340).url }} 600w,
-  {{ page.media['cover.jpg'].cropZoom(1280,720).url }} 1280w,
-  {{ page.media['cover.jpg'].cropzoom(1920,1080).url }} 1920w"
-  data-src="{{ page.media['cover.jpg'].url }}"
-  class="cover lazyload"
-/>
+<picture class="cover">
+  <source
+    data-srcset="{{ page.media['cover.webp'].cropZoom(600,450).url }}"
+    media="(max-width: 599px)"
+    type="image/webp"
+  />
+  <source
+    data-srcset="{{ page.media['cover.webp'].cropZoom(900,506).url }}"
+    media="(min-width: 600px) and (max-width: 899px)"
+    type="image/webp"
+  />
+  <source
+    data-srcset="{{ page.media['cover.webp'].cropZoom(1200,675).url }}"
+    media="(min-width: 900px) and (max-width: 1199px)"
+    type="image/webp"
+  />
+  <source
+    data-srcset="{{ page.media['cover.webp'].cropZoom(1800,1012).url }}"
+    media="(min-width: 1200px) and (max-width: 1799px)"
+    type="image/webp"
+  />
+  <source
+    data-srcset="{{ page.media['cover.webp'].cropZoom(1920,1080).url }}"
+    media="(min-width: 1800px)"
+    type="image/webp"
+  />
+  <source
+    data-srcset="{{ page.media['cover.jpg'].cropZoom(600,450).url }}"
+    media="(max-width: 599px)"
+    type="image/jpeg"
+  />
+  <source
+    data-srcset="{{ page.media['cover.jpg'].cropZoom(900,506).url }}"
+    media="(min-width: 600px) and (max-width: 899px)"
+    type="image/jpeg"
+  />
+  <source
+    data-srcset="{{ page.media['cover.jpg'].cropZoom(1200,675).url }}"
+    media="(min-width: 900px) and (max-width: 1199px)"
+    type="image/jpeg"
+  />
+  <source
+    data-srcset="{{ page.media['cover.jpg'].cropZoom(1800,1012).url }}"
+    media="(min-width: 1200px) and (max-width: 1799px)"
+    type="image/jpeg"
+  />
+  <source
+    data-srcset="{{ page.media['cover.jpg'].cropZoom(1920,1080).url }}"
+    media="(min-width: 1800px)"
+    type="image/jpeg"
+  />
+  <img class="lazyload"
+    src="{{ page.media['cover.jpg'].quality(1).url }}"
+    data-src="{{ page.media['cover.jpg'].enableProgressive.url }}"
+  />
+</picture>
 <div class="meta">
   <div class="wrap sqncbrk-grid">
     <time class="date" datetime="{{ page.date|date('Y-m-d') }}">{{ 'SQNC_MONTHS'|ta(page.date|date('n') - 1) }} {{ page.date|date('d') }}, {{ page.date|date('Y') }}</time>

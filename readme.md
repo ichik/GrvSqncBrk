@@ -17,3 +17,6 @@ developer: Studio Pixel
 developersite: http://studiopixel.sakura.ne.jp
 description: It’s not easy to even start talking about Cave Story without starting to throw out such adjectives like “modern classic” or “cult underground hit”. But there, you have it, I just wrote it and I won’t take it back.
 ```
+
+5. **Video covers**. Controlled by setting frontmatter property `videocover: true` and providing cover video in the same folder (`cover.mp4` and/or `cover.webm`).
+6. **Sidenotes**. Done with `<aside class="caption">SIDENOTE</aside>` following the paragraph they should relate to.

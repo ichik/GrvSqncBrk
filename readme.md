@@ -20,3 +20,4 @@ description: It’s not easy to even start talking about Cave Story without star
 
 5. **Video covers**. Controlled by setting frontmatter property `videocover: true` and providing cover video in the same folder (`cover.mp4` and/or `cover.webm`).
 6. **Sidenotes**. Done with `<aside class="caption">SIDENOTE</aside>` following the paragraph they should relate to.
+7. **Modifying styles**. Theme is authored in SASS (_not SCSS_), source files are in `sass` folder, compiled minified CSS and maps in `css`.

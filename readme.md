@@ -6,7 +6,7 @@ Theme for [Grav](https://getgrav.org) CMS used for publishing [SqncBrk](https://
 ## Considerations
 
 1. **Fonts**. Fonts are not included with the theme distribution. SqncBrk uses [Museo](https://www.exljbris.com/museo.html) and [Museo Sans](https://www.exljbris.com/museosans.html) by exljbris Font Foundry, and [Alternate Gothic Pro](https://www.fontspring.com/fonts/softmaker/alternate-gothic-pro) by SoftMaker.
-2. **Lazyloading**. Theme assumes you provide lazyloading library with the plugin. [Example for lazysizes](https://gist.github.com/ichik/3191c85570821170a86b581199f4a8ee).
+2. **Lazyloading**. Theme assumes you provide additional lazyloading optimizations with [Lazysizes library](https://github.com/aFarkas/lazysizes). Cover images should work without, but content of pages, video covers and iframe-type content is better handled by it. [Example plugin](https://gist.github.com/ichik/3191c85570821170a86b581199f4a8ee).
 3. **Cover image**. Theme expects to find `cover.jpg` and (optional) `cover.webp` in every page folder to create previews. You can use variery of tools to generate needed image formats, i.e. [Squoosh](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli)
 4. **Frontmatter**. Some additional optional frontmatter is used to provide non-standard data, check the following example:
 
@@ -19,5 +19,5 @@ description: It’s not easy to even start talking about Cave Story without star
 ```
 
 5. **Video covers**. Controlled by setting frontmatter property `videocover: true` and providing cover video in the same folder (`cover.mp4` and/or `cover.webm`).
-6. **Sidenotes**. Done with `<aside class="caption">SIDENOTE</aside>` following the paragraph they should relate to.
+6. **Sidenotes**. Are created with `<aside class="caption">SIDENOTE</aside>` following the paragraph they should relate to.
 7. **Modifying styles**. Theme is authored in SASS (_not SCSS_), source files are in `sass` folder, compiled minified CSS and maps in `css`.

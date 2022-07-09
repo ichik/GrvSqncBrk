@@ -2,7 +2,7 @@
   padding-top: $spacing * 7.5
 
   background: $white
-  box-shadow: 0 $spacing $spacing * 2 $spacing / 2 $black
+  box-shadow: 0 $spacing $spacing * 2 $spacing * 0.5 $black
 
   will-change: contents
 
@@ -10,17 +10,22 @@
     padding-top: $spacing * 15
 
   > .sqncbrk-post
+    content-visibility: auto
+
     position: relative
     height: 60vh
-    margin-bottom: $spacing / 2
+    contain-intrinsic-size: 0 60vh
+    margin-bottom: $spacing * 0.5
 
     background: $black
 
     +for-size(tablet-landscape-up)
       height: 70vh
+      containt-intrinsic-height: 0 70vh
 
     +for-size(desktop-up)
       height: 80vh
+      containt-intrinsic-height: 0 80vh
 
     > .link > .cover
       opacity: .9

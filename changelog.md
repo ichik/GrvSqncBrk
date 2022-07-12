@@ -2,7 +2,7 @@
 
 - Introduced `content-visibility` optimizations
 - Improved lazy-loading of cover images (native loading, better sizing)
-- Updated and actualized readme
+- Updated readme
 - Fixed non-disabled logo link on the index page
 - Updated thumbnail
 - Aligned .editorconfig with .prettierrc

@@ -3,8 +3,8 @@
 	<head>
 	{% block head %}
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#000a14" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="theme-color" content="#000a14" />
 
 		{% if header.description %}
 		<meta name="description" content="{{ header.description }}">
@@ -16,8 +16,10 @@
 		<link rel="alternate" type="application/rss+xml" href="{{ site.rss }}" />
 		{% endif %}
 
-		<link rel="shortcut icon" href="{{ theme_url }}/images/favicon.ico">
-	    <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png">
+		<link rel="icon" href="{{ theme_url }}/images/favicon.ico" sizes="any">
+	    <link rel="icon" href="{{ theme_url }}/images/favicon.svg">
+		<link rel="apple-touch-icon" href="{{ theme_url }}/images/apple-touch-icon.png">
+		<link rel="manifest" href="{{ theme_url }}/manifest.webmanifest">
 
 		{% block title %}
 		<title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>

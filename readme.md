@@ -18,6 +18,7 @@ developersite: http://studiopixel.sakura.ne.jp
 description: It’s not easy to even start talking about Cave Story without starting to throw out such adjectives like “modern classic” or “cult underground hit”. But there, you have it, I just wrote it and I won’t take it back.
 ```
 
-5. **Video covers**. Controlled by setting frontmatter property `videocover: true` and providing cover video in the same folder (`cover.mp4` and/or `cover.webm`).
-6. **Sidenotes**. Are created with `<aside class="caption">SIDENOTE</aside>` following the paragraph they should relate to.
-7. **Modifying styles**. Theme is authored in SASS (_not SCSS_), source files are in `sass` folder, compiled minified CSS and maps in `css`.
+5. **Video covers**. Set by `videocover: true` and providing cover video in the same folder (`cover.mp4` and/or `cover.webm`).
+6. **Custom CSS**. Set by `customcss: true` and providing CSS file in the same folder (`custom.css`). CSS won't be compressed and won't be appended to main theme stylesheets.
+7. **Sidenotes**. Are created with `<aside class="caption">SIDENOTE</aside>` following the paragraph they should relate to.
+8. **Modifying styles**. Theme is authored in SASS (_not SCSS_), source files are in `sass` folder, compiled minified CSS and maps in `css`.

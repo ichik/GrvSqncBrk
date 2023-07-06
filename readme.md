@@ -7,7 +7,7 @@ Theme for [Grav](https://getgrav.org) CMS used for publishing [SqncBrk](https://
 
 1. **Fonts**. Fonts are not included with the theme distribution. SqncBrk uses [Museo](https://www.exljbris.com/museo.html) and [Museo Sans](https://www.exljbris.com/museosans.html) by exljbris Font Foundry, and [Alternate Gothic Pro](https://www.fontspring.com/fonts/softmaker/alternate-gothic-pro) by SoftMaker.
 2. **Lazyloading**. Theme assumes you provide additional lazyloading optimizations with [Lazysizes library](https://github.com/aFarkas/lazysizes). Cover images should work without, but content of pages, video covers and iframe-type content is better handled by it. [Example plugin](https://gist.github.com/ichik/3191c85570821170a86b581199f4a8ee).
-3. **Cover image**. Theme expects to find `cover.jpg` and (optional) `cover.webp` in every page folder to create previews. You can use variery of tools to generate needed image formats, i.e. [Squoosh](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli)
+3. **Cover image**. Theme expects to find `cover.jpg` and (optional) `cover.webp` in every page folder to create previews.
 4. **Frontmatter**. Some additional optional frontmatter is used to provide non-standard data, check the following example:
 
 ```markdown
